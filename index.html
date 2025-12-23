@@ -1,11 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Junior PHP / Web Developer</title>
+  <meta name="description" content="Junior PHP / Web Developer — PHP 8+, MySQL, Docker, Ubuntu. Bezpieczne aplikacje webowe, panele admin/klient, CSRF, sesje." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Portfolio — Junior PHP / Web Developer" />
+  <meta property="og:description" content="PHP 8+, MySQL, Docker, Ubuntu. Bezpieczne aplikacje webowe i panele administracyjne." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
-    ELOELOEOE
+  <a class="skip-link" href="#content">Przejdź do treści</a>
+
+  <!-- BOOT / LOADER (shown only on first visit) -->
+  <div id="boot" class="boot" aria-hidden="true">
+    <div class="boot-box" role="status" aria-live="polite" aria-label="Ładowanie strony">
+      <div class="boot-top">
+        <div class="boot-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="boot-title">boot::portfolio</div>
+      </div>
+      <div class="boot-body">
+        <p class="boot-line">Uruchamianie interfejsu…</p>
+        <div class="boot-progress" aria-hidden="true"><div class="boot-bar" id="bootBar"></div></div>
+        <div class="boot-log" id="bootLog">
+          <div><span class="p">boot</span> <span class="dim">ready</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app" role="application" aria-label="Portfolio">
+    <!-- LEFT: Sidebar -->
+    <aside class="panel sidebar" aria-label="Panel nawigacji">
+      <div class="brand">
+        <div class="path"><span class="hint">~/</span><span class="accent">portfolio</span> <span class="muted">::</span> <span class="hint">index</span></div>
+        <div class="title">
+          <h1>Portfolio</h1>
+          <div class="subtitle">Junior PHP / Web Developer — PHP 8+, MySQL, Docker, Ubuntu. Bezpieczne aplikacje i panele.</div>
+        </div>
+      </div>
+
+      <div class="quick" aria-label="Skrót technologii">
+        <span class="chip hot">PHP 8+</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Ubuntu</span>
+        <span class="chip hot">Security</span>
+      </div>
+
+      <nav class="nav" aria-label="Sekcje portfolio">
+        <h2>SEKCJE</h2>
+        <div class="nav-list" role="list">
+          <button class="nav-item active" type="button" data-target="about" aria-controls="section-about" aria-current="page">
+            <div class="nav-label">About</div>
+            <div class="slash">/</div>
+            <div class="nav-desc">
+              <strong>Kim jestem</strong>
+              <span>Szybki opis i podejście</span>
+            </div>
+          </button>
+
+          <button class="nav-item" type="button" data-target="projects" aria-controls="section-projects">
+            <div class="nav-label">Projects</div>
+            <div class="slash">/</div>
+            <div class="nav-desc">
+              <strong>Co zrobiłem</strong>
+              <span>3 projekty + roadmap</span>
+            </div>
+          </button>
+
+          <button class="nav-item" type="button" data-target="skills" aria-controls="section-skills">
+            <div class="nav-label">Skills</div>
+            <div class="slash">/</div>
+            <div class="nav-desc">
+              <strong>Umiejętności</strong>
+              <span>Backend • DevOps • UI</span>
+            </div>
+          </button>
+
+          <button class="nav-item" type="button" data-target="contact" aria-controls="section-contact">
+            <div class="nav-label">Contact</div>
+            <div class="slash">/</div>
+            <div class="nav-desc">
+              <strong>Kontakt</strong>
+              <span>Mail + linki</span>
+            </div>
+          </button>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="links" aria-label="Linki zewnętrzne">
+          <a href="https://github.com/twojnick" target="_blank" rel="noopener noreferrer">~ github::twojnick</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">~ linkedin::wstaw_link</a>
+          <a href="cv.pdf" download>~ cv::download.pdf</a>
+        </div>
+        <div class="hintline">Wskazówka: uzupełnij linki i podmień mail w sekcji Contact.</div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: Content -->
+    <section class="panel content" aria-label="Treść" id="content">
+      <div class="content-top">
+        <div class="content-path" id="contentPath">
+          <span class="prompt">nikodem@dev</span>:<span class="file">~/portfolio</span>$ cat <span class="file">about.md</span>
+        </div>
+        <div class="top-actions">
+          <a class="btn primary" href="https://github.com/twojnick" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="cv.pdf" download>CV (PDF)</a>
+          <button class="btn" type="button" id="copyEmail">Kopiuj e-mail</button>
+        </div>
+      </div>
+
+      <div class="content-body">
+        <noscript>
+          <div class="card">
+            <strong>Włącz JavaScript</strong>
+            <p style="color: var(--muted); margin-top: 8px;">Ta wersja portfolio przełącza sekcje po kliknięciu w menu (bez scrollowania).</p>
+          </div>
+        </noscript>
+
+        <!-- ABOUT -->
+        <div class="section active" id="section-about" data-section="about">
+          <h2 class="h2">O mnie</h2>
+          <p class="lead">
+            Jestem Junior PHP / Web Developerem. Buduję aplikacje end-to-end: od projektu bazy danych, przez backend w PHP, po UI oraz uruchomienie w Dockerze na Ubuntu.
+            Najbardziej dbam o bezpieczeństwo (CSRF, sesje, hasła, role) i przewidywalność działania aplikacji.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Jak pracuję</h3>
+              <ul class="list">
+                <li>Najpierw wymagania i model danych — potem logika i UI.</li>
+                <li>Bezpieczeństwo jako standard: CSRF, sesje, hashowanie, kontrola dostępu.</li>
+                <li>Spójne środowisko: Docker Compose (web + DB) i testowanie na Ubuntu.</li>
+                <li>UI nastawione na użyteczność: kontrast, stany hover/focus, czytelna nawigacja.</li>
+              </ul>
+
+              <div class="divider"></div>
+
+              <div class="stack" aria-label="Obszary">
+                <span class="tag hot">Auth / Roles</span>
+                <span class="tag">DB design</span>
+                <span class="tag hot">CSRF / Sessions</span>
+                <span class="tag">Admin panel</span>
+                <span class="tag">Dark UI</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Szybki skrót</h3>
+              <div class="codebox" aria-label="Skrót terminalowy">
+                <span class="prompt">nikodem@dev</span>:<span class="muted">~/portfolio</span>$ whoami<br/>
+                Junior PHP / Web Developer<br/><br/>
+                <span class="prompt">nikodem@dev</span>:<span class="muted">~/portfolio</span>$ stack<br/>
+                PHP 8+ • MySQL • Docker Compose • Ubuntu • HTML/CSS • JS basics<br/><br/>
+                <span class="prompt">nikodem@dev</span>:<span class="muted">~/portfolio</span>$ focus<br/>
+                Security + czytelne panele + stabilne wdrożenie
+              </div>
+
+              <p style="color: var(--muted-2); margin-top: 12px; font-size: 0.95rem;">
+                Cel: rozwój jako Junior PHP/Web Developer w stronę Full-Stack.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section" id="section-projects" data-section="projects">
+          <h2 class="h2">Projekty</h2>
+          <p class="lead">
+            Projekty pokazują mój realny workflow: backend + baza + uruchomienie + UI. Linki do demo/GitHub możesz podpiąć później.
+          </p>
+
+          <div class="card">
+            <h3>1) UnderGround Gym — system zarządzania siłownią</h3>
+            <p style="color: var(--muted); margin-top: 8px; margin-bottom: 12px;">
+              Aplikacja z panelami dla administratora i klienta: konta, role, karnety, cennik, dane klubowe. Fundament pod integrację RFID/kontrolę dostępu.
+            </p>
+            <ul class="list">
+              <li>Logowanie z rolami (admin/klient) + kontrola dostępu</li>
+              <li>Hashowanie haseł, sesje, CSRF</li>
+              <li>Panel klienta: status i dane karnetu</li>
+              <li>Panel admina: zarządzanie użytkownikami i cennikiem</li>
+            </ul>
+            <div class="stack">
+              <span class="tag hot">PHP 8.x</span>
+              <span class="tag">MySQL</span>
+              <span class="tag hot">Docker Compose</span>
+              <span class="tag">Ubuntu</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+            <div class="divider"></div>
+            <div class="codebox">
+              <span class="prompt">roadmap</span> :: next<br/>
+              → Integracja RFID / kontrola dostępu<br/>
+              → Raporty i statystyki w panelu admina<br/>
+              → Powiadomienia e-mail (np. wygasający karnet)
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="card">
+            <h3>2) Strona siłowni — landing + sekcje</h3>
+            <p style="color: var(--muted); margin-top: 8px; margin-bottom: 12px;">
+              Responsywna strona prezentacyjna z naciskiem na UI/UX: oferta, cennik, grafik zajęć, kontakt i mapa dojazdu.
+            </p>
+            <ul class="list">
+              <li>Mobile-first + dopracowane stany hover/focus</li>
+              <li>Grafik zajęć i sekcje informacyjne</li>
+              <li>Kontakt + integracja mapy</li>
+            </ul>
+            <div class="stack">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag hot">JS</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="card">
+            <h3>3) Mini-projekt: bezpieczny formularz kontaktowy</h3>
+            <p style="color: var(--muted); margin-top: 8px; margin-bottom: 12px;">
+              Prosty projekt pokazujący jakość: walidacja po stronie serwera, CSRF, podstawowe anty-spam, poprawny UX formularza.
+            </p>
+            <ul class="list">
+              <li>Walidacja danych (backend) i komunikaty błędów</li>
+              <li>CSRF + ograniczanie nadużyć</li>
+              <li>Wysyłka e-mail / zapis do bazy (opcjonalnie)</li>
+            </ul>
+            <div class="stack">
+              <span class="tag hot">PHP</span>
+              <span class="tag">Security</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section" id="section-skills" data-section="skills">
+          <h2 class="h2">Umiejętności</h2>
+          <p class="lead">
+            Skupiam się na praktycznym web dev: backend + baza danych + bezpieczeństwo + uruchomienie w Dockerze, a do tego czytelny UI.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Backend</h3>
+              <ul class="list">
+                <li>PHP 8+ — struktura projektu, sesje, logowanie, role</li>
+                <li>Bezpieczeństwo: hashowanie haseł, CSRF, kontrola dostępu</li>
+                <li>Walidacja i sanityzacja danych</li>
+                <li>MySQL: relacje, projektowanie tabel, zapytania</li>
+              </ul>
+              <div class="stack">
+                <span class="tag hot">Auth</span>
+                <span class="tag hot">CSRF</span>
+                <span class="tag">Sessions</span>
+                <span class="tag">MySQL</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>DevOps / środowisko</h3>
+              <ul class="list">
+                <li>Docker / Docker Compose (web + DB)</li>
+                <li>Wolumeny, porty, izolacja usług</li>
+                <li>Ubuntu: deploy, konfiguracja, podstawy administrowania</li>
+              </ul>
+              <div class="stack">
+                <span class="tag hot">Docker</span>
+                <span class="tag">Compose</span>
+                <span class="tag">Ubuntu</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="card">
+            <h3>Frontend / UX</h3>
+            <ul class="list">
+              <li>HTML/CSS: layout, dark UI, komponenty, kontrast</li>
+              <li>Responsywność i nawigacja</li>
+              <li>JavaScript: proste interakcje i obsługa UI</li>
+              <li>Dostępność (focus, aria) w podstawowym zakresie</li>
+            </ul>
+            <div class="stack">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag hot">JS</span>
+              <span class="tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="section" id="section-contact" data-section="contact">
+          <h2 class="h2">Kontakt</h2>
+          <p class="lead">
+            Najszybciej złapiesz mnie przez e-mail. Mogę podesłać demo/wideo z projektu, krótką dokumentację albo opis techniczny.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Dane</h3>
+              <div class="codebox" aria-label="Kontakt">
+                <span class="prompt">email</span> :: <span id="emailText">twojmail@example.com</span><br/>
+                <span class="prompt">github</span> :: github.com/twojnick<br/>
+                <span class="prompt">linkedin</span> :: (wstaw link)
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="stack">
+                <span class="tag hot">Dostępny na</span>
+                <span class="tag">projekty / rekrutacja</span>
+                <span class="tag">współpraca</span>
+              </div>
+
+              <p style="color: var(--muted-2); margin-top: 12px;">
+                Uzupełnij: e-mail, LinkedIn i link do CV (cv.pdf).
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Szybka wiadomość (UI)</h3>
+              <p style="color: var(--muted); margin-top: 8px;">
+                Ten formularz jest tylko wizualny. Jeśli chcesz, podpinam pod backend PHP (walidacja + CSRF + antyspam + wysyłka).
+              </p>
+
+              <div class="divider"></div>
+
+              <form onsubmit="event.preventDefault(); alert('To jest tylko UI. Podpinamy pod PHP, jeśli chcesz.');">
+                <label style="display:block; font-weight:900; margin-bottom:6px;">Imię</label>
+                <input class="input" type="text" placeholder="Twoje imię" />
+
+                <div style="height:10px;"></div>
+
+                <label style="display:block; font-weight:900; margin-bottom:6px;">E-mail</label>
+                <input class="input" type="email" placeholder="twoj@email.com" />
+
+                <div style="height:10px;"></div>
+
+                <label style="display:block; font-weight:900; margin-bottom:6px;">Wiadomość</label>
+                <textarea class="textarea" placeholder="Napisz, czego potrzebujesz..."></textarea>
+
+                <div style="height:12px;"></div>
+
+                <button class="btn primary" type="submit">Wyślij</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
