@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0c0e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <title>Work — Case studies</title>
+  <meta name="description" content="Case studies: websites, admin panels, marketing. Filter and metrics." />
+</head>
+<body>
+<header class="nav reveal">
+  <div class="container nav-inner">
+    <a class="brand" href="./index.html" aria-label="Home">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name" data-i18n="site_name">Nikodem Kustusz Studio</span>
+      <span class="role" data-i18n="hero_kicker">Partner dla firm</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./index.html" data-nav="home" data-i18n="nav_home">Start</a>
+      <a href="./work.html" data-nav="work" data-i18n="nav_work">Realizacje</a>
+      <a href="./services.html" data-nav="services" data-i18n="nav_services">Usługi</a>
+      <a href="./about.html" data-nav="about" data-i18n="nav_about">O mnie</a>
+      <a href="./contact.html" data-nav="contact" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button id="langPL" type="button">PL</button>
+        <button id="langEN" type="button">EN</button>
+      </div>
+      <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-drawer" id="drawer" aria-label="Mobile menu">
+    <div class="container">
+      <div class="mobile-links">
+        <a href="./index.html" data-nav-mobile="home" data-i18n="nav_home">Start</a>
+        <a href="./work.html" data-nav-mobile="work" data-i18n="nav_work">Realizacje</a>
+        <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
+        <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
+        <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+        <a class="btn primary" style="justify-content:center;" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+<div class="title reveal">
+  <div class="kicker" data-i18n="nav_work">Realizacje</div>
+  <h1 class="h1" style="font-size: clamp(2rem, 2.6vw, 2.6rem);" data-i18n="work_h1">Work / Case studies</h1>
+  <p class="sub" data-i18n="work_p">Filtruj po typie: Strony / Panele / Marketing. Każdy projekt ma rolę, stack i metrykę.</p>
+
+  <div class="quick-actions reveal">
+    <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+    <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
+    <a class="btn" href="./contact.html">Email</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="filters reveal" role="tablist" aria-label="Filters">
+  <button class="filter active" type="button" data-filter="all" data-i18n="filter_all">Wszystko</button>
+  <button class="filter" type="button" data-filter="web" data-i18n="filter_web">Strony</button>
+  <button class="filter" type="button" data-filter="admin" data-i18n="filter_admin">Panele</button>
+  <button class="filter" type="button" data-filter="mkt" data-i18n="filter_mkt">Marketing</button>
+</div>
+<noscript>
+  <div class="note" style="margin-top:10px;opacity:.8">
+    Filtry wymagają JavaScript — wyświetlam wszystkie projekty.
+  </div>
+</noscript>
+
+<div class="grid-2">
+  <article class="card work-card reveal" data-cat="admin,web">
+    <div class="row">
+      <div>
+        <h3>UnderGround Gym — system</h3>
+        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_1_role">Backend + DB + UI</span></div>
+      </div>
+      <div class="meta">Fitness / SaaS</div>
+    </div>
+    <p class="p" style="margin:10px 0 0 0;" data-i18n="work_1_desc">Panel admin/klient, role, sesje, CSRF, karnety i cennik.</p>
+    <div class="stack">
+      <span class="pill">PHP 8</span><span class="pill">MySQL</span><span class="pill">Docker</span><span class="pill">Ubuntu</span>
+    </div>
+    <div class="metricline"><span data-i18n="kpi_label">KPI:</span> <b data-i18n="work_1_metric">↓ czas obsługi</b><span data-i18n="work_1_metric_tail"> / mniejsze błędy</span></div>
+  </article>
+
+  <article class="card work-card reveal" data-cat="web,mkt">
+    <div class="row">
+      <div>
+        <h3>Landing sprzedażowy</h3>
+        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_2_role">UI/UX + copy + tracking</span></div>
+      </div>
+      <div class="meta">Lead gen</div>
+    </div>
+    <p class="p" style="margin:10px 0 0 0;" data-i18n="work_2_desc">Strona pod kampanię z trackingiem i optymalizacją konwersji.</p>
+    <div class="stack">
+      <span class="pill">HTML/CSS</span><span class="pill">JS</span><span class="pill">SEO</span><span class="pill">Tracking</span>
+    </div>
+    <div class="metricline"><span data-i18n="kpi_label">KPI:</span> <b data-i18n="work_2_metric">↑ leady</b><span data-i18n="work_2_metric_tail"> / wyższy CR</span></div>
+  </article>
+
+  <article class="card work-card reveal" data-cat="admin">
+    <div class="row">
+      <div>
+        <h3>Panel operacyjny</h3>
+        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_3_role">Dashboard + role/permissions</span></div>
+      </div>
+      <div class="meta">Ops / CRM</div>
+    </div>
+    <p class="p" style="margin:10px 0 0 0;" data-i18n="work_3_desc">Usprawnienie procesu: role, widoki, raporty, integracje.</p>
+    <div class="stack">
+      <span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">Auth</span><span class="pill">RBAC</span>
+    </div>
+    <div class="metricline"><span data-i18n="kpi_label">KPI:</span> <b data-i18n="work_3_metric">↓ czas obsługi</b><span data-i18n="work_3_metric_tail"> / lepsza kontrola</span></div>
+  </article>
+
+  <article class="card work-card reveal" data-cat="web">
+    <div class="row">
+      <div>
+        <h3>Strona firmowa (multi-page)</h3>
+        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_4_role">Design system + wdrożenie</span></div>
+      </div>
+      <div class="meta">Brand</div>
+    </div>
+    <p class="p" style="margin:10px 0 0 0;" data-i18n="work_4_desc">Premium layout, performance, SEO i spójne komponenty.</p>
+    <div class="stack">
+      <span class="pill">Responsive</span><span class="pill">Performance</span><span class="pill">SEO</span>
+    </div>
+    <div class="metricline"><span data-i18n="kpi_label">KPI:</span> <b data-i18n="work_4_metric">↑ jakość leadów</b><span data-i18n="work_4_metric_tail"></span></div>
+  </article>
+</div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
+    <div class="mini">
+      <a href="./contact.html">Email</a>
+      <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="./services.html">Services</a>
+    </div>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>

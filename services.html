@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0c0e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <title>Services — Websites, admin panels, marketing</title>
+  <meta name="description" content="Services with deliverables: websites, dashboards, marketing. Pricing from ranges." />
+</head>
+<body>
+<header class="nav reveal">
+  <div class="container nav-inner">
+    <a class="brand" href="./index.html" aria-label="Home">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name" data-i18n="site_name">Nikodem Kustusz Studio</span>
+      <span class="role" data-i18n="hero_kicker">Partner dla firm</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./index.html" data-nav="home" data-i18n="nav_home">Start</a>
+      <a href="./work.html" data-nav="work" data-i18n="nav_work">Realizacje</a>
+      <a href="./services.html" data-nav="services" data-i18n="nav_services">Usługi</a>
+      <a href="./about.html" data-nav="about" data-i18n="nav_about">O mnie</a>
+      <a href="./contact.html" data-nav="contact" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button id="langPL" type="button">PL</button>
+        <button id="langEN" type="button">EN</button>
+      </div>
+      <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-drawer" id="drawer" aria-label="Mobile menu">
+    <div class="container">
+      <div class="mobile-links">
+        <a href="./index.html" data-nav-mobile="home" data-i18n="nav_home">Start</a>
+        <a href="./work.html" data-nav-mobile="work" data-i18n="nav_work">Realizacje</a>
+        <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
+        <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
+        <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+        <a class="btn primary" style="justify-content:center;" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+<div class="title reveal">
+  <div class="kicker" data-i18n="nav_services">Usługi</div>
+  <h1 class="h1" style="font-size: clamp(2rem, 2.6vw, 2.6rem);" data-i18n="services_page_h1">Services</h1>
+  <p class="sub" data-i18n="services_page_p">Deliverables jasno opisane. Na końcu: CTA + widełki.</p>
+
+  <div class="quick-actions reveal">
+    <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+    <a class="btn" href="./work.html" data-i18n="nav_work">Realizacje</a>
+    <a class="btn" href="./contact.html" data-i18n="email_short">Email</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="title reveal">
+    <h2 class="h2" data-i18n="pack_h2">Audit → Build → Scale</h2>
+    <p class="p" data-i18n="pack_p">Trzy poziomy współpracy: Audit → Build → Scale. Dobieramy wariant do celu i budżetu.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step reveal">
+      <div class="n">01</div>
+      <b data-i18n="pack1_t">Audit</b>
+      <p data-i18n="pack1_p">Audyt + plan: oferta, UX, tracking i priorytety.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">02</div>
+      <b data-i18n="pack2_t">Build</b>
+      <p data-i18n="pack2_p">Projekt + wdrożenie: strona, panel lub landing.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">03</div>
+      <b data-i18n="pack3_t">Scale</b>
+      <p data-i18n="pack3_p">Optymalizacja: CRO, automatyzacje i raporty.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="quick-actions reveal">
+    <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+    <a class="btn" href="./contact.html" data-i18n="nav_contact">Kontakt</a>
+    <a class="btn" href="./work.html" data-i18n="see_work">Zobacz realizacje</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="web">
+  <h2 class="h2 reveal" data-i18n="svc_web_h2">Strony</h2>
+  <p class="p reveal">Landing, multi-page, CMS, SEO, performance — premium UI z naciskiem na zaufanie i konwersję.</p>
+
+  <div class="grid-2">
+    <div class="card reveal">
+      <h3 data-i18n="deliverables_h3">Deliverables</h3>
+      <ul class="bullets">
+        <li>Landing / multi-page</li>
+        <li>Design system (komponenty)</li>
+        <li>SEO basics + performance (Core Web Vitals)</li>
+        <li data-i18n="svc_web_li2">CMS (opcjonalnie)</li>
+        <li>Deploy (hosting + domena)</li>
+      </ul>
+      <div class="price"><span data-i18n="from_label">Od</span>: <b data-i18n="price_estimate">Wycena po callu</b> <span data-i18n="scope_note">/ zależnie od zakresu</span></div>
+      <div class="inline-actions" style="margin-top:12px;">
+        <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+        <a class="btn" href="./work.html" data-i18n="see_work">Zobacz realizacje</a>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <h3 data-i18n="ideal_h3">Idealne, gdy</h3>
+      <ul class="bullets">
+        <li>Potrzebujesz premium pierwszego wrażenia</li>
+        <li>Chcesz poprawić CR i wiarygodność</li>
+        <li>Masz kampanie i potrzebujesz szybkiego wdrożenia</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="admin">
+  <h2 class="h2 reveal" data-i18n="svc_admin_h2">Panele admin</h2>
+  <p class="p reveal">Dashboard, role/uprawnienia, analityka i integracje. Procesy, które realnie oszczędzają czas.</p>
+
+  <div class="grid-2">
+    <div class="card reveal">
+      <h3 data-i18n="deliverables_h3">Deliverables</h3>
+      <ul class="bullets">
+        <li>Dashboard + widoki danych</li>
+        <li>Role/permissions (RBAC)</li>
+        <li>Walidacja + bezpieczeństwo (sesje, CSRF)</li>
+        <li>Raporty / analityka</li>
+        <li>Integracje (np. e-mail, API)</li>
+      </ul>
+      <div class="price"><span data-i18n="from_label">Od</span>: <b data-i18n="price_estimate">Wycena po callu</b> <span data-i18n="scope_note">/ zależnie od zakresu</span></div>
+      <div class="inline-actions" style="margin-top:12px;">
+        <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+        <a class="btn" href="./work.html" data-i18n="nav_work">Realizacje</a>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <h3 data-i18n="ideal_h3">Idealne, gdy</h3>
+      <ul class="bullets">
+        <li>Masz chaos w procesie i potrzebujesz kontroli</li>
+        <li>Chcesz oszczędzić czas zespołu</li>
+        <li>Potrzebujesz ról i ograniczeń dostępu</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="marketing">
+  <h2 class="h2 reveal" data-i18n="svc_mkt_h2">Marketing</h2>
+  <p class="p reveal" data-i18n="svc_mkt_p">Landing pod kampanie, tracking, CRO i automatyzacje. Skupienie na wyniku.</p>
+
+  <div class="grid-2">
+    <div class="card reveal">
+      <h3 data-i18n="deliverables_h3">Deliverables</h3>
+      <ul class="bullets">
+        <li data-i18n="svc_mkt_li1">Landing pod kampanie (warianty)</li>
+        <li data-i18n="svc_mkt_li2">Tracking (GA4 / pixel) + eventy</li>
+        <li data-i18n="svc_mkt_li3">CRO: testy, poprawki, iteracje</li>
+        <li data-i18n="svc_mkt_li4">Formularze + automatyzacje (opcjonalnie)</li>
+        <li data-i18n="svc_mkt_li5">Raport “co działa”</li>
+      </ul>
+      <div class="price"><span data-i18n="from_label">Od</span>: <b data-i18n="price_estimate">Wycena po callu</b> <span data-i18n="scope_note">/ zależnie od zakresu</span></div>
+      <div class="inline-actions" style="margin-top:12px;">
+        <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+        <a class="btn" href="./contact.html" data-i18n="email_short">Email</a>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <h3 data-i18n="ideal_h3">Idealne, gdy</h3>
+      <ul class="bullets">
+        <li data-i18n="svc_mkt_ideal1">Chcesz szybciej testować oferty</li>
+        <li data-i18n="svc_mkt_ideal2">Potrzebujesz mierzyć wynik</li>
+        <li data-i18n="svc_mkt_ideal3">Optymalizujesz CR i koszt leadów</li>
+      </ul>
+    </div>
+  </div>
+</section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
+    <div class="mini">
+      <a href="./contact.html">Email</a>
+      <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="./services.html">Services</a>
+    </div>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0c0e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <title>Contact — Book a call</title>
+  <meta name="description" content="Contact: brief form that generates a mailto template and copy email." />
+</head>
+<body>
+<header class="nav reveal">
+  <div class="container nav-inner">
+    <a class="brand" href="./index.html" aria-label="Home">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="name" data-i18n="site_name">Nikodem Kustusz Studio</span>
+      <span class="role" data-i18n="hero_kicker">Partner dla firm</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="./index.html" data-nav="home" data-i18n="nav_home">Start</a>
+      <a href="./work.html" data-nav="work" data-i18n="nav_work">Realizacje</a>
+      <a href="./services.html" data-nav="services" data-i18n="nav_services">Usługi</a>
+      <a href="./about.html" data-nav="about" data-i18n="nav_about">O mnie</a>
+      <a href="./contact.html" data-nav="contact" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button id="langPL" type="button">PL</button>
+        <button id="langEN" type="button">EN</button>
+      </div>
+      <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-drawer" id="drawer" aria-label="Mobile menu">
+    <div class="container">
+      <div class="mobile-links">
+        <a href="./index.html" data-nav-mobile="home" data-i18n="nav_home">Start</a>
+        <a href="./work.html" data-nav-mobile="work" data-i18n="nav_work">Realizacje</a>
+        <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
+        <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
+        <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+        <a class="btn primary" style="justify-content:center;" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+<div class="title reveal">
+  <div class="kicker" data-i18n="nav_contact">Kontakt</div>
+  <h1 class="h1" style="font-size: clamp(2rem, 2.6vw, 2.6rem);" data-i18n="contact_h1">Contact</h1>
+  <p class="sub" data-i18n="contact_p">Wyślij krótki brief — wygeneruję mail z tematem i treścią. Możesz też skopiować e-mail.</p>
+
+  <div class="quick-actions reveal">
+    <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+    <a class="btn" href="./work.html" data-i18n="nav_work">Realizacje</a>
+    <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="card reveal" id="book" style="margin-bottom: 18px;">
+  <h2 class="h2" style="font-size:1.5rem;" data-i18n="book_h2">Umów call</h2>
+  <p class="p" data-i18n="book_p">Wybierz termin w kalendarzu — link otworzy się w nowej karcie.</p>
+  <div class="actions">
+    <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+    <a class="btn" href="#brief" data-i18n="book_or">lub wyślij brief</a>
+  </div>
+  <!-- Cal inline embed code begins -->
+<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-secret"></div>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "init");
+Cal("init", "secret", {origin:"https://app.cal.eu"});
+
+  Cal.ns.secret("inline", {
+    elementOrSelector:"#my-cal-inline-secret",
+    config: {"layout":"month_view"},
+    calLink: "quero/secret",
+  });
+
+  Cal.ns.secret("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal inline embed code ends -->
+</div>
+
+<div class="grid-2">
+  <div class="card reveal" id="brief">
+    <h2 class="h2" style="font-size:1.5rem;" data-i18n="contact_brief_h2">Brief</h2>
+    <form class="form" id="briefForm">
+      <div class="field">
+        <label for="company" data-i18n="form_company">Nazwa firmy</label>
+        <input class="input" id="company" type="text" placeholder="Np. Acme" data-i18n="ph_company" data-i18n-attr="placeholder">
+      </div>
+
+      <div class="field">
+        <label for="service" data-i18n="form_service">Usługa</label>
+        <select class="select" id="service">
+
+          <option value="website" data-i18n="service_website">Strona</option>
+          <option value="admin" data-i18n="service_admin">Panel admin</option>
+          <option value="marketing" data-i18n="service_marketing">Marketing</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="budget" data-i18n="form_budget">Budżet (opcjonalnie)</label>
+        <input class="input" id="budget" type="text" placeholder="np. 1500–3000 zł" data-i18n="ph_budget" data-i18n-attr="placeholder">
+      </div>
+
+      <div class="field">
+        <label for="deadline" data-i18n="form_deadline">Termin (opcjonalnie)</label>
+        <input class="input" id="deadline" type="text" placeholder="np. 2 tygodnie" data-i18n="ph_deadline" data-i18n-attr="placeholder">
+      </div>
+
+      <div class="field">
+        <label for="links" data-i18n="form_links">Linki (www, konkurencja, inspiracje)</label>
+        <input class="input" id="links" type="text" placeholder="linki..." data-i18n="ph_links" data-i18n-attr="placeholder">
+      </div>
+
+      <div class="field">
+        <label for="desc" data-i18n="form_desc">Krótki opis</label>
+        <textarea class="textarea" id="desc" placeholder="co budujemy i jaki cel?" data-i18n="ph_desc" data-i18n-attr="placeholder"></textarea>
+      </div>
+
+      <div class="inline-actions">
+        <button class="btn primary" id="mailtoBtn" type="submit" data-i18n="form_send">Otwórz mail (mailto)</button>
+        <button class="btn" id="copyEmailBtn" type="button" data-i18n="copy_email">Kopiuj e-mail</button>
+      </div>
+
+      <div class="help">
+        Email: <b id="emailValue">wonskkdesign@gmail.com</b><br/>
+      </div>
+    </form>
+  </div>
+
+  <div class="card reveal">
+    <h2 class="h2" style="font-size:1.5rem;">Quick</h2>
+    <p class="p">Jeśli wolisz: napisz bez briefu — wystarczy 2–3 zdania o celu, budżecie i terminie.</p>
+    <div class="divider"></div>
+    <div class="inline-actions">
+      <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+      <a class="btn" href="#" data-email-link aria-label="Email">Email</a>
+    </div>
+    <div class="divider"></div>
+    <div class="p" style="margin:0; color: var(--muted-2);">
+    </div>
+  </div>
+</div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
+    <div class="mini">
+      <a href="./contact.html">Email</a>
+      <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="./services.html">Services</a>
+    </div>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
