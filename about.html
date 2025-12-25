@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
-  <title>About — Partner for web projects</title>
-  <meta name="description" content="About: approach, focus areas, why me." />
+  <title>Nikodem Kustusz Studio — O mnie</title>
+  <meta name="description" content="O mnie: podejście, focus i stack." />
 </head>
 <body>
 <header class="nav reveal">
@@ -58,12 +58,12 @@
   <div class="container">
 <div class="title reveal">
   <div class="kicker" data-i18n="nav_about">O mnie</div>
-  <h1 class="h1" style="font-size: clamp(2rem, 2.6vw, 2.6rem);" data-i18n="about_h1">About</h1>
+  <h1 class="h1" style="font-size: clamp(2rem, 2.6vw, 2.6rem);" data-i18n="about_h1">O mnie</h1>
 
   <div class="quick-actions reveal">
     <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
     <a class="btn" href="./work.html" data-i18n="nav_work">Realizacje</a>
-    <a class="btn" href="./contact.html">Email</a>
+    <a class="btn" href="./contact.html" data-i18n="email_short">E-mail</a>
   </div>
 </div>
 
@@ -84,8 +84,13 @@
       <li data-i18n="why_3">Komunikacja i transparentny plan</li>
     </ul>
     <div class="divider"></div>
-    <div class="p" style="margin:0; color: var(--muted-2);">
-      Portrait: tylko jeśli pasuje do luxury — inaczej abstrakcyjny visual (jak na Home).
+    <h3 class="h3" style="margin-top:16px;" data-i18n="about_stack_h3">Stack</h3>
+    <div class="stack" style="margin-top:10px;">
+      <span class="pill" data-i18n="stack_php">PHP 8</span>
+      <span class="pill" data-i18n="stack_mysql">MySQL</span>
+      <span class="pill" data-i18n="stack_docker">Docker</span>
+      <span class="pill" data-i18n="stack_uiux">UI/UX</span>
+      <span class="pill" data-i18n="stack_security">Security</span>
     </div>
   </div>
 </div>
@@ -96,11 +101,13 @@
   <div class="container footer-inner">
     <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
     <div class="mini">
-      <a href="./contact.html">Email</a>
+      <a href="./contact.html" data-i18n="email_short">E-mail</a>
+      <a href="./privacy.html" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a href="./legal.html" data-i18n="footer_legal">Prawa autorskie</a>
       <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="./services.html">Services</a>
     </div>
+    <div class="copyright">© <span data-year></span> Nikodem Kustusz — <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></div>
   </div>
 </footer>
 
