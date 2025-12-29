@@ -23,7 +23,7 @@
       desc_work: "Realizacje: strony, panele admin i marketing. Filtry i metryki.",
       desc_services: "Usługi: strony, panele admin i marketing. Deliverables i proces.",
       desc_about: "O mnie: podejście, focus i stack.",
-      desc_contact: "Kontakt: umów call, wyślij brief albo wygeneruj mail",
+      desc_contact: "Kontakt: umów call, wyślij brief i wygeneruj mailto.",
 
       // Nav / global
       site_name: "Nikodem Kustusz Studio",
@@ -58,12 +58,12 @@
       
 
       // Home
-      home_h1: "Buduję panele admin i prowadzę kampanie reklamowe, które wyglądają premium i dowożą wynik.",
-      home_p: "Strony, panele administracyjne i marketing. Szybko, bezpiecznie, z naciskiem na efekt.",
+      home_h1: "Buduję strony i panele admin, które wyglądają premium i dowożą wynik.",
+      home_p: "Strony, panele administracyjne i marketing nastawione na sprzedaż. Szybko, bezpiecznie, z naciskiem na efekt.",
       hero_tag: "Audit • Build • Scale",
       proof_fast: "Szybko",
       proof_secure: "Bezpiecznie",
-      proof_sales: "Nastawione na efektywność",
+      proof_sales: "Nastawione na sprzedaż",
       home_svc_web_meta: "Premium landing i strony multi‑page.",
       home_svc_admin_meta: "Dashboardy, role i automatyzacje.",
       home_svc_mkt_meta: "Landing + tracking + CRO.",
@@ -72,7 +72,7 @@
       home_work_1_result: "panel admin + klient, role/permissions, przygotowanie pod RFID.",
       home_work_2_meta: "Multi‑page landing • UI/UX • performance",
       home_work_2_result: "czytelna oferta + CTA + sekcje konwersyjne.",
-      home_work_3_meta: "Pre-mail brief + copy • UX detale",
+      home_work_3_meta: "Mailto brief + copy • UX detale",
       home_work_3_result: "mniejsze tarcie kontaktu, szybki start współpracy.",
       services_h2: "Usługi",
       work_h2: "Top realizacje",
@@ -205,7 +205,7 @@
 
       // Contact
       contact_h1: "Kontakt",
-      contact_p: "Wyślij krótki brief — wygeneruj mail z tematem i treścią. Możesz też napisać przez e‑mail.",
+      contact_p: "Wyślij krótki brief — wygeneruję mail z tematem i treścią. Możesz też skopiować e‑mail.",
       book_h2: "Umów call",
       book_p: "Najprościej: 15 minut, żeby ustalić cel i zakres.",
       book_or: "albo wyślij brief",
@@ -246,10 +246,10 @@
       title_about: "Nikodem Kustusz Studio — About",
       title_contact: "Nikodem Kustusz Studio — Contact",
       desc_home: "I build premium websites and admin panels: fast, secure, outcome-driven.",
-      desc_work: "Work: websites, admin dashboards, and marketing—filter by category and see key metrics.",
+      desc_work: "Work: websites, admin panels and marketing. Filters and metrics.",
       desc_services: "Services: websites, admin panels and marketing. Deliverables and process.",
       desc_about: "About: approach, focus and stack.",
-      desc_contact: "Contact: book a call, send a brief and generate a pre-filled mail.",
+      desc_contact: "Contact: book a call, send a brief and generate a mailto.",
 
       // Nav / global
       site_name: "Nikodem Kustusz Studio",
@@ -278,7 +278,7 @@
       desc_legal: "Legal notice, licensing and disclaimers.",
 
       // Home
-      home_h1: "I design and build admin dashboards, and manage performance marketing campaigns focused on growth.",
+      home_h1: "I build premium websites & admin panels that ship fast and drive results.",
       home_p: "Websites, admin panels and marketing focused on performance and conversion — fast, secure, outcome-driven.",
       hero_tag: "Audit • Build • Scale",
       proof_fast: "Fast",
@@ -305,7 +305,7 @@
       process_step3_t: "Build",
       process_step3_p: "Design + implementation, iterations and testing.",
       process_step4_t: "Launch",
-      process_step4_p: "Launch, tracking and final polish.",
+      process_step4_p: "Ship, tracking and final polish.",
       view_case: "See details →",
       faq1_q: "How long does it take?",
       faq1_a: "Depends on scope: landing 1–2 weeks, multi-page 2–4 weeks, admin panel — agreed on call.",
@@ -817,80 +817,78 @@
     }
   }
 
-/**
- * Zaktualizowana funkcja do ładowania kalendarza.
- * Podmień istniejącą funkcję setupCalEmbed w swoim pliku script.js
- */
-function setupCalEmbed() {
-  const btn = document.getElementById("loadCalendarBtn");
-  const host = document.getElementById("calInlineEmbed");
-  const consentArea = document.getElementById("calendarConsentArea");
+  // Cal embed on contact (loaded only after user click)
+function setupCalEmbed(){
+  const host = $("#calInlineEmbed");
+  if (!host) return;
 
-  if (!btn || !host) return;
+  const btn = $("#loadCalendarBtn");
+  const notice = $("#calendarNotice");
+  const open = $("#openCalendarLink");
+
+  const calLink = (host.getAttribute("data-cal-link") || "quero/15min").replace(/^\//, "");
+  const namespace = (host.getAttribute("data-cal-namespace") || "secret").trim() || "secret";
+  const openHref = `https://app.cal.eu/${calLink}`;
+
+  if (open) open.setAttribute("href", openHref);
+
+  // Do not load anything until the user clicks (consent gate)
+  if (!btn) return;
 
   btn.addEventListener("click", () => {
-    // 1. Zablokuj przycisk i pokaż stan ładowania
-    btn.setAttribute("disabled", "true");
-    const originalText = btn.textContent;
-    btn.textContent = "Ładowanie...";
+    if (window.__cal_loaded) return;
+    window.__cal_loaded = true;
 
-    // 2. Dynamiczne ładowanie skryptu Cal.com
-    if (!window.Cal) {
-      (function (C, A, L) {
-        let p = function (a, ar) { a.q.push(ar); };
-        let d = C.document;
-        C.Cal = C.Cal || function () {
-          let cal = C.Cal;
-          let ar = arguments;
-          if (!cal.loaded) {
-            cal.ns = {};
-            cal.q = cal.q || [];
-            d.head.appendChild(d.createElement("script")).src = A;
-            cal.loaded = true;
+    host.hidden = false;
+    if (notice) notice.hidden = true;
+
+    btn.setAttribute("disabled", "disabled");
+    btn.textContent = (I18N[getLang()]?.calendar_loaded) || "Kalendarz załadowany";
+
+    // Official Cal inline embed snippet, wrapped in click-gate
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal; let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const ns = ar[1];
+          api.q = api.q || [];
+          if (typeof ns === "string") {
+            cal.ns[ns] = cal.ns[ns] || api;
+            p(cal.ns[ns], ar);
+            p(cal, ["initNamespace", ns]);
+          } else {
+            p(cal, ar);
           }
-          if (ar[0] === L) {
-            const api = function () { p(api, arguments); };
-            const namespace = ar[1];
-            api.q = api.q || [];
-            if (typeof namespace === "string") {
-              cal.ns[namespace] = cal.ns[namespace] || api;
-              p(cal.ns[namespace], ar);
-              p(cal, ["initNamespace", namespace]);
-            } else p(cal, ar);
-            return;
-          }
-          p(cal, ar);
-        };
-      })(window, "https://app.cal.eu/embed/embed.js", "init");
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.eu/embed/embed.js", "init");
+
+    // Configure + mount
+    window.Cal("init", namespace, { origin: "https://app.cal.eu" });
+
+    // Some builds expose namespaces as Cal.ns.<name>, others as Cal.ns[name]
+    const nsApi = (window.Cal?.ns && (window.Cal.ns[namespace] || window.Cal.ns?.[namespace])) || null;
+    if (nsApi) {
+      nsApi("inline", {
+        elementOrSelector: "#calInlineEmbed",
+        config: { layout: "month_view" },
+        calLink,
+      });
+      nsApi("ui", { hideEventTypeDetails: false, layout: "month_view" });
     }
-
-    // 3. Inicjalizacja kalendarza
-    const calNamespace = host.getAttribute("data-cal-namespace") || "secret";
-    const calLink = host.getAttribute("data-cal-link") || "quero/15min";
-
-    window.Cal("init", calNamespace, { origin: "https://app.cal.eu" });
-
-    window.Cal.ns[calNamespace]("inline", {
-      elementOrSelector: "#calInlineEmbed",
-      config: { layout: "month_view" },
-      calLink: calLink,
-    });
-
-    window.Cal.ns[calNamespace]("ui", {
-      hideEventTypeDetails: false, 
-      layout: "month_view"
-    });
-
-    // 4. Pokaż kontener i ukryj zgodę
-    host.removeAttribute("hidden");
-    if (consentArea) {
-      consentArea.style.display = "none";
-    }
-  });
+  }, { passive: true });
 }
-
-// Pamiętaj, aby wywołać setupCalEmbed() w swoim głównym bloku init!
-document.addEventListener("DOMContentLoaded", setupCalEmbed);
 
 
   // Init
