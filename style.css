@@ -388,6 +388,25 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
 .footer .copyright{flex-basis:100%; font-size:.9rem; color: var(--muted2)}
 
 .footer .mini a:hover{color: var(--text)}
+html, body { overflow-x: clip; }
+
+/* Full-width background "bleed" for selected sections (fixes wide-screen hard cut) */
+.section{ position: relative; z-index: 0; }
+
+.section-bleed::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:-28px;
+  bottom:-28px;
+  width:100vw;
+  background:
+    radial-gradient(1200px 520px at 70% 20%, rgba(205,168,93,.07), transparent 60%),
+    radial-gradient(900px 520px at 20% 75%, rgba(255,255,255,.04), transparent 60%);
+  pointer-events:none;
+  z-index:-1;
+}
 
 /* Responsive nav */
 @media (max-width: 980px){
