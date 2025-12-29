@@ -59,11 +59,11 @@
 
       // Home
       home_h1: "Buduję panele admin i prowadzę kampanie reklamowe, które wyglądają premium i dowożą wynik.",
-      home_p: "Strony, panele administracyjne i marketing nastawione na sprzedaż. Szybko, bezpiecznie, z naciskiem na efekt.",
+      home_p: "Strony, panele administracyjne i marketing. Szybko, bezpiecznie, z naciskiem na efekt.",
       hero_tag: "Audit • Build • Scale",
       proof_fast: "Szybko",
       proof_secure: "Bezpiecznie",
-      proof_sales: "Nastawione na sprzedaż",
+      proof_sales: "Nastawione na efektywność",
       home_svc_web_meta: "Premium landing i strony multi‑page.",
       home_svc_admin_meta: "Dashboardy, role i automatyzacje.",
       home_svc_mkt_meta: "Landing + tracking + CRO.",
