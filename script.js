@@ -618,14 +618,19 @@
     const drawer = $("#drawer");
     if (!burger || !drawer) return;
 
+    burger.setAttribute("aria-controls", "drawer");
+    drawer.setAttribute("aria-hidden", "true");
+
     const open = () => {
       drawer.classList.add("open");
       burger.setAttribute("aria-expanded", "true");
+      drawer.setAttribute("aria-hidden", "false");
       document.body.classList.add("drawer-open");
     };
     const close = () => {
       drawer.classList.remove("open");
       burger.setAttribute("aria-expanded", "false");
+      drawer.setAttribute("aria-hidden", "true");
       document.body.classList.remove("drawer-open");
     };
 
@@ -648,6 +653,17 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && drawer.classList.contains("open")) close();
     });
+
+    const mq = window.matchMedia("(min-width: 981px)");
+    const closeOnDesktop = () => {
+      if (mq.matches) close();
+    };
+
+    if (typeof mq.addEventListener === "function") {
+      mq.addEventListener("change", closeOnDesktop);
+    } else if (typeof mq.addListener === "function") {
+      mq.addListener(closeOnDesktop);
+    }
   }
 
   // Work filters (tabs)
