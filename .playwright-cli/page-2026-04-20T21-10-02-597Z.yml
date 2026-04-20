@@ -1,0 +1,124 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html?lang=pl
+        - generic [ref=e6]: Nikodem Kustusz Studio
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "PL" [ref=e9]
+          - button "EN" [ref=e10]
+        - button "Otwórz menu" [ref=e11]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Legal
+        - heading "Polityka prywatności" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Jak przetwarzam dane i jak działa kalendarz.
+      - article [ref=e22]:
+        - generic [ref=e23]:
+          - heading "Polityka prywatności" [level=2] [ref=e24]
+          - paragraph [ref=e25]:
+            - text: "Data aktualizacji:"
+            - strong [ref=e26]: 2025-12-24
+            - text: ". Ten dokument opisuje zasady przetwarzania danych osobowych w ramach portfolio „Nikodem Kustusz Studio” (dalej:"
+            - emphasis [ref=e27]: Serwis
+            - text: ).
+          - heading "1. Administrator danych" [level=3] [ref=e28]
+          - paragraph [ref=e29]:
+            - strong [ref=e30]: Nikodem Kustusz
+            - text: "E-mail:"
+            - link "wonskkdesign@gmail.com" [ref=e31] [cursor=pointer]:
+              - /url: mailto:wonskkdesign@gmail.com
+          - heading "2. Zakres i charakter Serwisu" [level=3] [ref=e32]
+          - list [ref=e33]:
+            - listitem [ref=e34]: Serwis ma charakter informacyjny (portfolio).
+            - listitem [ref=e35]: Serwis nie posiada kont użytkowników i nie prowadzi rejestracji.
+            - listitem [ref=e36]:
+              - text: Kontakt odbywa się przez link
+              - emphasis [ref=e37]: mailto
+              - text: oraz (opcjonalnie) przez zewnętrzny kalendarz Cal.com.
+          - heading "3. Jakie dane przetwarzam" [level=3] [ref=e38]
+          - list [ref=e39]:
+            - listitem [ref=e40]:
+              - strong [ref=e41]: Dane techniczne
+              - text: (np. adres IP, typ przeglądarki, system, przybliżone dane o urządzeniu) – mogą pojawiać się w logach dostawcy hostingu/CDN.
+            - listitem [ref=e42]:
+              - strong [ref=e43]: Dane z korespondencji
+              - text: – jeżeli wyślesz do mnie e-mail, przetwarzam dane, które podasz (np. imię, nazwa firmy, treść wiadomości, adres e-mail).
+            - listitem [ref=e44]:
+              - strong [ref=e45]: Dane związane z umawianiem spotkania
+              - text: – jeżeli klikniesz „Załaduj kalendarz” lub przejdziesz do Cal.com, dane podawane w formularzu rezerwacji są przetwarzane również przez Cal.com (np. imię, e-mail, termin spotkania).
+          - heading "4. Cele i podstawy prawne" [level=3] [ref=e46]
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - strong [ref=e49]: Utrzymanie i bezpieczeństwo Serwisu
+              - text: (logi, ochrona przed nadużyciami) – art. 6 ust. 1 lit. f RODO (uzasadniony interes).
+            - listitem [ref=e50]:
+              - strong [ref=e51]: Kontakt i obsługa zapytania
+              - text: – art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy) lub lit. f (uzasadniony interes).
+            - listitem [ref=e52]:
+              - strong [ref=e53]: Załadowanie zewnętrznego kalendarza (Cal.com)
+              - text: – art. 6 ust. 1 lit. a RODO (zgoda poprzez świadome kliknięcie „Załaduj kalendarz”).
+          - heading "5. Odbiorcy danych" [level=3] [ref=e54]
+          - list [ref=e55]:
+            - listitem [ref=e56]: dostawca hostingu/CDN (logi techniczne),
+            - listitem [ref=e57]: dostawca poczty e-mail (w zakresie korespondencji),
+            - listitem [ref=e58]:
+              - strong [ref=e59]: Cal.com
+              - text: – tylko jeśli załadujesz kalendarz lub otworzysz go w nowej karcie.
+          - heading "6. Przekazywanie danych poza EOG" [level=3] [ref=e60]
+          - paragraph [ref=e61]:
+            - text: W zależności od konfiguracji usług zewnętrznych (np. Cal.com) dane mogą być przetwarzane poza Europejskim Obszarem Gospodarczym. Szczegóły i podstawy transferu opisuje Cal.com w swojej polityce prywatności.
+            - link "Polityka prywatności Cal.com" [ref=e62] [cursor=pointer]:
+              - /url: https://cal.com/privacy
+            - text: .
+          - heading "7. Okres przechowywania" [level=3] [ref=e63]
+          - list [ref=e64]:
+            - listitem [ref=e65]: logi techniczne – zgodnie z zasadami dostawcy hostingu/CDN (zwykle krótki okres),
+            - listitem [ref=e66]: korespondencja e-mail – przez czas niezbędny do obsługi sprawy, a następnie archiwalnie (jeśli uzasadnione),
+            - listitem [ref=e67]: dane rezerwacji w Cal.com – zgodnie z zasadami Cal.com.
+          - heading "8. Twoje prawa" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Masz prawo żądania dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu (w zakresie art. 6 ust. 1 lit. f). Jeżeli przetwarzanie odbywa się na podstawie zgody – możesz ją wycofać w dowolnym momencie (nie wpływa to na zgodność przetwarzania sprzed wycofania).
+          - paragraph [ref=e70]: Masz też prawo złożenia skargi do Prezesa UODO.
+          - heading "9. Pliki cookie i podobne technologie" [level=3] [ref=e71]
+          - list [ref=e72]:
+            - listitem [ref=e73]:
+              - strong [ref=e74]: Serwis nie ustawia własnych (pierwszo-stronnych) cookies.
+            - listitem [ref=e75]:
+              - strong [ref=e76]: Cal.com
+              - text: ": po kliknięciu „Załaduj kalendarz” wczytywana jest treść zewnętrzna, która może używać cookies i podobnych identyfikatorów (np. w celu działania widgetu)."
+            - listitem [ref=e77]:
+              - strong [ref=e78]: Google Fonts
+              - text: ": Serwis ładuje czcionki z domen Google (fonts.googleapis.com / fonts.gstatic.com), co wiąże się z pobraniem zasobów z serwerów zewnętrznych."
+          - paragraph [ref=e79]:
+            - text: "Szczegóły:"
+            - link "Polityka prywatności Cal.com" [ref=e80] [cursor=pointer]:
+              - /url: https://cal.com/privacy
+            - text: .
+          - paragraph [ref=e81]: Jeżeli nie chcesz, aby zewnętrzne cookies były ustawiane przez Cal.com – nie klikaj „Załaduj kalendarz” i skorzystaj z kontaktu e-mail.
+          - heading "10. Zmiany polityki" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Polityka może być okresowo aktualizowana (np. przy zmianach funkcjonalności Serwisu).
+          - heading "11. Kontakt" [level=3] [ref=e84]
+          - paragraph [ref=e85]:
+            - text: "W sprawach prywatności napisz na:"
+            - link "wonskkdesign@gmail.com" [ref=e86] [cursor=pointer]:
+              - /url: mailto:wonskkdesign@gmail.com
+            - text: .
+  - contentinfo [ref=e87]:
+    - generic [ref=e88]:
+      - generic [ref=e89]: Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.
+      - generic [ref=e90]:
+        - link "E-mail" [ref=e91] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+        - link "Polityka prywatności" [ref=e92] [cursor=pointer]:
+          - /url: privacy.html?lang=pl
+        - link "Prawa autorskie" [ref=e93] [cursor=pointer]:
+          - /url: legal.html?lang=pl
+        - link "GitHub" [ref=e94] [cursor=pointer]:
+          - /url: https://github.com/querosdev
+        - link "LinkedIn" [ref=e95] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nikodem-kustusz-031ba1335/
+      - generic [ref=e96]:
+        - text: ©
+        - text: Nikodem Kustusz — Wszelkie prawa zastrzeżone.

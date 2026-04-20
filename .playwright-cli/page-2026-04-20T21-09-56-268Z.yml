@@ -1,0 +1,93 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html?lang=pl
+        - generic [ref=e6]: Nikodem Kustusz Studio
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "PL" [ref=e9]
+          - button "EN" [ref=e10]
+        - button "Otwórz menu" [ref=e11]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Kontakt
+        - heading "Kontakt" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Wyślij krótki brief — wygeneruję mail z tematem i treścią. Możesz też skopiować e‑mail.
+        - generic [ref=e21]:
+          - link "Realizacje" [ref=e22] [cursor=pointer]:
+            - /url: work.html?lang=pl
+          - link "Usługi" [ref=e23] [cursor=pointer]:
+            - /url: services.html?lang=pl
+      - generic [ref=e25]:
+        - heading "Umów call" [level=2] [ref=e26]
+        - paragraph [ref=e27]: "Najprościej: 15 minut, żeby ustalić cel i zakres."
+        - link "albo wyślij brief" [ref=e29] [cursor=pointer]:
+          - /url: "#brief"
+        - generic [ref=e30]:
+          - paragraph [ref=e32]: Po kliknięciu załadujesz treść zewnętrzną z Cal.com, która może używać plików cookie i podobnych technologii.
+          - paragraph [ref=e33]:
+            - link "Polityka prywatności Cal.com" [ref=e34] [cursor=pointer]:
+              - /url: https://cal.com/privacy
+          - generic [ref=e35]:
+            - button "Załaduj kalendarz" [ref=e36]
+            - link "Otwórz w nowej karcie" [ref=e37] [cursor=pointer]:
+              - /url: https://app.cal.eu/quero/15min
+      - generic [ref=e39]:
+        - heading "Brief (na maila)" [level=2] [ref=e40]
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: Imię i firma
+            - textbox "Imię i firma" [ref=e44]:
+              - /placeholder: np. Acme
+          - generic [ref=e45]:
+            - generic [ref=e46]: Usługa
+            - combobox "Usługa" [ref=e47]:
+              - option "Strona" [selected]
+              - option "Panel admin"
+              - option "Marketing"
+          - generic [ref=e48]:
+            - generic [ref=e49]: Budżet
+            - textbox "Budżet" [ref=e50]:
+              - /placeholder: np. 1500–3000 zł
+          - generic [ref=e51]:
+            - generic [ref=e52]: Termin
+            - textbox "Termin" [ref=e53]:
+              - /placeholder: np. 2 tygodnie
+          - generic [ref=e54]:
+            - generic [ref=e55]: Linki
+            - textbox "Linki" [ref=e56]:
+              - /placeholder: linki…
+          - generic [ref=e57]:
+            - generic [ref=e58]: Opis
+            - textbox "Opis" [ref=e59]:
+              - /placeholder: co budujemy i jaki cel?
+              - text: co budujemy i jaki cel?
+          - generic [ref=e60]:
+            - button "Otwórz mail (mailto)" [ref=e61]
+            - button "Kopiuj e‑mail" [ref=e62]
+            - button "Kopiuj treść briefu" [ref=e63]
+          - generic [ref=e64]: "E-mail: wonskkdesign@gmail.com"
+  - contentinfo [ref=e66]:
+    - generic [ref=e67]:
+      - generic [ref=e68]: Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.
+      - generic [ref=e69]:
+        - link "E-mail" [ref=e70] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+        - link "Polityka prywatności" [ref=e71] [cursor=pointer]:
+          - /url: privacy.html?lang=pl
+        - link "Prawa autorskie" [ref=e72] [cursor=pointer]:
+          - /url: legal.html?lang=pl
+        - link "GitHub" [ref=e73] [cursor=pointer]:
+          - /url: https://github.com/querosdev
+        - link "LinkedIn" [ref=e74] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nikodem-kustusz-031ba1335/
+      - generic [ref=e75]:
+        - text: ©
+        - text: Nikodem Kustusz — Wszelkie prawa zastrzeżone.
+  - generic "Quick actions" [ref=e76]:
+    - link "Umów call" [ref=e77] [cursor=pointer]:
+      - /url: https://app.cal.eu/quero/15min
+    - link "E-mail" [ref=e78] [cursor=pointer]:
+      - /url: mailto:wonskkdesign@gmail.com

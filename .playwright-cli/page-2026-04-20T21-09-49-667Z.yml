@@ -1,0 +1,58 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html?lang=pl
+        - generic [ref=e6]: Nikodem Kustusz Studio
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "PL" [ref=e9]
+          - button "EN" [ref=e10]
+        - button "Otwórz menu" [ref=e11]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: O mnie
+        - heading "O mnie" [level=1] [ref=e19]
+        - link "Realizacje" [ref=e21] [cursor=pointer]:
+          - /url: work.html?lang=pl
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: "Buduję produkty webowe w podejściu end‑to‑end: UI, backend, baza danych i wdrożenie."
+          - paragraph [ref=e26]: Stawiam na czytelny UX, performance i bezpieczeństwo (sesje, role, CSRF, hasła).
+          - paragraph [ref=e27]: "Lubię krótką komunikację i szybkie iteracje: plan → build → wdrożenie → optymalizacja. Każdego klienta traktuje tak samo z szacunkiem."
+        - generic [ref=e28]:
+          - heading "Dlaczego ja" [level=2] [ref=e29]
+          - list [ref=e30]:
+            - listitem [ref=e31]: Terminowość i adaptacja
+            - listitem [ref=e32]: Security + performance jako standard
+            - listitem [ref=e33]: Komunikacja i transparentny plan, jasno i prosto
+          - heading "Stack" [level=3] [ref=e35]
+          - generic [ref=e36]:
+            - generic [ref=e37]: PHP 8
+            - generic [ref=e38]: MySQL
+            - generic [ref=e39]: Docker
+            - generic [ref=e40]: UI/UX
+            - generic [ref=e41]: Security
+  - contentinfo [ref=e42]:
+    - generic [ref=e43]:
+      - generic [ref=e44]: Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.
+      - generic [ref=e45]:
+        - link "E-mail" [ref=e46] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+        - link "Polityka prywatności" [ref=e47] [cursor=pointer]:
+          - /url: privacy.html?lang=pl
+        - link "Prawa autorskie" [ref=e48] [cursor=pointer]:
+          - /url: legal.html?lang=pl
+        - link "GitHub" [ref=e49] [cursor=pointer]:
+          - /url: https://github.com/querosdev
+        - link "LinkedIn" [ref=e50] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nikodem-kustusz-031ba1335/
+      - generic [ref=e51]:
+        - text: ©
+        - text: Nikodem Kustusz — Wszelkie prawa zastrzeżone.
+  - generic "Quick actions" [ref=e52]:
+    - link "Umów call" [ref=e53] [cursor=pointer]:
+      - /url: https://app.cal.eu/quero/15min
+    - link "Kontakt" [ref=e54] [cursor=pointer]:
+      - /url: contact.html?lang=pl

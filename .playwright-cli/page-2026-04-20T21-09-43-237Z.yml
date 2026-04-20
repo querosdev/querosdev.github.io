@@ -1,0 +1,125 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html?lang=pl
+        - generic [ref=e6]: Nikodem Kustusz Studio
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "PL" [ref=e9]
+          - button "EN" [ref=e10]
+        - button "Otwórz menu" [ref=e11]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Usługi
+        - heading "Usługi" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Strony, panele admin i marketing — dopasowane do celu i marki.
+        - link "Realizacje" [ref=e22] [cursor=pointer]:
+          - /url: work.html?lang=pl
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - heading "Pakiety — proces (Audit → Build → Scale)" [level=2] [ref=e26]
+          - paragraph [ref=e27]: Dobieram zakres pod Twoją sytuację — możesz zacząć od małego pakietu i skalować.
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e30]: "01"
+            - text: Audit
+            - paragraph [ref=e31]: "Szybki audyt: cele, struktura, copy i plan wdrożenia."
+          - generic [ref=e32]:
+            - generic [ref=e33]: "02"
+            - text: Build
+            - paragraph [ref=e34]: Projekt + implementacja, iteracje, testy i dopięcie jakości.
+          - generic [ref=e35]:
+            - generic [ref=e36]: "03"
+            - text: Scale
+            - paragraph [ref=e37]: Optymalizacje, tracking, CRO i rozwój funkcji.
+        - generic "Carousel 1" [ref=e38]:
+          - button "Go to slide 1" [ref=e39]
+          - button "Go to slide 2" [ref=e40]
+          - button "Go to slide 3" [ref=e41]
+        - link "Zobacz realizacje" [ref=e44] [cursor=pointer]:
+          - /url: work.html?lang=pl
+      - generic [ref=e46]:
+        - heading "Strony" [level=2] [ref=e47]
+        - paragraph [ref=e48]: Landing, multi-page, CMS, SEO, performance — premium UI z naciskiem na zaufanie i konwersję.
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - heading "Deliverables" [level=3] [ref=e51]
+            - list [ref=e52]:
+              - listitem [ref=e53]: Landing / multi-page
+              - listitem [ref=e54]: Design system (komponenty)
+              - listitem [ref=e55]: SEO basics + performance (Core Web Vitals)
+              - listitem [ref=e56]: CMS (opcjonalnie)
+              - listitem [ref=e57]: Deploy (hosting + domena)
+            - generic [ref=e58]: "Od: Wycena po callu (zależnie od zakresu)"
+            - link "Zobacz realizacje" [ref=e60] [cursor=pointer]:
+              - /url: work.html?lang=pl
+          - generic [ref=e61]:
+            - heading "Idealne, gdy…" [level=3] [ref=e62]
+            - list [ref=e63]:
+              - listitem [ref=e64]: Potrzebujesz premium pierwszego wrażenia
+              - listitem [ref=e65]: Chcesz poprawić CR i wiarygodność
+              - listitem [ref=e66]: Masz kampanie i potrzebujesz szybkiego wdrożenia
+      - generic [ref=e68]:
+        - heading "Panele admin" [level=2] [ref=e69]
+        - paragraph [ref=e70]: Dashboard, role/uprawnienia, analityka i integracje. Procesy, które realnie oszczędzają czas.
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - heading "Deliverables" [level=3] [ref=e73]
+            - list [ref=e74]:
+              - listitem [ref=e75]: Dashboard + widoki danych
+              - listitem [ref=e76]: Role/permissions (RBAC)
+              - listitem [ref=e77]: Walidacja + bezpieczeństwo (sesje, CSRF)
+              - listitem [ref=e78]: Raporty / analityka
+              - listitem [ref=e79]: Integracje (np. e-mail, API)
+            - generic [ref=e80]: "Od: Wycena po callu (zależnie od zakresu)"
+            - link "Realizacje" [ref=e82] [cursor=pointer]:
+              - /url: work.html?lang=pl
+          - generic [ref=e83]:
+            - heading "Idealne, gdy…" [level=3] [ref=e84]
+            - list [ref=e85]:
+              - listitem [ref=e86]: Masz chaos w procesie i potrzebujesz kontroli
+              - listitem [ref=e87]: Chcesz oszczędzić czas zespołu
+              - listitem [ref=e88]: Potrzebujesz ról i ograniczeń dostępu
+      - generic [ref=e90]:
+        - heading "Marketing" [level=2] [ref=e91]
+        - paragraph [ref=e92]: Landing pod kampanie, tracking, CRO i automatyzacje. Skupienie na wyniku.
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - heading "Deliverables" [level=3] [ref=e95]
+            - list [ref=e96]:
+              - listitem [ref=e97]: Landing pod kampanie
+              - listitem [ref=e98]: Tracking + eventy
+              - listitem [ref=e99]: CRO / testy
+              - listitem [ref=e100]: Copy + oferta
+              - listitem [ref=e101]: Dashboard / raport
+            - generic [ref=e102]: "Od: Wycena po callu (zależnie od zakresu)"
+          - generic [ref=e103]:
+            - heading "Idealne, gdy…" [level=3] [ref=e104]
+            - list [ref=e105]:
+              - listitem [ref=e106]: Masz ruch z ads i chcesz domknąć sprzedaż
+              - listitem [ref=e107]: Potrzebujesz mierzyć wynik (eventy, cele)
+              - listitem [ref=e108]: Chcesz testować ofertę i UX
+  - contentinfo [ref=e109]:
+    - generic [ref=e110]:
+      - generic [ref=e111]: Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.
+      - generic [ref=e112]:
+        - link "E-mail" [ref=e113] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+        - link "Polityka prywatności" [ref=e114] [cursor=pointer]:
+          - /url: privacy.html?lang=pl
+        - link "Prawa autorskie" [ref=e115] [cursor=pointer]:
+          - /url: legal.html?lang=pl
+        - link "GitHub" [ref=e116] [cursor=pointer]:
+          - /url: https://github.com/querosdev
+        - link "LinkedIn" [ref=e117] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nikodem-kustusz-031ba1335/
+      - generic [ref=e118]:
+        - text: ©
+        - text: Nikodem Kustusz — Wszelkie prawa zastrzeżone.
+  - generic "Quick actions" [ref=e119]:
+    - link "Umów call" [ref=e120] [cursor=pointer]:
+      - /url: https://app.cal.eu/quero/15min
+    - link "Kontakt" [ref=e121] [cursor=pointer]:
+      - /url: contact.html?lang=pl

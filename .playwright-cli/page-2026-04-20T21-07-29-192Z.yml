@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html?lang=pl
+        - generic [ref=e6]: Nikodem Kustusz Studio
+        - generic [ref=e7]: Partner dla firm
+      - navigation "Primary" [ref=e8]:
+        - link "Start" [ref=e9] [cursor=pointer]:
+          - /url: index.html?lang=pl
+        - link "Realizacje" [ref=e10] [cursor=pointer]:
+          - /url: work.html?lang=pl
+        - link "Usługi" [ref=e11] [cursor=pointer]:
+          - /url: services.html?lang=pl
+        - link "O mnie" [ref=e12] [cursor=pointer]:
+          - /url: about.html?lang=pl
+        - link "Kontakt" [ref=e13] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+      - generic [ref=e14]:
+        - group "Language" [ref=e15]:
+          - button "PL" [ref=e16]
+          - button "EN" [ref=e17]
+        - link "Umów call" [ref=e18] [cursor=pointer]:
+          - /url: https://app.cal.eu/quero/15min
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]: Partner dla firm
+          - heading "Buduję strony i panele admin, które wyglądają premium i dowożą wynik." [level=1] [ref=e24]
+          - paragraph [ref=e25]: Strony, panele administracyjne i marketing. Szybko, bezpiecznie, z naciskiem na efekt.
+          - generic [ref=e26]:
+            - link "Umów call" [ref=e27] [cursor=pointer]:
+              - /url: https://app.cal.eu/quero/15min
+            - link "Zobacz realizacje" [ref=e28] [cursor=pointer]:
+              - /url: work.html?lang=pl
+          - generic [ref=e29]:
+            - generic [ref=e30]: Szybko
+            - generic [ref=e31]: Bezpiecznie
+            - generic [ref=e32]: Efektywnie
+        - generic [ref=e34]: Audit • Build • Scale
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "Usługi" [level=2] [ref=e38]
+          - link "Usługi" [ref=e39] [cursor=pointer]:
+            - /url: services.html?lang=pl
+        - generic [ref=e40]:
+          - article [ref=e41]:
+            - heading "Strony" [level=3] [ref=e42]
+            - generic [ref=e43]: Premium landing i strony multi‑page.
+            - list [ref=e44]:
+              - listitem [ref=e45]: Landing / multi-page
+              - listitem [ref=e46]: CMS (opcjonalnie)
+              - listitem [ref=e47]: SEO + performance
+            - link "Zobacz szczegóły →" [ref=e49] [cursor=pointer]:
+              - /url: services.html?lang=pl
+          - article [ref=e50]:
+            - heading "Panele admin" [level=3] [ref=e51]
+            - generic [ref=e52]: Dashboardy, role i automatyzacje.
+            - list [ref=e53]:
+              - listitem [ref=e54]: Dashboard + role/permissions
+              - listitem [ref=e55]: Analityka, raporty
+              - listitem [ref=e56]: Integracje / automatyzacje
+            - link "Zobacz szczegóły →" [ref=e58] [cursor=pointer]:
+              - /url: services.html?lang=pl
+          - article [ref=e59]:
+            - heading "Marketing" [level=3] [ref=e60]
+            - generic [ref=e61]: Landing + tracking + CRO.
+            - list [ref=e62]:
+              - listitem [ref=e63]: Landing pod kampanie
+              - listitem [ref=e64]: Tracking + eventy
+              - listitem [ref=e65]: CRO / testy
+            - link "Zobacz szczegóły →" [ref=e67] [cursor=pointer]:
+              - /url: services.html?lang=pl
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - heading "Top realizacje" [level=2] [ref=e70]
+          - link "Realizacje" [ref=e71] [cursor=pointer]:
+            - /url: work.html?lang=pl
+        - generic [ref=e72]:
+          - article [ref=e73]:
+            - heading "UnderGround Gym" [level=3] [ref=e74]
+            - generic [ref=e75]: System zarządzania siłownią • PHP/MySQL/Docker
+            - generic [ref=e76]: "Cel → wynik: panel admin + klient, role/permissions, przygotowanie pod RFID."
+          - article [ref=e77]:
+            - heading "Gym Landing" [level=3] [ref=e78]
+            - generic [ref=e79]: Multi‑page landing • UI/UX • performance
+            - generic [ref=e80]: "Cel → wynik: czytelna oferta + CTA + sekcje konwersyjne."
+          - article [ref=e81]:
+            - heading "Contact System" [level=3] [ref=e82]
+            - generic [ref=e83]: Mailto brief + copy • UX detale
+            - generic [ref=e84]: "Cel → wynik: mniejsze tarcie kontaktu, szybki start współpracy."
+      - generic [ref=e85]:
+        - heading "Proces" [level=2] [ref=e86]
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89]: "01"
+            - heading "Call" [level=3] [ref=e90]
+            - paragraph [ref=e91]: Szybkie zrozumienie celu, brief i priorytety.
+          - generic [ref=e92]:
+            - generic [ref=e93]: "02"
+            - heading "Plan" [level=3] [ref=e94]
+            - paragraph [ref=e95]: Propozycja struktury, copy i plan wdrożenia.
+          - generic [ref=e96]:
+            - generic [ref=e97]: "03"
+            - heading "Build" [level=3] [ref=e98]
+            - paragraph [ref=e99]: Projekt + implementacja, iteracje i testy.
+          - generic [ref=e100]:
+            - generic [ref=e101]: "04"
+            - heading "Launch" [level=3] [ref=e102]
+            - paragraph [ref=e103]: Publikacja, tracking i dopięcie detali.
+        - link "Umów call" [ref=e105] [cursor=pointer]:
+          - /url: https://app.cal.eu/quero/15min
+      - generic [ref=e106]:
+        - heading "FAQ" [level=2] [ref=e107]
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - heading "Ile to trwa?" [level=3] [ref=e110]
+            - paragraph [ref=e111]: "Zależnie od zakresu: landing zwykle 1–2 tygodnie, większe strony 2–4 tygodnie, panel admin — do ustalenia."
+          - generic [ref=e112]:
+            - heading "Jak wyglądają rozliczenia?" [level=3] [ref=e113]
+            - paragraph [ref=e114]: Zwykle stała wycena za zakres + opcjonalny support/miesięczna opieka.
+          - generic [ref=e115]:
+            - heading "Czy pomagasz z reklamami?" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Tak — przygotowuję landing pod kampanie, tracking, testy i optymalizacje (bez wchodzenia w platformy).
+  - contentinfo [ref=e118]:
+    - generic [ref=e119]:
+      - generic [ref=e120]: Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.
+      - generic [ref=e121]:
+        - link "E-mail" [ref=e122] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+        - link "Polityka prywatności" [ref=e123] [cursor=pointer]:
+          - /url: privacy.html?lang=pl
+        - link "Prawa autorskie" [ref=e124] [cursor=pointer]:
+          - /url: legal.html?lang=pl
+        - link "GitHub" [ref=e125] [cursor=pointer]:
+          - /url: https://github.com/querosdev
+        - link "LinkedIn" [ref=e126] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nikodem-kustusz-031ba1335/
+      - generic [ref=e127]:
+        - text: ©
+        - text: Nikodem Kustusz — Wszelkie prawa zastrzeżone.

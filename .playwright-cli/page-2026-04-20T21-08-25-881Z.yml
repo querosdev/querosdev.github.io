@@ -1,0 +1,98 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html?lang=pl
+        - generic [ref=e6]: Nikodem Kustusz Studio
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "PL" [ref=e9]
+          - button "EN" [ref=e10]
+        - button "Otwórz menu" [ref=e11]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Realizacje
+        - heading "Realizacje" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Wybrane projekty — krótko o roli, stacku i wyniku.
+        - link "Usługi" [ref=e22] [cursor=pointer]:
+          - /url: services.html?lang=pl
+      - tablist "Filters" [ref=e24]:
+        - tab "Wszystko" [selected] [ref=e25] [cursor=pointer]
+        - tab "Strony" [ref=e26] [cursor=pointer]
+        - tab "Panele" [ref=e27] [cursor=pointer]
+        - tab "Marketing" [ref=e28] [cursor=pointer]
+      - generic [ref=e29]:
+        - article [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - heading "UnderGround Gym — system" [level=3] [ref=e33]
+              - generic [ref=e34]: "Rola: Backend + DB + UI"
+            - generic [ref=e35]: Fitness / SaaS
+          - paragraph [ref=e36]: Panel admin/klient, role, sesje, CSRF, karnety i cennik.
+          - generic [ref=e37]:
+            - generic [ref=e38]: PHP 8
+            - generic [ref=e39]: MySQL
+            - generic [ref=e40]: Docker
+            - generic [ref=e41]: Ubuntu
+          - generic [ref=e42]: "KPI: ↓ czas obsługi / mniejsze błędy"
+        - article [ref=e43]:
+          - generic [ref=e44]:
+            - generic [ref=e45]:
+              - heading "Landing sprzedażowy" [level=3] [ref=e46]
+              - generic [ref=e47]: "Rola: UI/UX + copy + tracking"
+            - generic [ref=e48]: Lead gen
+          - paragraph [ref=e49]: Strona pod kampanię z trackingiem i optymalizacją konwersji.
+          - generic [ref=e50]:
+            - generic [ref=e51]: HTML/CSS
+            - generic [ref=e52]: JS
+            - generic [ref=e53]: SEO
+            - generic [ref=e54]: Tracking
+          - generic [ref=e55]: "KPI: ↑ leady / wyższy CR"
+        - article [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "Panel operacyjny" [level=3] [ref=e59]
+              - generic [ref=e60]: "Rola: Dashboard + role/permissions"
+            - generic [ref=e61]: Ops / CRM
+          - paragraph [ref=e62]: "Usprawnienie procesu: role, widoki, raporty, integracje."
+          - generic [ref=e63]:
+            - generic [ref=e64]: PHP
+            - generic [ref=e65]: MySQL
+            - generic [ref=e66]: Auth
+            - generic [ref=e67]: RBAC
+          - generic [ref=e68]: "KPI: ↓ czas obsługi / lepsza kontrola"
+        - article [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - heading "Strona firmowa (multi-page)" [level=3] [ref=e72]
+              - generic [ref=e73]: "Rola: Design system + wdrożenie"
+            - generic [ref=e74]: Brand
+          - paragraph [ref=e75]: Premium layout, performance, SEO i spójne komponenty.
+          - generic [ref=e76]:
+            - generic [ref=e77]: Responsive
+            - generic [ref=e78]: Performance
+            - generic [ref=e79]: SEO
+          - generic [ref=e80]: "KPI: ↑ jakość leadów"
+  - contentinfo [ref=e81]:
+    - generic [ref=e82]:
+      - generic [ref=e83]: Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.
+      - generic [ref=e84]:
+        - link "E-mail" [ref=e85] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+        - link "Polityka prywatności" [ref=e86] [cursor=pointer]:
+          - /url: privacy.html?lang=pl
+        - link "Prawa autorskie" [ref=e87] [cursor=pointer]:
+          - /url: legal.html?lang=pl
+        - link "GitHub" [ref=e88] [cursor=pointer]:
+          - /url: https://github.com/querosdev
+        - link "LinkedIn" [ref=e89] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nikodem-kustusz-031ba1335/
+      - generic [ref=e90]:
+        - text: ©
+        - text: Nikodem Kustusz — Wszelkie prawa zastrzeżone.
+  - generic "Quick actions" [ref=e91]:
+    - link "Umów call" [ref=e92] [cursor=pointer]:
+      - /url: https://app.cal.eu/quero/15min
+    - link "Kontakt" [ref=e93] [cursor=pointer]:
+      - /url: contact.html?lang=pl

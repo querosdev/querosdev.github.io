@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html?lang=pl
+        - generic [ref=e6]: Nikodem Kustusz Studio
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "PL" [ref=e9]
+          - button "EN" [ref=e10]
+        - button "Otwórz menu" [ref=e11]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Legal
+        - heading "Prawa autorskie" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Zastrzeżenia, licencje i prawa do treści.
+      - article [ref=e22]:
+        - generic [ref=e23]:
+          - heading "Prawa autorskie i informacje prawne" [level=2] [ref=e24]
+          - paragraph [ref=e25]:
+            - text: "Data aktualizacji:"
+            - strong [ref=e26]: 2025-12-24
+            - text: .
+          - heading "1. Prawa autorskie" [level=3] [ref=e27]
+          - paragraph [ref=e28]: "Wszelkie treści udostępnione w Serwisie (w tym: teksty, układ, grafiki, identyfikacja wizualna, fragmenty kodu oraz elementy UI) podlegają ochronie prawnej. O ile nie wskazano inaczej, przysługują mi do nich prawa autorskie."
+          - heading "2. Dozwolony użytek" [level=3] [ref=e29]
+          - list [ref=e30]:
+            - listitem [ref=e31]: Możesz przeglądać Serwis i korzystać z niego w celach informacyjnych.
+            - listitem [ref=e32]: Bez mojej zgody nie wolno kopiować, rozpowszechniać, publikować ani wykorzystywać elementów Serwisu w projektach komercyjnych.
+          - heading "3. Znaki towarowe i materiały stron trzecich" [level=3] [ref=e33]
+          - paragraph [ref=e34]: Nazwy produktów, logotypy i znaki towarowe należą do ich właścicieli. Jeśli w Serwisie pojawiają się nazwy projektów/firm – służą wyłącznie identyfikacji realizacji i nie oznaczają powiązania kapitałowego ani sponsoringu.
+          - heading "4. Zastrzeżenie odpowiedzialności" [level=3] [ref=e35]
+          - paragraph [ref=e36]: Serwis ma charakter portfolio. Informacje są podawane w dobrej wierze, jednak mogą ulegać zmianie. Nie ponoszę odpowiedzialności za decyzje podjęte na podstawie treści Serwisu.
+          - heading "5. Kontakt" [level=3] [ref=e37]
+          - paragraph [ref=e38]:
+            - text: "W sprawach prawnych lub dot. licencji napisz na:"
+            - link "wonskkdesign@gmail.com" [ref=e39] [cursor=pointer]:
+              - /url: mailto:wonskkdesign@gmail.com
+            - text: .
+  - contentinfo [ref=e40]:
+    - generic [ref=e41]:
+      - generic [ref=e42]: Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.
+      - generic [ref=e43]:
+        - link "E-mail" [ref=e44] [cursor=pointer]:
+          - /url: contact.html?lang=pl
+        - link "Polityka prywatności" [ref=e45] [cursor=pointer]:
+          - /url: privacy.html?lang=pl
+        - link "Prawa autorskie" [ref=e46] [cursor=pointer]:
+          - /url: legal.html?lang=pl
+        - link "GitHub" [ref=e47] [cursor=pointer]:
+          - /url: https://github.com/querosdev
+        - link "LinkedIn" [ref=e48] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/nikodem-kustusz-031ba1335/
+      - generic [ref=e49]:
+        - text: ©
+        - text: Nikodem Kustusz — Wszelkie prawa zastrzeżone.
