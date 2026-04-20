@@ -164,12 +164,19 @@ button{font-family:inherit}
   background: rgba(0,0,0,.58);
   z-index: 80;
   overflow-y: auto;
+  min-height: 100dvh;
   padding: 18px 0 max(24px, env(safe-area-inset-bottom));
 }
 .mobile-drawer.open{display:block}
-.mobile-drawer .container{height:100%}
+.mobile-drawer .container{
+  min-height: 100%;
+  display:flex;
+  align-items:flex-start;
+  width:100%;
+}
 .mobile-drawer .mobile-links{
   margin-top: 70px;
+  width:min(100%, 360px);
   background: var(--surface);
   border:1px solid var(--line);
   border-radius: var(--radius2);
@@ -182,6 +189,11 @@ button{font-family:inherit}
 .mobile-links a:hover{background: rgba(255,255,255,.04); color: var(--text)}
 .mobile-links a.btn{width:100%}
 body.drawer-open{overflow:hidden}
+body.drawer-open .mobile-dock{
+  opacity:0;
+  pointer-events:none;
+  transform: translateY(10px);
+}
 
 /* Cards & grid */
 .grid{display:grid; gap:16px}
@@ -637,14 +649,17 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
   }
   .h2{font-size: clamp(1.45rem, 7vw, 1.85rem)}
 
-  .nav-inner{align-items:flex-start}
+  .nav-inner{align-items:center}
   .brand{min-width:0}
   .brand .mark{
     width:9px;
     height:9px;
     box-shadow: 0 0 0 5px rgba(205,168,93,.15);
   }
-  .brand .name{font-size:.9rem}
+  .brand .name{
+    font-size:.9rem;
+    line-height:1.15;
+  }
 
   .nav-actions{gap:8px}
   .lang button{

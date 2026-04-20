@@ -619,6 +619,10 @@
     const drawer = $("#drawer");
     if (!burger || !drawer) return;
 
+    if (drawer.parentElement !== document.body) {
+      document.body.appendChild(drawer);
+    }
+
     burger.setAttribute("aria-controls", "drawer");
     drawer.setAttribute("aria-hidden", "true");
 
