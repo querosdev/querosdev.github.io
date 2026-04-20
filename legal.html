@@ -34,24 +34,23 @@
         <button id="langEN" type="button">EN</button>
       </div>
       <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
-      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 
-  <div class="mobile-drawer" id="drawer" aria-label="Mobile menu">
-    <div class="container">
-      <div class="mobile-links">
-        <a href="./index.html" data-nav-mobile="home" data-i18n="nav_home">Start</a>
-        <a href="./work.html" data-nav-mobile="work" data-i18n="nav_work">Realizacje</a>
-        <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
-        <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
-        <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
-        <a class="btn primary" style="justify-content:center;" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
-      </div>
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Nawigacja główna">
+    <div class="mobile-links">
+      <a href="./index.html" data-nav-mobile="home" data-i18n="nav_home">Start</a>
+      <a href="./work.html" data-nav-mobile="work" data-i18n="nav_work">Realizacje</a>
+      <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
+      <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
+      <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+      <a class="mobile-menu-cta btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
     </div>
-  </div>
+  </nav>
 </header>
 
 

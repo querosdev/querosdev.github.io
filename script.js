@@ -496,6 +496,7 @@
 
     applyLang(v);
     updateInternalLinks(v);
+    updateNavState();
     updateLangButtons(v);
     syncMobileLayout();
   }
@@ -517,6 +518,32 @@
       const u = new URL(href, location.href);
       u.searchParams.set("lang", lang);
       a.setAttribute("href", u.pathname.split("/").pop() + u.search + (u.hash || ""));
+    });
+  }
+
+  function getPageKey(){
+    const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    if (page === "index.html") return "home";
+    if (page === "work.html") return "work";
+    if (page === "services.html") return "services";
+    if (page === "about.html") return "about";
+    if (page === "contact.html") return "contact";
+    return "";
+  }
+
+  function updateNavState(){
+    const pageKey = getPageKey();
+    $$("[data-nav], [data-nav-mobile]").forEach((link) => {
+      const key = link.getAttribute("data-nav") || link.getAttribute("data-nav-mobile") || "";
+      const active = key === pageKey;
+
+      if (active) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+
+      if (link.hasAttribute("data-nav-mobile")) {
+        if (active) link.setAttribute("data-current", "true");
+        else link.removeAttribute("data-current");
+      }
     });
   }
 
@@ -615,65 +642,54 @@
 
   // Drawer
   function setupDrawer(){
-    const burger = $("#burger");
-    const drawer = $("#drawer");
-    if (!burger || !drawer) return;
+    const toggle = $("#navToggle");
+    const menu = $("#mobile-menu");
+    const backdrop = $("#navBackdrop");
+    if (!toggle || !menu || !backdrop) return;
 
-    if (drawer.parentElement !== document.body) {
-      document.body.appendChild(drawer);
+    if (backdrop.parentElement !== document.body || menu.parentElement !== document.body) {
+      document.body.append(backdrop, menu);
     }
 
-    burger.setAttribute("aria-controls", "drawer");
-    drawer.setAttribute("aria-hidden", "true");
-
-    const positionDrawer = () => {
-      const burgerRect = burger.getBoundingClientRect();
-      const top = Math.round(burgerRect.bottom + 10);
-      const right = Math.max(12, Math.round(window.innerWidth - burgerRect.right));
-      drawer.style.top = `${top}px`;
-      drawer.style.right = `${right}px`;
-    };
+    menu.setAttribute("aria-hidden", "true");
+    backdrop.setAttribute("aria-hidden", "true");
 
     const open = () => {
-      positionDrawer();
-      drawer.classList.add("open");
-      burger.classList.add("active");
-      burger.setAttribute("aria-expanded", "true");
-      drawer.setAttribute("aria-hidden", "false");
-      document.body.classList.add("drawer-open");
+      menu.classList.add("is-open");
+      backdrop.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Zamknij menu");
+      menu.setAttribute("aria-hidden", "false");
+      backdrop.setAttribute("aria-hidden", "false");
+      document.body.classList.add("nav-open", "is-open");
     };
+
     const close = () => {
-      drawer.classList.remove("open");
-      burger.classList.remove("active");
-      burger.setAttribute("aria-expanded", "false");
-      drawer.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("drawer-open");
+      menu.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Otwórz menu");
+      menu.setAttribute("aria-hidden", "true");
+      backdrop.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("nav-open", "is-open");
     };
 
-    burger.addEventListener("click", () => {
-      drawer.classList.contains("open") ? close() : open();
+    toggle.addEventListener("click", () => {
+      menu.classList.contains("is-open") ? close() : open();
     });
 
-    // close on link click
-    drawer.addEventListener("click", (e) => {
-      const a = e.target.closest("a");
-      if (a) close();
+    menu.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link) close();
     });
 
-    document.addEventListener("pointerdown", (e) => {
-      if (!drawer.classList.contains("open")) return;
-      const target = e.target;
-      if (!(target instanceof Node)) return;
-      if (drawer.contains(target) || burger.contains(target)) return;
-      close();
-    });
+    backdrop.addEventListener("click", close);
 
-    // close on ESC
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && drawer.classList.contains("open")) close();
+      if (e.key === "Escape" && menu.classList.contains("is-open")) close();
     });
 
-    const mq = window.matchMedia("(min-width: 981px)");
+    const mq = window.matchMedia("(min-width: 768px)");
     const closeOnDesktop = () => {
       if (mq.matches) close();
     };
@@ -683,10 +699,6 @@
     } else if (typeof mq.addListener === "function") {
       mq.addListener(closeOnDesktop);
     }
-
-    window.addEventListener("resize", () => {
-      if (drawer.classList.contains("open")) positionDrawer();
-    });
   }
 
   // Work filters (tabs)
@@ -962,7 +974,7 @@
 
   function isDockDuplicateAction(el, page){
     if (!(el instanceof HTMLElement)) return false;
-    if (el.closest(".mobile-dock") || el.closest(".mobile-drawer")) return false;
+    if (el.closest(".mobile-dock") || el.closest(".mobile-menu")) return false;
     if (el.hasAttribute("data-book")) return true;
     if (page === "contact.html" && el.hasAttribute("data-email-link")) return true;
 
@@ -1006,7 +1018,7 @@
 
     $$("main [data-book]").forEach((item) => {
       if (item.closest(".hero-actions, .quick-actions, .inline-actions, .actions, .section-head")) return;
-      if (item.closest(".mobile-dock, .mobile-drawer")) return;
+      if (item.closest(".mobile-dock, .mobile-menu")) return;
 
       item.classList.add("mobile-dock-duplicate");
 
