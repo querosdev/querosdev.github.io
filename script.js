@@ -834,7 +834,7 @@
   }
 
   // Cal embed on contact (loaded only after user click)
-function setupCalEmbed(){
+  function setupCalEmbed(){
   const host = $("#calInlineEmbed");
   if (!host) return;
 
@@ -906,8 +906,40 @@ function setupCalEmbed(){
   }, { passive: true });
 }
 
+  function setupMobileDock(){
+    const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    if (page === "privacy.html" || page === "legal.html") return;
+
+    const dock = document.createElement("div");
+    dock.className = "mobile-dock";
+    dock.setAttribute("aria-label", "Quick actions");
+
+    const primary = document.createElement("a");
+    primary.className = "btn primary";
+    primary.setAttribute("data-book", "");
+    primary.setAttribute("data-i18n", "book_call");
+    primary.href = CONFIG.bookUrl;
+
+    const secondary = document.createElement("a");
+    secondary.className = "btn";
+
+    if (page === "contact.html") {
+      secondary.setAttribute("data-email-link", "");
+      secondary.setAttribute("data-i18n", "email_short");
+      secondary.href = `mailto:${CONFIG.email}`;
+    } else {
+      secondary.setAttribute("data-i18n", "nav_contact");
+      secondary.href = "./contact.html";
+    }
+
+    dock.append(primary, secondary);
+    document.body.appendChild(dock);
+    document.body.classList.add("has-mobile-dock");
+  }
+
 
   // Init
+  setupMobileDock();
   const lang = getLang();
   setLang(lang); // also applies + updates links
 
