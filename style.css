@@ -371,6 +371,26 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
   border-color: rgba(205,168,93,.35);
   color: var(--text);
 }
+.carousel-dots{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-top: 14px;
+}
+.carousel-dots button{
+  width:9px;
+  height:9px;
+  padding:0;
+  border:0;
+  border-radius:999px;
+  background: rgba(255,255,255,.16);
+  transition: transform .22s ease, background .22s ease, width .22s ease;
+}
+.carousel-dots button.active{
+  width:26px;
+  background: var(--gold);
+}
 
 /* Work cards */
 .work-card .row{
@@ -448,6 +468,8 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
 
 .footer .mini a:hover{color: var(--text)}
 .mobile-dock{display:none}
+.mobile-dock-duplicate{display:inherit}
+.mobile-dock-redundant{display:inherit}
 
 /* Responsive nav */
 @media (max-width: 980px){
@@ -551,27 +573,30 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
     scroll-snap-align:start;
   }
 
-  .work-card .row{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+  .mobile-dock-duplicate{display:none !important}
+  .mobile-dock-redundant{display:none !important}
 
-  .page-home .grid.cols-3,
-  .page-services .steps{
+  [data-carousel]{
     display:flex;
     gap:12px;
     overflow-x:auto;
     scroll-snap-type:x proximity;
+    scroll-behavior:smooth;
+    overscroll-behavior-x:contain;
     scrollbar-width:none;
     margin-right:-18px;
     padding:0 18px 6px 0;
   }
-  .page-home .grid.cols-3::-webkit-scrollbar,
-  .page-services .steps::-webkit-scrollbar{display:none}
-  .page-home .grid.cols-3 > *,
-  .page-services .steps > *{
+  [data-carousel]::-webkit-scrollbar{display:none}
+  [data-carousel] > *{
     flex:0 0 min(84vw, 320px);
     scroll-snap-align:start;
+  }
+  .carousel-dots{display:flex}
+
+  .work-card .row{
+    flex-direction:column;
+    align-items:flex-start;
   }
 
   .mobile-dock{
@@ -640,8 +665,7 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
     margin-right:-16px;
     padding-right:16px;
   }
-  .page-home .grid.cols-3,
-  .page-services .steps{
+  [data-carousel]{
     margin-right:-16px;
     padding-right:16px;
   }

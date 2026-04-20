@@ -497,6 +497,7 @@
     applyLang(v);
     updateInternalLinks(v);
     updateLangButtons(v);
+    syncMobileLayout();
   }
 
   function updateLangButtons(lang){
@@ -937,6 +938,199 @@
     document.body.classList.add("has-mobile-dock");
   }
 
+  function isDockDuplicateAction(el, page){
+    if (!(el instanceof HTMLElement)) return false;
+    if (el.closest(".mobile-dock") || el.closest(".mobile-drawer")) return false;
+    if (el.hasAttribute("data-book")) return true;
+    if (page === "contact.html" && el.hasAttribute("data-email-link")) return true;
+
+    const href = el.getAttribute("href") || "";
+    if (!href || href.startsWith("#") || href.startsWith("mailto:")) return false;
+
+    try {
+      const url = new URL(href, location.href);
+      const file = (url.pathname.split("/").pop() || "").toLowerCase();
+      return page !== "contact.html" && file === "contact.html";
+    } catch {
+      return false;
+    }
+  }
+
+  function markMobileDockDuplicates(){
+    const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const groups = $$(".hero-actions, .quick-actions, .inline-actions, .actions, .section-head");
+
+    $$(".mobile-dock-duplicate").forEach((item) => item.classList.remove("mobile-dock-duplicate"));
+    $$(".mobile-only-duplicates").forEach((item) => item.classList.remove("mobile-only-duplicates"));
+    $$(".mobile-dock-redundant").forEach((item) => item.classList.remove("mobile-dock-redundant"));
+
+    groups.forEach(group => {
+      const items = Array.from(group.children).filter(child => child.matches("a, button"));
+      let hasVisibleItem = false;
+
+      items.forEach(item => {
+        const duplicate = isDockDuplicateAction(item, page);
+        item.classList.toggle("mobile-dock-duplicate", duplicate);
+        if (!duplicate) hasVisibleItem = true;
+      });
+
+      group.classList.toggle("mobile-only-duplicates", items.length > 0 && !hasVisibleItem);
+
+      const redundantCard = group.closest(".contact-sidecard");
+      if (redundantCard) {
+        redundantCard.classList.toggle("mobile-dock-redundant", !hasVisibleItem);
+      }
+    });
+
+    $$("main [data-book]").forEach((item) => {
+      if (item.closest(".hero-actions, .quick-actions, .inline-actions, .actions, .section-head")) return;
+      if (item.closest(".mobile-dock, .mobile-drawer")) return;
+
+      item.classList.add("mobile-dock-duplicate");
+
+      const wrapper = item.parentElement;
+      if (wrapper && wrapper.children.length === 1) {
+        wrapper.classList.add("mobile-dock-redundant");
+      }
+    });
+  }
+
+  function syncMobileLayout(){
+    markMobileDockDuplicates();
+  }
+
+  function setupAutoCarousels(){
+    const mq = window.matchMedia("(max-width: 760px)");
+
+    $$("[data-carousel]").forEach((track, trackIndex) => {
+      const slides = Array.from(track.children).filter(node => node instanceof HTMLElement);
+      if (slides.length < 2) return;
+
+      const dots = document.createElement("div");
+      dots.className = "carousel-dots";
+      dots.setAttribute("aria-label", `Carousel ${trackIndex + 1}`);
+
+      let current = 0;
+      let intervalId = null;
+      let resumeTimeout = null;
+      let syncTimeout = null;
+      let programmaticScroll = false;
+      let isVisible = false;
+
+      const dotButtons = slides.map((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.setAttribute("aria-label", `Go to slide ${index + 1}`);
+        button.addEventListener("click", () => {
+          pauseAutoplay(7000);
+          goTo(index);
+        });
+        dots.appendChild(button);
+        return button;
+      });
+
+      track.after(dots);
+
+      function updateDots(){
+        dotButtons.forEach((button, index) => {
+          button.classList.toggle("active", index === current);
+          button.setAttribute("aria-current", index === current ? "true" : "false");
+        });
+      }
+
+      function nearestIndex(){
+        const leftEdge = track.getBoundingClientRect().left;
+        let nearest = current;
+        let bestDelta = Infinity;
+
+        slides.forEach((slide, index) => {
+          const delta = Math.abs(slide.getBoundingClientRect().left - leftEdge);
+          if (delta < bestDelta) {
+            bestDelta = delta;
+            nearest = index;
+          }
+        });
+
+        return nearest;
+      }
+
+      function goTo(index, behavior = "smooth"){
+        current = (index + slides.length) % slides.length;
+        programmaticScroll = true;
+        slides[current].scrollIntoView({ behavior, inline: "start", block: "nearest" });
+        updateDots();
+        window.setTimeout(() => {
+          programmaticScroll = false;
+        }, 450);
+      }
+
+      function stopAutoplay(){
+        if (intervalId) {
+          window.clearInterval(intervalId);
+          intervalId = null;
+        }
+      }
+
+      function canAutoplay(){
+        return mq.matches && !prefersReduced && isVisible;
+      }
+
+      function startAutoplay(){
+        if (!canAutoplay() || intervalId) return;
+        const interval = parseInt(track.getAttribute("data-carousel-interval") || "4000", 10);
+        intervalId = window.setInterval(() => {
+          if (document.hidden) return;
+          goTo(current + 1);
+        }, interval);
+      }
+
+      function pauseAutoplay(duration = 6000){
+        stopAutoplay();
+        if (resumeTimeout) window.clearTimeout(resumeTimeout);
+        resumeTimeout = window.setTimeout(() => {
+          startAutoplay();
+        }, duration);
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        isVisible = Boolean(entry?.isIntersecting && entry.intersectionRatio > 0.55);
+        if (isVisible) startAutoplay();
+        else stopAutoplay();
+      }, { threshold: [0, 0.55, 0.9] });
+
+      observer.observe(track);
+      updateDots();
+
+      track.addEventListener("scroll", () => {
+        if (syncTimeout) window.clearTimeout(syncTimeout);
+        syncTimeout = window.setTimeout(() => {
+          current = nearestIndex();
+          updateDots();
+          if (!programmaticScroll) pauseAutoplay(7000);
+        }, 120);
+      });
+
+      track.addEventListener("pointerdown", () => pauseAutoplay(7000));
+      track.addEventListener("touchstart", () => pauseAutoplay(7000), { passive: true });
+      track.addEventListener("focusin", () => pauseAutoplay(7000));
+
+      const onMqChange = () => {
+        dots.hidden = !mq.matches;
+        if (mq.matches) startAutoplay();
+        else stopAutoplay();
+      };
+
+      if (typeof mq.addEventListener === "function") {
+        mq.addEventListener("change", onMqChange);
+      } else if (typeof mq.addListener === "function") {
+        mq.addListener(onMqChange);
+      }
+
+      onMqChange();
+    });
+  }
+
 
   // Init
   setupMobileDock();
@@ -954,5 +1148,6 @@
   setupWorkFilters();
   setupContact();
   setupCalEmbed();
+  setupAutoCarousels();
   runReveal();
 })();
