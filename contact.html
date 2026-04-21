@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8" />
@@ -48,6 +48,8 @@
       <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
       <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
       <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+      <a class="mobile-menu-secondary" href="./privacy.html" data-nav-mobile="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a class="mobile-menu-secondary" href="./legal.html" data-nav-mobile="legal" data-i18n="footer_legal">Prawa autorskie</a>
       <a class="mobile-menu-cta btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
     </div>
   </nav>
@@ -57,7 +59,7 @@
   <div class="container">
 <div class="title reveal">
   <div class="kicker" data-i18n="nav_contact">Kontakt</div>
-  <h1 class="h1" style="font-size: clamp(2rem, 2.6vw, 2.6rem);" data-i18n="contact_h1">Kontakt</h1>
+  <h1 class="h1" data-i18n="contact_h1">Kontakt</h1>
   <p class="sub" data-i18n="contact_p">Wyślij krótki brief — wygeneruję mail z tematem i treścią. Możesz też skopiować e-mail.</p>
 
   <div class="quick-actions reveal">
@@ -70,8 +72,8 @@
 <div class="divider"></div>
 
 <!-- Sekcja Kalendarza w contact.html -->
-<div class="card reveal" id="book" style="margin-bottom: 18px;">
-  <h2 class="h2" style="font-size:1.5rem;" data-i18n="book_h2">Umów call</h2>
+    <div class="card reveal book-card" id="book">
+  <h2 class="h2 compact-title" data-i18n="book_h2">Umów call</h2>
   <p class="p" data-i18n="book_p">Najprościej: 15 minut, żeby ustalić cel i zakres.</p>
   
   <div class="actions">
@@ -81,12 +83,12 @@
 
   <!-- Warstwa informacyjna o Cookies -->
   <div id="calendarConsentArea">
-    <div class="divider" style="margin:16px 0;"></div>
-    <p class="p" id="calendarNotice" data-i18n="calendar_notice" style="font-size:0.85rem; opacity:0.8;">
+      <div class="divider soft-divider"></div>
+      <p class="p calendar-notice" id="calendarNotice" data-i18n="calendar_notice">
       Klikając przycisk poniżej, wyrażasz zgodę na załadowanie zewnętrznego kalendarza Cal.com, który może korzystać z plików cookie.
     </p>
     <p class="help"><a href="https://cal.com/privacy" target="_blank" rel="noopener noreferrer" data-i18n="cal_privacy_link">Polityka prywatności Cal.com</a></p>
-    <div class="inline-actions" style="margin-top:12px;">
+    <div class="inline-actions">
       <button class="btn primary" id="loadCalendarBtn" type="button" data-i18n="calendar_load">Załaduj kalendarz</button>
       <a class="btn" id="openCalendarLink" href="https://app.cal.eu/quero/15min" target="_blank" rel="noopener noreferrer" data-i18n="calendar_open">Otwórz w nowej karcie</a>
     </div>
@@ -96,14 +98,14 @@
   <div id="calInlineEmbed" 
        data-cal-link="quero/15min" 
        data-cal-namespace="secret" 
-       style="width:100%; height:720px; overflow:auto; margin-top:20px;" 
+        class="cal-embed"
        hidden>
   </div>
 </div>
 
 <div class="grid-2">
   <div class="card reveal" id="brief">
-    <h2 class="h2" style="font-size:1.5rem;" data-i18n="contact_brief_h2">Brief (na maila)</h2>
+    <h2 class="h2 compact-title" data-i18n="contact_brief_h2">Brief (na maila)</h2>
     <form class="form" id="briefForm">
       <div class="field">
         <label for="name" data-i18n="form_name">Imię i firma</label>
@@ -153,7 +155,7 @@
   </div>
 
   <div class="card reveal contact-sidecard">
-    <h2 class="h2" style="font-size:1.5rem;" data-i18n="contact_quick_h2">Szybki kontakt</h2>
+    <h2 class="h2 compact-title" data-i18n="contact_quick_h2">Szybki kontakt</h2>
     <p class="p" data-i18n="contact_quick_p">Jeśli wolisz: napisz bez briefu — wystarczą 2–3 zdania o celu, budżecie i terminie.</p>
     <div class="divider"></div>
     <div class="inline-actions">
@@ -170,8 +172,8 @@
     <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
     <div class="mini">
       <a href="./contact.html" data-i18n="email_short">E-mail</a>
-      <a href="./privacy.html" data-i18n="footer_privacy">Polityka prywatności</a>
-      <a href="./legal.html" data-i18n="footer_legal">Prawa autorskie</a>
+      <a href="./privacy.html" data-nav="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a href="./legal.html" data-nav="legal" data-i18n="footer_legal">Prawa autorskie</a>
       <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>

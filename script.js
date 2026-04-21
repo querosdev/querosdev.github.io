@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const CONFIG = {
     email: "wonskkdesign@gmail.com",
     bookUrl: "https://app.cal.eu/quero/15min",
@@ -69,11 +69,15 @@
       home_svc_mkt_meta: "Landing + tracking + CRO.",
       home_goal_result_label: "Cel → wynik:",
       home_work_1_meta: "System zarządzania siłownią • PHP/MySQL/Docker",
+      home_work_1_build: "Panel admin i klienta z fundamentem pod RFID.",
       home_work_1_result: "panel admin + klient, role/permissions, przygotowanie pod RFID.",
       home_work_2_meta: "Multi‑page landing • UI/UX • performance",
+      home_work_2_build: "Oferta, sekcje zaufania i CTA pod kampanię.",
       home_work_2_result: "czytelna oferta + CTA + sekcje konwersyjne.",
       home_work_3_meta: "Mailto brief + copy • UX detale",
+      home_work_3_build: "Brief generujący gotową wiadomość do wysłania.",
       home_work_3_result: "mniejsze tarcie kontaktu, szybki start współpracy.",
+      case_build_label: "Build:",
       services_h2: "Usługi",
       work_h2: "Top realizacje",
       process_h2: "Proces",
@@ -234,9 +238,20 @@
       privacy_kicker: "Legal",
       privacy_h1: "Polityka prywatności",
       privacy_sub: "Jak przetwarzam dane i jak działa kalendarz.",
+      privacy_summary_kicker: "Privacy basics",
+      legal_summary_h2: "Najważniejsze",
+      privacy_summary_1: "Portfolio nie tworzy kont użytkowników.",
+      privacy_summary_2: "Kontakt działa przez e-mail i opcjonalny kalendarz Cal.com.",
+      privacy_summary_3: "Własne cookies nie są ustawiane przez tę stronę.",
+      privacy_summary_link: "Kontakt w sprawie danych →",
       legal_kicker: "Legal",
       legal_h1: "Prawa autorskie",
       legal_sub: "Zastrzeżenia, licencje i prawa do treści.",
+      legal_summary_kicker: "Legal basics",
+      legal_summary_1: "Treści i układ portfolio są chronione prawem autorskim.",
+      legal_summary_2: "Możesz przeglądać stronę informacyjnie.",
+      legal_summary_3: "Komercyjne użycie elementów wymaga zgody.",
+      legal_summary_link: "Zapytaj o licencję →",
 },
     en: {
       // Titles / meta
@@ -289,10 +304,13 @@
       home_svc_mkt_meta: "Landing + tracking + CRO.",
       home_goal_result_label: "Goal → result:",
       home_work_1_meta: "Gym management system • PHP/MySQL/Docker",
+      home_work_1_build: "Admin and client panels with RFID-ready foundations.",
       home_work_1_result: "admin + client panel, roles/permissions, RFID‑ready foundations.",
       home_work_2_meta: "Multi‑page landing • UI/UX • performance",
+      home_work_2_build: "Offer structure, trust sections and campaign CTA.",
       home_work_2_result: "clear offer + CTA + conversion sections.",
       home_work_3_meta: "Mailto brief + copy • UX details",
+      home_work_3_build: "Brief flow that generates a ready-to-send message.",
       home_work_3_result: "less friction to contact, faster kickoff.",
       services_h2: "Services",
       work_h2: "Top case studies",
@@ -454,9 +472,20 @@
       privacy_kicker: "Legal",
       privacy_h1: "Privacy Policy",
       privacy_sub: "How data is processed and how the calendar works.",
+      privacy_summary_kicker: "Privacy basics",
+      legal_summary_h2: "Key points",
+      privacy_summary_1: "The portfolio does not create user accounts.",
+      privacy_summary_2: "Contact works via email and an optional Cal.com calendar.",
+      privacy_summary_3: "This website does not set first-party cookies.",
+      privacy_summary_link: "Contact about data ->",
       legal_kicker: "Legal",
       legal_h1: "Copyright & Legal",
       legal_sub: "Disclaimers, licensing and rights.",
+      legal_summary_kicker: "Legal basics",
+      legal_summary_1: "The portfolio content and layout are copyright-protected.",
+      legal_summary_2: "You may browse the website for informational purposes.",
+      legal_summary_3: "Commercial reuse requires permission.",
+      legal_summary_link: "Ask about licensing ->",
 }
   };
 
@@ -528,6 +557,8 @@
     if (page === "services.html") return "services";
     if (page === "about.html") return "about";
     if (page === "contact.html") return "contact";
+    if (page === "privacy.html") return "privacy";
+    if (page === "legal.html") return "legal";
     return "";
   }
 

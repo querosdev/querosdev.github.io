@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
@@ -48,6 +48,8 @@
       <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
       <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
       <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+      <a class="mobile-menu-secondary" href="./privacy.html" data-nav-mobile="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a class="mobile-menu-secondary" href="./legal.html" data-nav-mobile="legal" data-i18n="footer_legal">Prawa autorskie</a>
       <a class="mobile-menu-cta btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
     </div>
   </nav>
@@ -73,7 +75,27 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal" data-reveal-order="3" aria-hidden="true">
+      <div class="hero-visual hero-stage reveal" data-reveal-order="3" aria-hidden="true">
+        <div class="stage-grid"></div>
+        <div class="stage-card stage-card-main">
+          <span class="stage-label">live sprint</span>
+          <strong>Launch-ready build</strong>
+          <div class="stage-lines">
+            <span class="line-long"></span>
+            <span class="line-short"></span>
+            <span class="line-mid"></span>
+          </div>
+        </div>
+        <div class="stage-card stage-card-side">
+          <span class="stage-label">quality gate</span>
+          <strong>UX · SEO · Speed</strong>
+        </div>
+        <div class="stage-metrics">
+          <span>Brief</span>
+          <span>UI</span>
+          <span>Build</span>
+          <span>Deploy</span>
+        </div>
         <div class="tag" data-i18n="hero_tag">Audit • Build • Scale</div>
       </div>
     </section>
@@ -86,8 +108,8 @@
         <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
       </div>
 
-      <div class="grid cols-3" data-carousel data-carousel-interval="3800" style="margin-top:16px;">
-        <article class="card glow reveal" data-reveal-order="5">
+      <div class="grid cols-3 section-grid" data-carousel data-carousel-interval="3800">
+        <article class="service-strip reveal" data-reveal-order="5">
           <h3 class="h3" data-i18n="svc_web_h2">Strony</h3>
           <div class="meta" data-i18n="home_svc_web_meta">Premium landing i strony multi‑page.</div>
           <ul class="bullets">
@@ -95,10 +117,10 @@
             <li data-i18n="svc_web_d2">CMS (opcjonalnie)</li>
             <li data-i18n="svc_web_d3">SEO + performance</li>
           </ul>
-          <div style="margin-top:14px;"><a class="inline" href="./services.html" data-i18n="view_case">Zobacz szczegóły →</a></div>
+          <div class="card-link"><a class="inline" href="./services.html#web" data-i18n="view_case">Zobacz szczegóły →</a></div>
         </article>
 
-        <article class="card glow reveal" data-reveal-order="6">
+        <article class="service-strip reveal" data-reveal-order="6">
           <h3 class="h3" data-i18n="svc_admin_h2">Panele admin</h3>
           <div class="meta" data-i18n="home_svc_admin_meta">Dashboardy, role i automatyzacje.</div>
           <ul class="bullets">
@@ -106,10 +128,10 @@
             <li data-i18n="svc_admin_d2">Analityka, raporty</li>
             <li data-i18n="svc_admin_d3">Integracje / automatyzacje</li>
           </ul>
-          <div style="margin-top:14px;"><a class="inline" href="./services.html" data-i18n="view_case">Zobacz szczegóły →</a></div>
+          <div class="card-link"><a class="inline" href="./services.html#admin" data-i18n="view_case">Zobacz szczegóły →</a></div>
         </article>
 
-        <article class="card glow reveal" data-reveal-order="7">
+        <article class="service-strip reveal" data-reveal-order="7">
           <h3 class="h3" data-i18n="svc_mkt_h2">Marketing</h3>
           <div class="meta" data-i18n="home_svc_mkt_meta">Landing + tracking + CRO.</div>
           <ul class="bullets">
@@ -117,7 +139,7 @@
             <li data-i18n="svc_mkt_d2">Tracking + eventy</li>
             <li data-i18n="svc_mkt_d3">CRO / testy</li>
           </ul>
-          <div style="margin-top:14px;"><a class="inline" href="./services.html" data-i18n="view_case">Zobacz szczegóły →</a></div>
+          <div class="card-link"><a class="inline" href="./services.html#marketing" data-i18n="view_case">Zobacz szczegóły →</a></div>
         </article>
       </div>
     </section>
@@ -127,20 +149,26 @@
         <h2 class="h2" data-i18n="work_h2">Top realizacje</h2>
         <a class="btn" href="./work.html" data-i18n="nav_work">Realizacje</a>
       </div>
-      <div class="grid cols-3" data-carousel data-carousel-interval="4200" style="margin-top:16px;">
-        <article class="card reveal" data-reveal-order="9">
+      <div class="grid cols-3 section-grid case-rail" data-carousel data-carousel-interval="4200">
+        <article class="case-study reveal" data-reveal-order="9">
+          <div class="case-index">01</div>
           <h3 class="h3">UnderGround Gym</h3>
           <div class="meta" data-i18n="home_work_1_meta">System zarządzania siłownią • PHP/MySQL/Docker</div>
+          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_1_build">Panel admin i klienta z fundamentem pod RFID.</span></p>
           <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_1_result">panel admin + klient, role/permissions, przygotowanie pod RFID.</span></div>
         </article>
-        <article class="card reveal" data-reveal-order="10">
+        <article class="case-study reveal" data-reveal-order="10">
+          <div class="case-index">02</div>
           <h3 class="h3">Gym Landing</h3>
           <div class="meta" data-i18n="home_work_2_meta">Multi‑page landing • UI/UX • performance</div>
+          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_2_build">Oferta, sekcje zaufania i CTA pod kampanię.</span></p>
           <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_2_result">czytelna oferta + CTA + sekcje konwersyjne.</span></div>
         </article>
-        <article class="card reveal" data-reveal-order="11">
+        <article class="case-study reveal" data-reveal-order="11">
+          <div class="case-index">03</div>
           <h3 class="h3">Contact System</h3>
           <div class="meta" data-i18n="home_work_3_meta">Mailto brief + copy • UX detale</div>
+          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_3_build">Brief generujący gotową wiadomość do wysłania.</span></p>
           <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_3_result">mniejsze tarcie kontaktu, szybki start współpracy.</span></div>
         </article>
       </div>
@@ -148,23 +176,23 @@
 
     <section class="section">
       <h2 class="h2 reveal" data-reveal-order="12" data-i18n="process_h2">Proces</h2>
-      <div class="grid cols-2" style="margin-top:16px;">
-        <div class="card reveal" data-reveal-order="13"><div class="kicker">01</div><h3 class="h3" data-i18n="process_step1_t">Call</h3><p class="sub" data-i18n="process_step1_p">Szybkie zrozumienie celu, brief i priorytety.</p></div>
-        <div class="card reveal" data-reveal-order="14"><div class="kicker">02</div><h3 class="h3" data-i18n="process_step2_t">Plan</h3><p class="sub" data-i18n="process_step2_p">Propozycja struktury, copy i plan wdrożenia.</p></div>
-        <div class="card reveal" data-reveal-order="15"><div class="kicker">03</div><h3 class="h3" data-i18n="process_step3_t">Build</h3><p class="sub" data-i18n="process_step3_p">Projekt + implementacja, iteracje i testy.</p></div>
-        <div class="card reveal" data-reveal-order="16"><div class="kicker">04</div><h3 class="h3" data-i18n="process_step4_t">Launch</h3><p class="sub" data-i18n="process_step4_p">Publikacja, tracking i dopięcie detali.</p></div>
+      <div class="process-list">
+        <div class="process-item reveal" data-reveal-order="13"><div class="kicker">01</div><h3 class="h3" data-i18n="process_step1_t">Call</h3><p class="sub" data-i18n="process_step1_p">Szybkie zrozumienie celu, brief i priorytety.</p></div>
+        <div class="process-item reveal" data-reveal-order="14"><div class="kicker">02</div><h3 class="h3" data-i18n="process_step2_t">Plan</h3><p class="sub" data-i18n="process_step2_p">Propozycja struktury, copy i plan wdrożenia.</p></div>
+        <div class="process-item reveal" data-reveal-order="15"><div class="kicker">03</div><h3 class="h3" data-i18n="process_step3_t">Build</h3><p class="sub" data-i18n="process_step3_p">Projekt + implementacja, iteracje i testy.</p></div>
+        <div class="process-item reveal" data-reveal-order="16"><div class="kicker">04</div><h3 class="h3" data-i18n="process_step4_t">Launch</h3><p class="sub" data-i18n="process_step4_p">Publikacja, tracking i dopięcie detali.</p></div>
       </div>
-      <div style="margin-top:18px;" class="reveal" data-reveal-order="17">
+      <div class="section-cta reveal" data-reveal-order="17">
         <a class="btn primary" data-book href="#" data-i18n="book_call">Umów call</a>
       </div>
     </section>
 
     <section class="section">
       <h2 class="h2 reveal" data-reveal-order="18" data-i18n="faq_h2">FAQ</h2>
-      <div class="grid cols-2" style="margin-top:16px;">
-        <div class="card reveal" data-reveal-order="19"><h3 class="h3" data-i18n="faq1_q">Ile to trwa?</h3><p class="sub" data-i18n="faq1_a">Zależnie od zakresu: landing zwykle 1–2 tygodnie, większe strony 2–4 tygodnie, panel admin — do ustalenia.</p></div>
-        <div class="card reveal" data-reveal-order="20"><h3 class="h3" data-i18n="faq2_q">Jak wyglądają rozliczenia?</h3><p class="sub" data-i18n="faq2_a">Zwykle stała wycena za zakres + opcjonalny support/miesięczna opieka.</p></div>
-        <div class="card reveal" data-reveal-order="21"><h3 class="h3" data-i18n="faq3_q">Czy pomagasz z reklamami?</h3><p class="sub" data-i18n="faq3_a">Tak — przygotowuję landing pod kampanie, tracking, testy i optymalizacje (bez wchodzenia w platformy).</p></div>
+      <div class="faq-list">
+        <div class="faq-item reveal" data-reveal-order="19"><h3 class="h3" data-i18n="faq1_q">Ile to trwa?</h3><p class="sub" data-i18n="faq1_a">Zależnie od zakresu: landing zwykle 1–2 tygodnie, większe strony 2–4 tygodnie, panel admin — do ustalenia.</p></div>
+        <div class="faq-item reveal" data-reveal-order="20"><h3 class="h3" data-i18n="faq2_q">Jak wyglądają rozliczenia?</h3><p class="sub" data-i18n="faq2_a">Zwykle stała wycena za zakres + opcjonalny support/miesięczna opieka.</p></div>
+        <div class="faq-item reveal" data-reveal-order="21"><h3 class="h3" data-i18n="faq3_q">Czy pomagasz z reklamami?</h3><p class="sub" data-i18n="faq3_a">Tak — przygotowuję landing pod kampanie, tracking, testy i optymalizacje (bez wchodzenia w platformy).</p></div>
       </div>
     </section>
 
@@ -176,8 +204,8 @@
     <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
     <div class="mini">
       <a href="./contact.html" data-i18n="email_short">E-mail</a>
-      <a href="./privacy.html" data-i18n="footer_privacy">Polityka prywatności</a>
-      <a href="./legal.html" data-i18n="footer_legal">Prawa autorskie</a>
+      <a href="./privacy.html" data-nav="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a href="./legal.html" data-nav="legal" data-i18n="footer_legal">Prawa autorskie</a>
       <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>

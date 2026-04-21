@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
@@ -8,10 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
-  <title>Nikodem Kustusz Studio</title>
-  <meta name="description" content="Nikodem Kustusz Studio" />
+  <title>Polityka prywatności — Nikodem Kustusz Studio</title>
+  <meta name="description" content="Polityka prywatności, dane kontaktowe, cookies i zasady działania kalendarza Cal.com." />
 </head>
-<body>
+<body class="page-privacy page-legal-doc">
 <header class="nav reveal">
   <div class="container nav-inner">
     <a class="brand" href="./index.html" aria-label="Home">
@@ -48,6 +48,8 @@
       <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
       <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
       <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+      <a class="mobile-menu-secondary" href="./privacy.html" data-nav-mobile="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a class="mobile-menu-secondary" href="./legal.html" data-nav-mobile="legal" data-i18n="footer_legal">Prawa autorskie</a>
       <a class="mobile-menu-cta btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
     </div>
   </nav>
@@ -58,13 +60,25 @@
   <div class="container">
     <div class="title reveal">
       <div class="kicker" data-i18n="privacy_kicker">Legal</div>
-      <h1 class="h1" style="font-size: clamp(2rem, 2.6vw, 2.6rem);" data-i18n="privacy_h1">Polityka prywatności</h1>
+      <h1 class="h1" data-i18n="privacy_h1">Polityka prywatności</h1>
       <p class="sub" data-i18n="privacy_sub"></p>
     </div>
 
     <div class="divider"></div>
 
-    <article class="card reveal" style="max-width: 980px;">
+    <div class="legal-shell">
+    <aside class="legal-summary reveal" aria-label="Szybkie podsumowanie">
+      <div class="kicker" data-i18n="privacy_summary_kicker">Privacy basics</div>
+      <h2 class="h3" data-i18n="legal_summary_h2">Najważniejsze</h2>
+      <ul class="legal-points">
+        <li data-i18n="privacy_summary_1">Portfolio nie tworzy kont użytkowników.</li>
+        <li data-i18n="privacy_summary_2">Kontakt działa przez e-mail i opcjonalny kalendarz Cal.com.</li>
+        <li data-i18n="privacy_summary_3">Własne cookies nie są ustawiane przez tę stronę.</li>
+      </ul>
+      <a class="inline" href="./contact.html" data-i18n="privacy_summary_link">Kontakt w sprawie danych →</a>
+    </aside>
+
+    <article class="legal-doc reveal">
       <div data-lang="pl">
         
 <h2 class="h2">Polityka prywatności</h2>
@@ -199,6 +213,7 @@ Email: <a href="mailto:wonskkdesign@gmail.com">wonskkdesign@gmail.com</a></p>
 
       </div>
     </article>
+    </div>
   </div>
 </main>
 
@@ -207,8 +222,8 @@ Email: <a href="mailto:wonskkdesign@gmail.com">wonskkdesign@gmail.com</a></p>
     <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
     <div class="mini">
       <a href="./contact.html" data-i18n="email_short">E-mail</a>
-      <a href="./privacy.html" data-i18n="footer_privacy">Polityka prywatności</a>
-      <a href="./legal.html" data-i18n="footer_legal">Prawa autorskie</a>
+      <a href="./privacy.html" data-nav="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a href="./legal.html" data-nav="legal" data-i18n="footer_legal">Prawa autorskie</a>
       <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
