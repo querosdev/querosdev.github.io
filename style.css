@@ -1371,3 +1371,54 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
     font-size: clamp(2.05rem, 9.4vw, 2.65rem);
   }
 }
+
+/* Targeted fixes from visual QA */
+.hero-stage .tag{
+  top: 18px;
+  right: 18px;
+  bottom: auto;
+  left: auto;
+  z-index: 2;
+}
+
+.stage-metrics{
+  z-index: 2;
+}
+
+.contact-sidecard{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-sidecard .divider{
+  margin: 20px 0;
+}
+
+.contact-sidecard .inline-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+.contact-sidecard .inline-actions > .btn{
+  width: auto;
+  min-width: 128px;
+  min-height: 46px;
+  flex: 0 0 auto;
+  padding: 11px 16px;
+  border-radius: 999px;
+}
+
+@media (max-width: 760px){
+  .contact-sidecard .inline-actions{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-sidecard .inline-actions > .btn{
+    width: 100%;
+    min-width: 0;
+  }
+}
