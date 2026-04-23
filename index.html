@@ -7,9 +7,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://querosdev.github.io/" />
   <link rel="stylesheet" href="./style.css" />
-  <title>Nikodem Kustusz Studio — Strony i panele premium</title>
-  <meta name="description" content="Buduję premium strony i panele admin: szybko, bezpiecznie i z naciskiem na wynik." />
+  <title>Nikodem Kustusz Studio — Strony, panele admin i case studies</title>
+  <meta name="description" content="Projektuję i wdrażam strony, panele admin oraz procesy kontaktu. Zobacz live proof: UndergroundGym.pl." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nikodem Kustusz Studio" />
+  <meta property="og:title" content="Nikodem Kustusz Studio — strony, panele admin i case studies" />
+  <meta property="og:description" content="Portfolio z live proof: UndergroundGym.pl, strony sprzedażowe, panele admin i automatyzacje kontaktu." />
+  <meta property="og:url" content="https://querosdev.github.io/" />
+  <meta property="og:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nikodem Kustusz Studio — strony, panele admin i case studies" />
+  <meta name="twitter:description" content="Portfolio z live proof: UndergroundGym.pl, strony sprzedażowe, panele admin i automatyzacje kontaktu." />
+  <meta name="twitter:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
 </head>
 <body class="page-home">
 <header class="nav reveal">
@@ -60,8 +72,8 @@
     <section class="hero">
       <div class="hero-copy reveal" data-reveal-order="2">
         <div class="kicker" data-i18n="hero_kicker">Partner dla firm</div>
-        <h1 class="h1" data-i18n="home_h1">Buduję strony i panele admin, które wyglądają premium i dowożą wynik.</h1>
-        <p class="sub" data-i18n="home_p">Strony, panele administracyjne i marketing. Szybko, bezpiecznie, z naciskiem na efekt.</p>
+        <h1 class="h1" data-i18n="home_h1">Projektuję strony i panele admin dla firm, które potrzebują jasnego lead flow.</h1>
+        <p class="sub" data-i18n="home_p">Od oferty i UI po formularze, tracking, SEO basics i wdrożenie. Zobacz publiczny przykład poniżej.</p>
 
         <div class="hero-actions">
           <a class="btn primary" data-book href="#" data-i18n="book_call">Umów call</a>
@@ -97,6 +109,34 @@
           <span>Deploy</span>
         </div>
         <div class="tag" data-i18n="hero_tag">Audit • Build • Scale</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section proof-spotlight" id="proof">
+      <div class="proof-visual reveal" data-reveal-order="4">
+        <img class="proof-desktop" src="./assets/work/undergroundgym-clean-desktop.png" alt="Zrzut ekranu strony UndergroundGym.pl na desktopie" loading="lazy" width="1440" height="1000">
+        <img class="proof-phone" src="./assets/work/undergroundgym-clean-mobile.png" alt="Mobilny widok strony UndergroundGym.pl" loading="lazy" width="390" height="844">
+      </div>
+      <div class="proof-copy reveal" data-reveal-order="5">
+        <div class="kicker" data-i18n="proof_kicker">Live proof</div>
+        <h2 class="h2" data-i18n="proof_h2">UndergroundGym.pl — publiczny case dla siłowni</h2>
+        <p class="sub" data-i18n="proof_p">Publiczny projekt z realnym ruchem: oferta, cennik, opinie, formularz wejścia próbnego i kontakt dla klubu w Żukowie.</p>
+        <dl class="proof-facts">
+          <div>
+            <dt data-i18n="proof_scope_label">Zakres</dt>
+            <dd data-i18n="proof_scope_value">UX, frontend, oferta, formularze, SEO basics</dd>
+          </div>
+          <div>
+            <dt data-i18n="proof_outcome_label">Efekt</dt>
+            <dd data-i18n="proof_outcome_value">Czytelna ścieżka: oferta → wejście próbne → kontakt</dd>
+          </div>
+        </dl>
+        <div class="inline-actions">
+          <a class="btn primary" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer" data-i18n="proof_visit">Otwórz live site</a>
+          <a class="btn" href="./work.html#undergroundgym" data-i18n="proof_case">Zobacz case</a>
+        </div>
       </div>
     </section>
 
@@ -151,23 +191,27 @@
       </div>
       <div class="grid cols-3 section-grid case-rail" data-carousel data-carousel-interval="4200">
         <article class="case-study reveal" data-reveal-order="9">
+          <figure class="case-thumb">
+            <img src="./assets/work/undergroundgym-clean-desktop.png" alt="Desktopowy widok realizacji UndergroundGym.pl" loading="lazy" width="1440" height="1000">
+          </figure>
           <div class="case-index">01</div>
-          <h3 class="h3">UnderGround Gym</h3>
-          <div class="meta" data-i18n="home_work_1_meta">System zarządzania siłownią • PHP/MySQL/Docker</div>
-          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_1_build">Panel admin i klienta z fundamentem pod RFID.</span></p>
-          <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_1_result">panel admin + klient, role/permissions, przygotowanie pod RFID.</span></div>
+          <h3 class="h3">UndergroundGym.pl</h3>
+          <div class="meta" data-i18n="home_work_1_meta">Live website • gym 24/7 • lead flow</div>
+          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_1_build">Oferta, cennik, opinie, formularz wejścia próbnego i contact UX.</span></p>
+          <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_1_result">szybka ścieżka od oferty do kontaktu dla lokalnej siłowni.</span></div>
+          <a class="inline case-live-link" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer" data-i18n="proof_visit">Otwórz live site</a>
         </article>
         <article class="case-study reveal" data-reveal-order="10">
           <div class="case-index">02</div>
-          <h3 class="h3">Gym Landing</h3>
-          <div class="meta" data-i18n="home_work_2_meta">Multi‑page landing • UI/UX • performance</div>
-          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_2_build">Oferta, sekcje zaufania i CTA pod kampanię.</span></p>
-          <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_2_result">czytelna oferta + CTA + sekcje konwersyjne.</span></div>
+          <h3 class="h3" data-i18n="home_work_2_title">Landing — prototyp</h3>
+          <div class="meta" data-i18n="home_work_2_meta">Lead-gen pattern • UI/UX • performance</div>
+          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_2_build">Struktura oferty, sekcje zaufania i CTA pod kampanię.</span></p>
+          <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_2_result">gotowy wzorzec landing page do szybkiego wdrożenia.</span></div>
         </article>
         <article class="case-study reveal" data-reveal-order="11">
           <div class="case-index">03</div>
-          <h3 class="h3">Contact System</h3>
-          <div class="meta" data-i18n="home_work_3_meta">Mailto brief + copy • UX detale</div>
+          <h3 class="h3" data-i18n="home_work_3_title">Contact brief flow</h3>
+          <div class="meta" data-i18n="home_work_3_meta">Mailto brief • copy • UX detale</div>
           <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_3_build">Brief generujący gotową wiadomość do wysłania.</span></p>
           <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_3_result">mniejsze tarcie kontaktu, szybki start współpracy.</span></div>
         </article>
