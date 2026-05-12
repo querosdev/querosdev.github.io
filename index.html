@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
@@ -6,22 +6,349 @@
   <meta name="theme-color" content="#0b0c0e" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://querosdev.github.io/" />
   <link rel="stylesheet" href="./style.css" />
-  <title>Nikodem Kustusz Studio — Strony, panele admin i case studies</title>
-  <meta name="description" content="Projektuję i wdrażam strony, panele admin oraz procesy kontaktu. Zobacz live proof: UndergroundGym.pl." />
+  <title>Nikodem Kustusz Studio — Websites, apps and growth systems</title>
+  <meta name="description" content="Portfolio Nikodema Kustusza: UndergroundGym.pl live, PrimeGym Rumia strategic demo, Sudoku Premium mobile app and private dashboard systems." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Nikodem Kustusz Studio" />
-  <meta property="og:title" content="Nikodem Kustusz Studio — strony, panele admin i case studies" />
-  <meta property="og:description" content="Portfolio z live proof: UndergroundGym.pl, strony sprzedażowe, panele admin i automatyzacje kontaktu." />
+  <meta property="og:title" content="Nikodem Kustusz Studio — websites, apps and growth systems" />
+  <meta property="og:description" content="Selected work: live client website, strategic fitness website demo, own mobile app and private system interfaces." />
   <meta property="og:url" content="https://querosdev.github.io/" />
   <meta property="og:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nikodem Kustusz Studio — strony, panele admin i case studies" />
-  <meta name="twitter:description" content="Portfolio z live proof: UndergroundGym.pl, strony sprzedażowe, panele admin i automatyzacje kontaktu." />
+  <meta name="twitter:title" content="Nikodem Kustusz Studio — websites, apps and growth systems" />
+  <meta name="twitter:description" content="Selected work: live client website, strategic fitness website demo, own mobile app and private system interfaces." />
   <meta name="twitter:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
+
+  <style>
+    .home-hero-clean {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+      padding: clamp(44px, 8vw, 96px) 0 clamp(28px, 6vw, 64px);
+    }
+
+    @media (max-width: 940px) {
+      .home-hero-clean { grid-template-columns: 1fr; }
+    }
+
+    .home-eyebrow-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .home-proof-pill {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.09);
+      color: rgba(242,241,238,.68);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .03em;
+    }
+
+    .home-proof-pill.gold {
+      color: #e6c97a;
+      background: rgba(205,168,93,.12);
+      border-color: rgba(205,168,93,.34);
+    }
+
+    .home-proof-pill.green {
+      color: #34d399;
+      background: rgba(52,211,153,.10);
+      border-color: rgba(52,211,153,.28);
+    }
+
+    .home-hero-copy {
+      max-width: 700px;
+    }
+
+    .home-hero-copy .h1 {
+      max-width: 760px;
+    }
+
+    .home-hero-copy .sub {
+      max-width: 620px;
+    }
+
+    .home-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .home-proof-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+      max-width: 680px;
+    }
+
+    .home-proof-row {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 14px;
+      align-items: baseline;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .home-proof-row b {
+      color: #e6c97a;
+      font-size: .78rem;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .home-proof-row span {
+      color: rgba(242,241,238,.66);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 620px) {
+      .home-proof-row { grid-template-columns: 1fr; gap: 5px; }
+    }
+
+    .home-hero-showcase {
+      position: relative;
+      min-height: 500px;
+      display: grid;
+      align-items: center;
+    }
+
+    @media (max-width: 940px) {
+      .home-hero-showcase { min-height: 0; }
+    }
+
+    .home-showcase-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.025);
+      box-shadow: 0 34px 90px rgba(0,0,0,.36);
+    }
+
+    .home-showcase-frame.primary {
+      aspect-ratio: 16 / 10;
+    }
+
+    .home-showcase-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      opacity: .94;
+    }
+
+    .home-showcase-bar {
+      position: absolute;
+      z-index: 2;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .home-showcase-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(5,6,8,.74);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(242,241,238,.74);
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .home-showcase-label.gold {
+      color: #e6c97a;
+      border-color: rgba(205,168,93,.35);
+    }
+
+    .home-showcase-stack {
+      position: absolute;
+      width: min(250px, 38%);
+      right: -22px;
+      bottom: -34px;
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (max-width: 940px) {
+      .home-showcase-stack {
+        position: static;
+        width: auto;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 14px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .home-showcase-stack { grid-template-columns: 1fr; }
+    }
+
+    .home-mini-case {
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.035);
+      box-shadow: 0 24px 54px rgba(0,0,0,.30);
+    }
+
+    .home-mini-case img {
+      width: 100%;
+      height: 156px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      opacity: .92;
+    }
+
+    .home-mini-case .mini-copy {
+      padding: 12px 14px 14px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .home-mini-case strong {
+      color: rgba(242,241,238,.92);
+      font-size: .95rem;
+    }
+
+    .home-mini-case span {
+      color: rgba(242,241,238,.55);
+      font-size: .78rem;
+      line-height: 1.4;
+    }
+
+    .home-section-title-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 720px) {
+      .home-section-title-row { align-items: start; flex-direction: column; }
+    }
+
+    .home-work-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 1060px) {
+      .home-work-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .home-work-list { grid-template-columns: 1fr; }
+    }
+
+    .home-work-tile {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 24px;
+      background: rgba(255,255,255,.025);
+      overflow: hidden;
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .home-work-tile:hover {
+      transform: translateY(-2px);
+      border-color: rgba(205,168,93,.22);
+      background: rgba(255,255,255,.035);
+    }
+
+    .home-work-tile-media {
+      aspect-ratio: 16 / 10;
+      background: #0d1117;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .home-work-tile-media img,
+    .home-work-tile-media svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .home-work-tile-media img {
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .home-work-tile-body {
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .home-work-tile-body h3 {
+      margin: 0;
+    }
+
+    .home-work-tile-body p {
+      margin: 0;
+      color: rgba(242,241,238,.62);
+      line-height: 1.55;
+      font-size: .95rem;
+    }
+
+    .home-tile-meta {
+      color: #e6c97a;
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .home-system-svg text {
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    .page-home .section-cta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .page-home .section-cta .btn {
+      width: auto !important;
+      max-width: none;
+      flex: 0 0 auto !important;
+    }
+
+  </style>
 </head>
 <body class="page-home">
 <header class="nav reveal">
@@ -69,46 +396,65 @@
 
 <main class="page">
   <div class="container">
-    <section class="hero">
-      <div class="hero-copy reveal" data-reveal-order="2">
-        <div class="kicker" data-i18n="hero_kicker">Partner dla firm</div>
-        <h1 class="h1" data-i18n="home_h1">Projektuję strony i panele admin dla firm, które potrzebują jasnego lead flow.</h1>
-        <p class="sub" data-i18n="home_p">Od oferty i UI po formularze, tracking, SEO basics i wdrożenie. Zobacz publiczny przykład poniżej.</p>
-
-        <div class="hero-actions">
-          <a class="btn primary" data-book href="#" data-i18n="book_call">Umów call</a>
-          <a class="btn" href="./work.html" data-i18n="see_work">Zobacz realizacje</a>
+    <section class="home-hero-clean">
+      <div class="home-hero-copy reveal" data-reveal-order="2">
+        <div class="home-eyebrow-row">
+          <span class="home-proof-pill green" data-home-i18n="hero_pill_1">Live work</span>
+          <span class="home-proof-pill gold" data-home-i18n="hero_pill_2">Local business</span>
+          <span class="home-proof-pill" data-home-i18n="hero_pill_3">Apps & systems</span>
         </div>
 
-        <div class="hero-proof">
-          <span class="pill" data-i18n="proof_fast">Szybko</span>
-          <span class="pill" data-i18n="proof_secure">Bezpiecznie</span>
-          <span class="pill" data-i18n="proof_sales">Efektywnie</span>
+        <div class="kicker" data-i18n="hero_kicker">Partner dla firm</div>
+        <h1 class="h1" data-home-i18n="home_h1">Buduję strony, aplikacje i systemy growth z realnym proofem.</h1>
+        <p class="sub" data-home-i18n="home_p">Portfolio oparte na konkretnych realizacjach: live strona dla siłowni, strategiczny koncept PrimeGym, własna aplikacja Sudoku Premium i prywatne systemy dashboardowe.</p>
+
+        <div class="home-hero-actions">
+          <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+          <a class="btn" href="./work.html" data-home-i18n="home_cta_work">Zobacz realizacje</a>
+        </div>
+
+        <div class="home-proof-grid">
+          <div class="home-proof-row">
+            <b data-home-i18n="proof_a_label">Web</b>
+            <span data-home-i18n="proof_a_text">Landing pages, strony firmowe, lokalne SEO, CTA i wdrożenie.</span>
+          </div>
+          <div class="home-proof-row">
+            <b data-home-i18n="proof_b_label">Product</b>
+            <span data-home-i18n="proof_b_text">Aplikacje, pattern trainer, UX produktu i assety brandowe.</span>
+          </div>
+          <div class="home-proof-row">
+            <b data-home-i18n="proof_c_label">Systems</b>
+            <span data-home-i18n="proof_c_text">Dashboardy, automatyzacje, evidence layer i workflow.</span>
+          </div>
         </div>
       </div>
 
-      <div class="hero-visual hero-stage reveal" data-reveal-order="3" aria-hidden="true">
-        <div class="stage-grid"></div>
-        <div class="stage-card stage-card-main">
-          <span class="stage-label">live sprint</span>
-          <strong>Launch-ready build</strong>
-          <div class="stage-lines">
-            <span class="line-long"></span>
-            <span class="line-short"></span>
-            <span class="line-mid"></span>
+      <div class="home-hero-showcase reveal" data-reveal-order="3">
+        <div class="home-showcase-frame primary">
+          <div class="home-showcase-bar">
+            <span class="home-showcase-label gold">PrimeGym Rumia</span>
+            <span class="home-showcase-label" data-home-i18n="status_demo">Strategic demo</span>
+          </div>
+          <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia strategic website demo screenshot" loading="eager" width="1920" height="1080">
+        </div>
+
+        <div class="home-showcase-stack">
+          <div class="home-mini-case">
+            <img src="./assets/work/undergroundgym-clean-desktop.png" alt="UndergroundGym.pl live website screenshot" loading="lazy" width="1440" height="1000">
+            <div class="mini-copy">
+              <strong>UndergroundGym.pl</strong>
+              <span data-home-i18n="mini_underground">Live client website</span>
+            </div>
+          </div>
+
+          <div class="home-mini-case">
+            <img src="./assets/work/sudoku-premium-home.webp" alt="Sudoku Premium mobile app screenshot" loading="lazy" width="900" height="1800">
+            <div class="mini-copy">
+              <strong>Sudoku Premium</strong>
+              <span data-home-i18n="mini_sudoku">Own mobile product</span>
+            </div>
           </div>
         </div>
-        <div class="stage-card stage-card-side">
-          <span class="stage-label">quality gate</span>
-          <strong>UX · SEO · Speed</strong>
-        </div>
-        <div class="stage-metrics">
-          <span>Brief</span>
-          <span>UI</span>
-          <span>Build</span>
-          <span>Deploy</span>
-        </div>
-        <div class="tag" data-i18n="hero_tag">Audit • Build • Scale</div>
       </div>
     </section>
 
@@ -142,16 +488,88 @@
 
     <div class="divider"></div>
 
+    <section class="section" id="selected-work">
+      <div class="home-section-title-row reveal" data-reveal-order="6">
+        <div>
+          <div class="kicker" data-home-i18n="selected_kicker">Połączone z Realizacjami</div>
+          <h2 class="h2" data-home-i18n="selected_h2">Wybrane case studies</h2>
+        </div>
+        <a class="btn" href="./work.html" data-i18n="nav_work">Realizacje</a>
+      </div>
+
+      <div class="home-work-list">
+        <a class="home-work-tile reveal" data-reveal-order="7" href="./work.html#undergroundgym">
+          <div class="home-work-tile-media">
+            <img src="./assets/work/undergroundgym-clean-desktop.png" alt="UndergroundGym.pl live website screenshot" loading="lazy" width="1440" height="1000">
+          </div>
+          <div class="home-work-tile-body">
+            <div class="home-tile-meta" data-home-i18n="tile_live">Live website</div>
+            <h3 class="h3">UndergroundGym.pl</h3>
+            <p data-home-i18n="tile_underground">Strona lokalnej siłowni 24/7 z ofertą, opiniami i wejściem próbnym.</p>
+          </div>
+        </a>
+
+        <a class="home-work-tile reveal" data-reveal-order="8" href="./work.html#primegym">
+          <div class="home-work-tile-media">
+            <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia strategic website demo screenshot" loading="lazy" width="1920" height="1080">
+          </div>
+          <div class="home-work-tile-body">
+            <div class="home-tile-meta" data-home-i18n="tile_demo">Demo strategiczne</div>
+            <h3 class="h3">PrimeGym Rumia</h3>
+            <p data-home-i18n="tile_prime">Premium koncept strony, landing pages, CTA i plan trackingu.</p>
+          </div>
+        </a>
+
+        <a class="home-work-tile reveal" data-reveal-order="9" href="./work.html#sudoku">
+          <div class="home-work-tile-media">
+            <img src="./assets/work/sudoku-premium-home.webp" alt="Sudoku Premium mobile app screenshot" loading="lazy" width="900" height="1800">
+          </div>
+          <div class="home-work-tile-body">
+            <div class="home-tile-meta" data-home-i18n="tile_own">Projekt własny</div>
+            <h3 class="h3">Sudoku Premium</h3>
+            <p data-home-i18n="tile_sudoku">Mobilna aplikacja z Pattern Trainerem i premium brand assetami.</p>
+          </div>
+        </a>
+
+        <a class="home-work-tile reveal" data-reveal-order="10" href="./work.html#trading">
+          <div class="home-work-tile-media">
+            <svg class="home-system-svg" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-label="Trading Workstation private dashboard preview">
+              <rect width="640" height="400" fill="#0d1117"/>
+              <rect x="28" y="32" width="584" height="326" rx="28" fill="rgba(255,255,255,.025)" stroke="rgba(255,255,255,.09)"/>
+              <rect x="54" y="64" width="160" height="12" rx="4" fill="rgba(255,255,255,.42)"/>
+              <rect x="54" y="104" width="336" height="170" rx="16" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.18)"/>
+              <polyline points="80,246 128,210 186,225 242,174 300,192 360,145" fill="none" stroke="#3b82f6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="420" y="104" width="150" height="170" rx="16" fill="rgba(255,255,255,.035)" stroke="rgba(255,255,255,.08)"/>
+              <rect x="442" y="128" width="102" height="22" rx="11" fill="rgba(52,211,153,.16)" stroke="rgba(52,211,153,.32)"/>
+              <rect x="442" y="176" width="86" height="9" rx="3" fill="rgba(255,255,255,.35)"/>
+              <rect x="442" y="202" width="112" height="9" rx="3" fill="rgba(255,255,255,.20)"/>
+              <rect x="54" y="302" width="190" height="14" rx="5" fill="rgba(255,255,255,.15)"/>
+              <rect x="54" y="328" width="256" height="14" rx="5" fill="rgba(59,130,246,.18)"/>
+              <rect x="420" y="302" width="150" height="32" rx="11" fill="rgba(99,170,255,.12)" stroke="rgba(99,170,255,.3)"/>
+              <text x="495" y="323" fill="#93c5fd" font-size="14" font-weight="800" text-anchor="middle">PRIVATE SYSTEM</text>
+            </svg>
+          </div>
+          <div class="home-work-tile-body">
+            <div class="home-tile-meta" data-home-i18n="tile_private">System prywatny</div>
+            <h3 class="h3">Trading Workstation</h3>
+            <p data-home-i18n="tile_trading">Dashboard, evidence layer, decision UI i diagnostyki.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
     <section class="section">
-      <div class="section-head reveal" data-reveal-order="4">
+      <div class="section-head reveal" data-reveal-order="11">
         <h2 class="h2" data-i18n="services_h2">Usługi</h2>
         <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
       </div>
 
       <div class="grid cols-3 section-grid" data-carousel data-carousel-interval="3800">
-        <article class="service-strip reveal" data-reveal-order="5">
+        <article class="service-strip reveal" data-reveal-order="12">
           <h3 class="h3" data-i18n="svc_web_h2">Strony</h3>
-          <div class="meta" data-i18n="home_svc_web_meta">Premium landing i strony multi‑page.</div>
+          <div class="meta" data-home-i18n="service_web_meta">Landing pages, multi-page sites, lokalne SEO i conversion-focused UX.</div>
           <ul class="bullets">
             <li data-i18n="svc_web_d1">Landing / multi-page</li>
             <li data-i18n="svc_web_d2">CMS (opcjonalnie)</li>
@@ -160,9 +578,9 @@
           <div class="card-link"><a class="inline" href="./services.html#web" data-i18n="view_case">Zobacz szczegóły →</a></div>
         </article>
 
-        <article class="service-strip reveal" data-reveal-order="6">
+        <article class="service-strip reveal" data-reveal-order="13">
           <h3 class="h3" data-i18n="svc_admin_h2">Panele admin</h3>
-          <div class="meta" data-i18n="home_svc_admin_meta">Dashboardy, role i automatyzacje.</div>
+          <div class="meta" data-home-i18n="service_admin_meta">Dashboardy, role, raporty, workflow i automatyzacje.</div>
           <ul class="bullets">
             <li data-i18n="svc_admin_d1">Dashboard + role/permissions</li>
             <li data-i18n="svc_admin_d2">Analityka, raporty</li>
@@ -171,9 +589,9 @@
           <div class="card-link"><a class="inline" href="./services.html#admin" data-i18n="view_case">Zobacz szczegóły →</a></div>
         </article>
 
-        <article class="service-strip reveal" data-reveal-order="7">
+        <article class="service-strip reveal" data-reveal-order="14">
           <h3 class="h3" data-i18n="svc_mkt_h2">Marketing</h3>
-          <div class="meta" data-i18n="home_svc_mkt_meta">Landing + tracking + CRO.</div>
+          <div class="meta" data-home-i18n="service_mkt_meta">Landing + tracking + CRO + kąty kampanii.</div>
           <ul class="bullets">
             <li data-i18n="svc_mkt_d1">Landing pod kampanie</li>
             <li data-i18n="svc_mkt_d2">Tracking + eventy</li>
@@ -185,61 +603,18 @@
     </section>
 
     <section class="section">
-      <div class="section-head reveal" data-reveal-order="8">
-        <h2 class="h2" data-i18n="work_h2">Top realizacje</h2>
+      <h2 class="h2 reveal" data-reveal-order="15" data-i18n="process_h2">Proces</h2>
+      <div class="process-list">
+        <div class="process-item reveal" data-reveal-order="16"><div class="kicker">01</div><h3 class="h3" data-i18n="process_step1_t">Call</h3><p class="sub" data-i18n="process_step1_p">Szybkie zrozumienie celu, brief i priorytety.</p></div>
+        <div class="process-item reveal" data-reveal-order="17"><div class="kicker">02</div><h3 class="h3" data-i18n="process_step2_t">Plan</h3><p class="sub" data-i18n="process_step2_p">Propozycja struktury, copy i plan wdrożenia.</p></div>
+        <div class="process-item reveal" data-reveal-order="18"><div class="kicker">03</div><h3 class="h3" data-i18n="process_step3_t">Build</h3><p class="sub" data-i18n="process_step3_p">Projekt + implementacja, iteracje i testy.</p></div>
+        <div class="process-item reveal" data-reveal-order="19"><div class="kicker">04</div><h3 class="h3" data-i18n="process_step4_t">Launch</h3><p class="sub" data-i18n="process_step4_p">Publikacja, tracking i dopięcie detali.</p></div>
+      </div>
+      <div class="section-cta reveal" data-reveal-order="20">
+        <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
         <a class="btn" href="./work.html" data-i18n="nav_work">Realizacje</a>
       </div>
-      <div class="grid cols-3 section-grid case-rail" data-carousel data-carousel-interval="4200">
-        <article class="case-study reveal" data-reveal-order="9">
-          <figure class="case-thumb">
-            <img src="./assets/work/undergroundgym-clean-desktop.png" alt="Desktopowy widok realizacji UndergroundGym.pl" loading="lazy" width="1440" height="1000">
-          </figure>
-          <div class="case-index">01</div>
-          <h3 class="h3">UndergroundGym.pl</h3>
-          <div class="meta" data-i18n="home_work_1_meta">Live website • gym 24/7 • lead flow</div>
-          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_1_build">Oferta, cennik, opinie, formularz wejścia próbnego i contact UX.</span></p>
-          <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_1_result">szybka ścieżka od oferty do kontaktu dla lokalnej siłowni.</span></div>
-          <a class="inline case-live-link" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer" data-i18n="proof_visit">Otwórz live site</a>
-        </article>
-        <article class="case-study reveal" data-reveal-order="10">
-          <div class="case-index">02</div>
-          <h3 class="h3" data-i18n="home_work_2_title">Landing — prototyp</h3>
-          <div class="meta" data-i18n="home_work_2_meta">Lead-gen pattern • UI/UX • performance</div>
-          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_2_build">Struktura oferty, sekcje zaufania i CTA pod kampanię.</span></p>
-          <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_2_result">gotowy wzorzec landing page do szybkiego wdrożenia.</span></div>
-        </article>
-        <article class="case-study reveal" data-reveal-order="11">
-          <div class="case-index">03</div>
-          <h3 class="h3" data-i18n="home_work_3_title">Contact brief flow</h3>
-          <div class="meta" data-i18n="home_work_3_meta">Mailto brief • copy • UX detale</div>
-          <p class="case-note"><b data-i18n="case_build_label">Build:</b> <span data-i18n="home_work_3_build">Brief generujący gotową wiadomość do wysłania.</span></p>
-          <div class="metricline"><b data-i18n="home_goal_result_label">Cel → wynik:</b> <span data-i18n="home_work_3_result">mniejsze tarcie kontaktu, szybki start współpracy.</span></div>
-        </article>
-      </div>
     </section>
-
-    <section class="section">
-      <h2 class="h2 reveal" data-reveal-order="12" data-i18n="process_h2">Proces</h2>
-      <div class="process-list">
-        <div class="process-item reveal" data-reveal-order="13"><div class="kicker">01</div><h3 class="h3" data-i18n="process_step1_t">Call</h3><p class="sub" data-i18n="process_step1_p">Szybkie zrozumienie celu, brief i priorytety.</p></div>
-        <div class="process-item reveal" data-reveal-order="14"><div class="kicker">02</div><h3 class="h3" data-i18n="process_step2_t">Plan</h3><p class="sub" data-i18n="process_step2_p">Propozycja struktury, copy i plan wdrożenia.</p></div>
-        <div class="process-item reveal" data-reveal-order="15"><div class="kicker">03</div><h3 class="h3" data-i18n="process_step3_t">Build</h3><p class="sub" data-i18n="process_step3_p">Projekt + implementacja, iteracje i testy.</p></div>
-        <div class="process-item reveal" data-reveal-order="16"><div class="kicker">04</div><h3 class="h3" data-i18n="process_step4_t">Launch</h3><p class="sub" data-i18n="process_step4_p">Publikacja, tracking i dopięcie detali.</p></div>
-      </div>
-      <div class="section-cta reveal" data-reveal-order="17">
-        <a class="btn primary" data-book href="#" data-i18n="book_call">Umów call</a>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="h2 reveal" data-reveal-order="18" data-i18n="faq_h2">FAQ</h2>
-      <div class="faq-list">
-        <div class="faq-item reveal" data-reveal-order="19"><h3 class="h3" data-i18n="faq1_q">Ile to trwa?</h3><p class="sub" data-i18n="faq1_a">Zależnie od zakresu: landing zwykle 1–2 tygodnie, większe strony 2–4 tygodnie, panel admin — do ustalenia.</p></div>
-        <div class="faq-item reveal" data-reveal-order="20"><h3 class="h3" data-i18n="faq2_q">Jak wyglądają rozliczenia?</h3><p class="sub" data-i18n="faq2_a">Zwykle stała wycena za zakres + opcjonalny support/miesięczna opieka.</p></div>
-        <div class="faq-item reveal" data-reveal-order="21"><h3 class="h3" data-i18n="faq3_q">Czy pomagasz z reklamami?</h3><p class="sub" data-i18n="faq3_a">Tak — przygotowuję landing pod kampanie, tracking, testy i optymalizacje (bez wchodzenia w platformy).</p></div>
-      </div>
-    </section>
-
   </div>
 </main>
 
@@ -257,5 +632,101 @@
   </div>
 </footer>
 <script src="./script.js"></script>
+<script>
+  (() => {
+    const HOME_I18N = {
+      pl: {
+        hero_pill_1: "Live work",
+        hero_pill_2: "Local business",
+        hero_pill_3: "Apps & systems",
+        home_h1: "Buduję strony, aplikacje i systemy growth z realnym proofem.",
+        home_p: "Portfolio oparte na konkretnych realizacjach: live strona dla siłowni, strategiczny koncept PrimeGym, własna aplikacja Sudoku Premium i prywatne systemy dashboardowe.",
+        home_cta_work: "Zobacz realizacje",
+        proof_a_label: "Web",
+        proof_a_text: "Landing pages, strony firmowe, lokalne SEO, CTA i wdrożenie.",
+        proof_b_label: "Product",
+        proof_b_text: "Aplikacje, pattern trainer, UX produktu i assety brandowe.",
+        proof_c_label: "Systems",
+        proof_c_text: "Dashboardy, automatyzacje, evidence layer i workflow.",
+        status_demo: "Demo strategiczne",
+        mini_underground: "Live client website",
+        mini_sudoku: "Projekt własny mobile",
+        selected_kicker: "Połączone z Realizacjami",
+        selected_h2: "Wybrane case studies",
+        tile_live: "Live website",
+        tile_demo: "Demo strategiczne",
+        tile_own: "Projekt własny",
+        tile_private: "System prywatny",
+        tile_underground: "Strona lokalnej siłowni 24/7 z ofertą, opiniami i wejściem próbnym.",
+        tile_prime: "Premium koncept strony, landing pages, CTA i plan trackingu.",
+        tile_sudoku: "Mobilna aplikacja z Pattern Trainerem i premium brand assetami.",
+        tile_trading: "Dashboard, evidence layer, decision UI i diagnostyki.",
+        service_web_meta: "Landing pages, multi-page sites, lokalne SEO i conversion-focused UX.",
+        service_admin_meta: "Dashboardy, role, raporty, workflow i automatyzacje.",
+        service_mkt_meta: "Landing + tracking + CRO + kąty kampanii."
+      },
+      en: {
+        hero_pill_1: "Live work",
+        hero_pill_2: "Local business",
+        hero_pill_3: "Apps & systems",
+        home_h1: "I build websites, apps and growth systems with real proof.",
+        home_p: "A portfolio based on concrete work: a live gym website, a strategic PrimeGym concept, my own Sudoku Premium app and private dashboard systems.",
+        home_cta_work: "See work",
+        proof_a_label: "Web",
+        proof_a_text: "Landing pages, business websites, local SEO, CTAs and delivery.",
+        proof_b_label: "Product",
+        proof_b_text: "Apps, pattern trainer, product UX and brand assets.",
+        proof_c_label: "Systems",
+        proof_c_text: "Dashboards, automations, evidence layer and workflow.",
+        status_demo: "Strategic demo",
+        mini_underground: "Live client website",
+        mini_sudoku: "Own mobile product",
+        selected_kicker: "Connected to Work",
+        selected_h2: "Selected case studies",
+        tile_live: "Live website",
+        tile_demo: "Strategic demo",
+        tile_own: "Own product",
+        tile_private: "Private system",
+        tile_underground: "24/7 local gym website with offer, reviews and trial entry.",
+        tile_prime: "Premium website concept, landing pages, CTAs and tracking plan.",
+        tile_sudoku: "Mobile app with Pattern Trainer and premium brand assets.",
+        tile_trading: "Dashboard, evidence layer, decision UI and diagnostics.",
+        service_web_meta: "Landing pages, multi-page sites, local SEO and conversion-focused UX.",
+        service_admin_meta: "Dashboards, roles, reporting, workflows and automations.",
+        service_mkt_meta: "Landing + tracking + CRO + campaign angles."
+      }
+    };
+
+    function getLang() {
+      if (document.documentElement.lang && HOME_I18N[document.documentElement.lang]) return document.documentElement.lang;
+      const enBtn = document.getElementById("langEN");
+      const plBtn = document.getElementById("langPL");
+      if (enBtn && enBtn.classList.contains("active")) return "en";
+      if (plBtn && plBtn.classList.contains("active")) return "pl";
+      const stored = localStorage.getItem("lang") || localStorage.getItem("siteLang") || localStorage.getItem("language");
+      return HOME_I18N[stored] ? stored : "pl";
+    }
+
+    function applyHomeI18n() {
+      const dict = HOME_I18N[getLang()] || HOME_I18N.pl;
+      document.querySelectorAll("[data-home-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-home-i18n");
+        if (dict[key]) el.textContent = dict[key];
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      applyHomeI18n();
+      document.getElementById("langPL")?.addEventListener("click", () => setTimeout(applyHomeI18n, 40));
+      document.getElementById("langEN")?.addEventListener("click", () => setTimeout(applyHomeI18n, 40));
+      new MutationObserver(applyHomeI18n).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["lang"]
+      });
+    });
+
+    window.addEventListener("load", applyHomeI18n);
+  })();
+</script>
 </body>
 </html>
