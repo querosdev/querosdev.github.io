@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8" />
@@ -11,19 +11,120 @@
   <link rel="canonical" href="https://querosdev.github.io/work.html" />
   <link rel="stylesheet" href="./style.css" />
   <title>Nikodem Kustusz Studio — Realizacje i live proof</title>
-  <meta name="description" content="Realizacje Nikodema Kustusza: live case UndergroundGym.pl, strony, panele admin i procesy kontaktu." />
+  <meta name="description" content="Realizacje: UndergroundGym.pl (live), PrimeGym Rumia (w realizacji), Sudoku Premium (własna aplikacja), Trading Workstation (dashboard systemowy)." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Nikodem Kustusz Studio" />
   <meta property="og:title" content="Realizacje — Nikodem Kustusz Studio" />
-  <meta property="og:description" content="Zobacz live proof: UndergroundGym.pl oraz wybrane wdrożenia web, admin i contact UX." />
+  <meta property="og:description" content="Strony, aplikacje i systemy: od live business website po aplikację mobilną i dashboard operacyjny." />
   <meta property="og:url" content="https://querosdev.github.io/work.html" />
   <meta property="og:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Realizacje — Nikodem Kustusz Studio" />
-  <meta name="twitter:description" content="Zobacz live proof: UndergroundGym.pl oraz wybrane wdrożenia web, admin i contact UX." />
+  <meta name="twitter:description" content="Strony, aplikacje i systemy: od live business website po aplikację mobilną i dashboard operacyjny." />
   <meta name="twitter:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
+
+  <style>
+    /* ── Preview frames — intentional placeholders gdzie brak screenshota ── */
+    .preview-frame {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
+      position: relative;
+      background: #0f1114;
+      margin: 0 0 18px;
+    }
+    .preview-frame svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Status / category pills na kartach */
+    .work-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .tag-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .tag-live   { background: rgba(52,211,153,.14); color: #34d399; border: 1px solid rgba(52,211,153,.28); }
+    .tag-wip    { background: rgba(205,168,93,.14);  color: #cda85d; border: 1px solid rgba(205,168,93,.28); }
+    .tag-own    { background: rgba(139,92,246,.14);  color: #a78bfa; border: 1px solid rgba(139,92,246,.28); }
+    .tag-sys    { background: rgba(99,170,255,.14);  color: #93c5fd; border: 1px solid rgba(99,170,255,.28); }
+    .tag-cat {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 700;
+      color: rgba(242,241,238,.55);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* Feature section — UndergroundGym spotlight */
+    .work-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+      gap: clamp(20px, 4vw, 40px);
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .work-feature { grid-template-columns: 1fr; }
+    }
+    .work-feature-media {
+      position: relative;
+      min-height: 340px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: radial-gradient(440px 300px at 90% 8%, rgba(205,168,93,.16), transparent 62%),
+                  rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 28px 70px rgba(0,0,0,.32);
+    }
+    .work-feature-desktop {
+      width: 100%; height: 100%; min-height: inherit;
+      object-fit: cover; object-position: top left; opacity: .92;
+    }
+    .work-feature-mobile {
+      position: absolute; right: 18px; bottom: 18px;
+      width: min(170px, 28%); max-height: 72%;
+      object-fit: cover; object-position: top center;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 20px;
+      box-shadow: 0 24px 54px rgba(0,0,0,.44);
+    }
+    .work-feature-copy { display: grid; gap: 14px; }
+    .work-feature-copy .sub { margin-top: 0; }
+    .proof-list { margin: 10px 0 0; padding-left: 18px; color: rgba(242,241,238,.72); }
+    .proof-list li { margin: 7px 0; }
+
+    /* Disabled CTA */
+    .btn.disabled {
+      opacity: .38;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    /* Case grid tweaks */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body class="page-work">
+
+<!-- ─── NAV ─────────────────────────────────────────────────────── -->
 <header class="nav reveal">
   <div class="container nav-inner">
     <a class="brand" href="./index.html" aria-label="Home">
@@ -31,15 +132,13 @@
       <span class="name" data-i18n="site_name">Nikodem Kustusz Studio</span>
       <span class="role" data-i18n="hero_kicker">Partner dla firm</span>
     </a>
-
     <nav class="nav-links" aria-label="Primary">
-      <a href="./index.html" data-nav="home" data-i18n="nav_home">Start</a>
-      <a href="./work.html" data-nav="work" data-i18n="nav_work">Realizacje</a>
+      <a href="./index.html"    data-nav="home"     data-i18n="nav_home">Start</a>
+      <a href="./work.html"     data-nav="work"     data-i18n="nav_work" aria-current="page">Realizacje</a>
       <a href="./services.html" data-nav="services" data-i18n="nav_services">Usługi</a>
-      <a href="./about.html" data-nav="about" data-i18n="nav_about">O mnie</a>
-      <a href="./contact.html" data-nav="contact" data-i18n="nav_contact">Kontakt</a>
+      <a href="./about.html"    data-nav="about"    data-i18n="nav_about">O mnie</a>
+      <a href="./contact.html"  data-nav="contact"  data-i18n="nav_contact">Kontakt</a>
     </nav>
-
     <div class="nav-actions">
       <div class="lang" role="group" aria-label="Language">
         <button id="langPL" type="button">PL</button>
@@ -51,154 +150,564 @@
       </button>
     </div>
   </div>
-
   <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
   <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Nawigacja główna">
     <div class="mobile-links">
-      <a href="./index.html" data-nav-mobile="home" data-i18n="nav_home">Start</a>
-      <a href="./work.html" data-nav-mobile="work" data-i18n="nav_work">Realizacje</a>
+      <a href="./index.html"    data-nav-mobile="home"    data-i18n="nav_home">Start</a>
+      <a href="./work.html"     data-nav-mobile="work"    data-i18n="nav_work">Realizacje</a>
       <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
-      <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
-      <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
-      <a class="mobile-menu-secondary" href="./privacy.html" data-nav-mobile="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
-      <a class="mobile-menu-secondary" href="./legal.html" data-nav-mobile="legal" data-i18n="footer_legal">Prawa autorskie</a>
+      <a href="./about.html"    data-nav-mobile="about"   data-i18n="nav_about">O mnie</a>
+      <a href="./contact.html"  data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
+      <a class="mobile-menu-secondary" href="./privacy.html" data-i18n="footer_privacy">Polityka prywatności</a>
+      <a class="mobile-menu-secondary" href="./legal.html"   data-i18n="footer_legal">Prawa autorskie</a>
       <a class="mobile-menu-cta btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
     </div>
   </nav>
 </header>
 
+<!-- ─── MAIN ─────────────────────────────────────────────────────── -->
 <main class="page">
   <div class="container">
-<div class="title reveal">
-  <div class="kicker" data-i18n="nav_work">Realizacje</div>
-  <h1 class="h1" data-i18n="work_page_h1">Realizacje</h1>
-  <p class="sub" data-i18n="work_page_p">Realne wdrożenia i wybrane prototypy. Każda pozycja pokazuje rolę, zakres i dowód, gdy projekt jest publiczny.</p>
 
-  <div class="quick-actions reveal">
-    <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
-    <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
-    <a class="btn" href="./contact.html" data-i18n="email_short">E-mail</a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<section class="work-feature reveal" id="undergroundgym" data-cat="web,mkt">
-  <div class="work-feature-media">
-    <img class="work-feature-desktop" src="./assets/work/undergroundgym-clean-desktop.png" alt="Zrzut ekranu strony UndergroundGym.pl na desktopie" loading="lazy" width="1440" height="1000">
-    <img class="work-feature-mobile" src="./assets/work/undergroundgym-clean-mobile.png" alt="Mobilny zrzut strony UndergroundGym.pl" loading="lazy" width="390" height="844">
-  </div>
-  <div class="work-feature-copy">
-    <div class="kicker" data-i18n="work_feature_kicker">Publiczny case</div>
-    <h2 class="h2" data-i18n="work_feature_h2">UndergroundGym.pl</h2>
-    <p class="sub" data-i18n="work_feature_p">Strona lokalnej siłowni 24/7: oferta, cennik, opinie, wejście próbne, dane kontaktowe i zgody na zewnętrzne embed-y.</p>
-    <ul class="proof-list">
-      <li data-i18n="work_feature_1">Oferta i CTA prowadzące do wejścia próbnego.</li>
-      <li data-i18n="work_feature_2">Responsywny układ desktop/mobile z mocną identyfikacją klubu.</li>
-      <li data-i18n="work_feature_3">Kontakt, mapa i treści zewnętrzne schowane za zgodą cookies.</li>
-    </ul>
-    <div class="inline-actions">
-      <a class="btn primary" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer" data-i18n="proof_visit">Otwórz live site</a>
-      <a class="btn" href="./contact.html" data-i18n="book_call">Umów call</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<div class="filters reveal" role="tablist" aria-label="Filters">
-  <button class="filter active" role="tab" type="button" data-filter="all" data-i18n="filter_all">Wszystko</button>
-  <button class="filter" role="tab" type="button" data-filter="web" data-i18n="filter_web">Strony</button>
-  <button class="filter" role="tab" type="button" data-filter="admin" data-i18n="filter_admin">Panele</button>
-  <button class="filter" role="tab" type="button" data-filter="mkt" data-i18n="filter_mkt">Marketing</button>
-</div>
-<noscript>
-  <div class="note no-script-note">
-    Filtry wymagają JavaScript — wyświetlam wszystkie projekty.
-  </div>
-</noscript>
-
-<div class="grid-2">
-  <article class="case-panel work-card reveal" data-cat="web,mkt">
-    <figure class="case-thumb">
-      <img src="./assets/work/undergroundgym-clean-desktop.png" alt="Desktopowy widok strony UndergroundGym.pl" loading="lazy" width="1440" height="1000">
-    </figure>
-    <div class="case-marker">01</div>
-    <div class="row">
-      <div>
-        <h3 data-i18n="work_1_title">UndergroundGym.pl — strona klubowa</h3>
-        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_1_role">UX + frontend + wdrożenie</span></div>
+    <!-- Page header -->
+    <div class="title reveal">
+      <div class="kicker" data-i18n="nav_work">Realizacje</div>
+      <h1 class="h1">Realizacje</h1>
+      <p class="sub">Strony, aplikacje i systemy — od live client website po własny produkt mobilny i dashboard operacyjny. Każda pozycja pokazuje problem, rolę i zakres bez overclaimingu.</p>
+      <div class="quick-actions reveal">
+        <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+        <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
+        <a class="btn" href="./contact.html"  data-i18n="email_short">E-mail</a>
       </div>
-      <div class="meta" data-i18n="work_1_meta">Fitness / live site</div>
     </div>
-    <p class="p work-desc" data-i18n="work_1_desc">Publiczna strona siłowni 24/7 z ofertą, cennikiem, opiniami, formularzem wejścia próbnego i kontaktem.</p>
-    <div class="stack">
-      <span class="pill">HTML/CSS</span><span class="pill">JS</span><span class="pill">Responsive</span><span class="pill">SEO</span>
-    </div>
-    <div class="metricline"><span data-i18n="kpi_label">Dowód:</span> <b data-i18n="work_1_metric">live site</b><span data-i18n="work_1_metric_tail"> / realny klient</span></div>
-    <div class="inline-actions">
-      <a class="btn primary" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer" data-i18n="proof_visit">Otwórz live site</a>
-    </div>
-  </article>
 
-  <article class="case-panel work-card reveal" data-cat="web,mkt">
-    <div class="case-marker">02</div>
-    <div class="row">
-      <div>
-        <h3 data-i18n="work_2_title">Landing sprzedażowy — prototyp</h3>
-        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_2_role">UI/UX + copy + tracking</span></div>
-      </div>
-      <div class="meta" data-i18n="work_2_meta">Lead gen / pattern</div>
-    </div>
-    <p class="p work-desc" data-i18n="work_2_desc">Strona pod kampanię z trackingiem i optymalizacją konwersji.</p>
-    <div class="stack">
-      <span class="pill">HTML/CSS</span><span class="pill">JS</span><span class="pill">SEO</span><span class="pill">Tracking</span>
-    </div>
-    <div class="metricline"><span data-i18n="kpi_label">Dowód:</span> <b data-i18n="work_2_metric">prototyp</b><span data-i18n="work_2_metric_tail"> / landing flow</span></div>
-  </article>
+    <div class="divider"></div>
 
-  <article class="case-panel work-card reveal" data-cat="admin">
-    <div class="case-marker">03</div>
-    <div class="row">
-      <div>
-        <h3 data-i18n="work_3_title">Panel operacyjny — prototyp</h3>
-        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_3_role">Dashboard + role/permissions</span></div>
+    <!-- ── FEATURE: Underground Gym (live) ─────────────────────── -->
+    <section class="work-feature reveal" id="undergroundgym" data-cat="strony,marketing">
+      <div class="work-feature-media">
+        <img class="work-feature-desktop"
+             src="./assets/work/undergroundgym-clean-desktop.png"
+             alt="Zrzut ekranu strony UndergroundGym.pl na desktopie"
+             loading="eager" width="1440" height="1000">
+        <img class="work-feature-mobile"
+             src="./assets/work/undergroundgym-clean-mobile.png"
+             alt="Mobilny zrzut strony UndergroundGym.pl"
+             loading="eager" width="390" height="844">
       </div>
-      <div class="meta" data-i18n="work_3_meta">Ops / admin pattern</div>
-    </div>
-    <p class="p work-desc" data-i18n="work_3_desc">Usprawnienie procesu: role, widoki, raporty, integracje.</p>
-    <div class="stack">
-      <span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">Auth</span><span class="pill">RBAC</span>
-    </div>
-    <div class="metricline"><span data-i18n="kpi_label">Dowód:</span> <b data-i18n="work_3_metric">prototyp</b><span data-i18n="work_3_metric_tail"> / role i raporty</span></div>
-  </article>
+      <div class="work-feature-copy">
+        <div class="work-tags">
+          <span class="tag-status tag-live">Live site</span>
+          <span class="tag-cat">Strona</span>
+          <span class="tag-cat">Lokalny klient</span>
+        </div>
+        <div class="kicker">Publiczny case #01</div>
+        <h2 class="h2">UndergroundGym.pl</h2>
+        <p class="sub">Strona lokalnej siłowni 24/7: premium first impression, czytelna oferta, cennik, opinie i pełna ścieżka kontaktu — od wejścia próbnego po formularz i mapę.</p>
+        <ul class="proof-list">
+          <li>Oferta i CTA prowadzące bezpośrednio do wejścia próbnego.</li>
+          <li>Responsywny układ desktop/mobile z mocną identyfikacją klubu.</li>
+          <li>Zewnętrzne embed-y (mapa) schowane za zgodą — RODO-friendly.</li>
+          <li>SEO basics i Core Web Vitals jako standard od startu.</li>
+        </ul>
+        <div class="inline-actions">
+          <a class="btn primary" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer">Otwórz live site</a>
+          <a class="btn" href="./contact.html" data-i18n="book_call">Umów call</a>
+        </div>
+      </div>
+    </section>
 
-  <article class="case-panel work-card reveal" data-cat="web">
-    <div class="case-marker">04</div>
-    <div class="row">
-      <div>
-        <h3 data-i18n="work_4_title">Strona firmowa — prototyp multi-page</h3>
-        <div class="role"><span data-i18n="work_role_label">Rola:</span> <span data-i18n="work_4_role">Design system + wdrożenie</span></div>
-      </div>
-      <div class="meta" data-i18n="work_4_meta">Brand / layout system</div>
+    <div class="divider"></div>
+
+    <!-- ── FILTERS ──────────────────────────────────────────────── -->
+    <div class="filters reveal" role="tablist" aria-label="Filtruj projekty">
+      <button class="filter active" role="tab" type="button" data-filter="all">Wszystkie</button>
+      <button class="filter" role="tab" type="button" data-filter="strony">Strony</button>
+      <button class="filter" role="tab" type="button" data-filter="aplikacje">Aplikacje</button>
+      <button class="filter" role="tab" type="button" data-filter="systemy">Systemy</button>
+      <button class="filter" role="tab" type="button" data-filter="marketing">Marketing</button>
     </div>
-    <p class="p work-desc" data-i18n="work_4_desc">Premium layout, performance, SEO i spójne komponenty.</p>
-    <div class="stack">
-      <span class="pill">Responsive</span><span class="pill">Performance</span><span class="pill">SEO</span>
-    </div>
-    <div class="metricline"><span data-i18n="kpi_label">Dowód:</span> <b data-i18n="work_4_metric">prototyp</b><span data-i18n="work_4_metric_tail"></span></div>
-  </article>
-</div>
-  </div>
+
+    <!-- ── CASE GRID ─────────────────────────────────────────────── -->
+    <div class="grid-2" id="caseGrid">
+
+      <!-- ── Case 01: UndergroundGym ─────────────────────────────── -->
+      <article class="case-panel work-card reveal" data-cat="strony marketing">
+        <div class="case-thumb">
+          <img src="./assets/work/undergroundgym-clean-desktop.png"
+               alt="Desktopowy widok strony UndergroundGym.pl"
+               loading="lazy" width="1440" height="1000">
+        </div>
+        <div class="work-tags">
+          <span class="tag-status tag-live">Live site</span>
+          <span class="tag-cat">Strona</span>
+        </div>
+        <div class="case-marker">01</div>
+        <div class="row">
+          <div>
+            <h3>UndergroundGym.pl</h3>
+            <div class="role"><span>Rola:</span> UX + frontend + wdrożenie</div>
+          </div>
+          <div class="meta">Fitness / realny klient</div>
+        </div>
+        <p class="p work-desc">Conversion-focused website dla siłowni 24/7. Oferta, cennik, opinie, formularz wejścia próbnego i kontakt z RODO-friendly embeds.</p>
+        <div class="stack">
+          <span class="pill">HTML/CSS</span>
+          <span class="pill">JS</span>
+          <span class="pill">Responsive</span>
+          <span class="pill">SEO</span>
+        </div>
+        <div class="metricline"><b>Dowód:</b> live site / realny klient / publiczny URL</div>
+        <div class="inline-actions">
+          <a class="btn primary" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer">Otwórz live site</a>
+        </div>
+      </article>
+
+      <!-- ── Case 02: PrimeGym Rumia ──────────────────────────────── -->
+      <article class="case-panel work-card reveal" data-cat="strony marketing">
+        <!-- Preview frame — intentional concept mockup -->
+        <div class="preview-frame">
+          <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="PrimeGym Rumia — concept preview">
+            <defs>
+              <linearGradient id="pg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0b0c0e"/>
+                <stop offset="100%" stop-color="#111318"/>
+              </linearGradient>
+              <linearGradient id="pg-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#cda85d"/>
+                <stop offset="100%" stop-color="#e6c97a"/>
+              </linearGradient>
+              <radialGradient id="pg-glow" cx="70%" cy="20%" r="55%">
+                <stop offset="0%" stop-color="#cda85d" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#cda85d" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- bg -->
+            <rect width="640" height="360" fill="url(#pg-bg)"/>
+            <rect width="640" height="360" fill="url(#pg-glow)"/>
+            <!-- nav bar -->
+            <rect x="0" y="0" width="640" height="38" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+            <circle cx="24" cy="19" r="5" fill="#cda85d" opacity="0.9"/>
+            <rect x="36" y="14" width="70" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
+            <rect x="400" y="13" width="36" height="10" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+            <rect x="444" y="13" width="36" height="10" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+            <rect x="488" y="13" width="36" height="10" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+            <rect x="542" y="12" width="74" height="14" rx="7" fill="url(#pg-gold)"/>
+            <!-- hero section -->
+            <rect x="0" y="38" width="640" height="200" fill="rgba(255,255,255,0.01)"/>
+            <!-- kicker -->
+            <rect x="32" y="62" width="90" height="7" rx="2" fill="#cda85d" opacity="0.7"/>
+            <!-- headline lines -->
+            <rect x="32" y="78" width="320" height="18" rx="3" fill="rgba(255,255,255,0.7)"/>
+            <rect x="32" y="102" width="260" height="18" rx="3" fill="rgba(255,255,255,0.5)"/>
+            <!-- sub -->
+            <rect x="32" y="132" width="280" height="8" rx="2" fill="rgba(255,255,255,0.22)"/>
+            <rect x="32" y="146" width="240" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <!-- CTAs -->
+            <rect x="32"  y="166" width="110" height="28" rx="14" fill="url(#pg-gold)"/>
+            <rect x="150" y="166" width="100" height="28" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="0.7"/>
+            <!-- right visual block -->
+            <rect x="420" y="50" width="190" height="180" rx="16" fill="rgba(205,168,93,0.07)" stroke="rgba(205,168,93,0.18)" stroke-width="0.8"/>
+            <rect x="432" y="64" width="166" height="80" rx="8" fill="rgba(255,255,255,0.04)"/>
+            <rect x="442" y="74" width="80" height="9" rx="2" fill="rgba(255,255,255,0.4)"/>
+            <rect x="442" y="89" width="120" height="7" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="442" y="102" width="100" height="7" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <!-- stat pills -->
+            <rect x="432" y="156" width="56" height="20" rx="10" fill="rgba(52,211,153,0.12)" stroke="rgba(52,211,153,0.3)" stroke-width="0.6"/>
+            <rect x="494" y="156" width="72" height="20" rx="10" fill="rgba(205,168,93,0.12)" stroke="rgba(205,168,93,0.3)" stroke-width="0.6"/>
+            <!-- hours badge -->
+            <rect x="432" y="183" width="60" height="14" rx="7" fill="rgba(205,168,93,0.18)" stroke="rgba(205,168,93,0.4)" stroke-width="0.6"/>
+            <rect x="498" y="183" width="80" height="14" rx="7" fill="rgba(255,255,255,0.04)"/>
+            <!-- services strip -->
+            <rect x="0" y="238" width="640" height="60" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+            <rect x="32"  y="252" width="88" height="32" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <rect x="130" y="252" width="88" height="32" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <rect x="228" y="252" width="88" height="32" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <rect x="326" y="252" width="88" height="32" rx="8" fill="rgba(205,168,93,0.08)" stroke="rgba(205,168,93,0.20)" stroke-width="0.6"/>
+            <!-- service labels -->
+            <rect x="46"  y="263" width="56" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="144" y="263" width="56" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="242" y="263" width="56" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="340" y="263" width="62" height="7" rx="2" fill="rgba(205,168,93,0.8)"/>
+            <!-- footer -->
+            <rect x="0" y="298" width="640" height="62" fill="rgba(0,0,0,0.3)"/>
+            <rect x="32" y="316" width="120" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="32" y="330" width="80"  height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+            <!-- concept label -->
+            <rect x="506" y="308" width="110" height="26" rx="6" fill="rgba(205,168,93,0.15)" stroke="rgba(205,168,93,0.35)" stroke-width="0.8"/>
+            <text x="561" y="325" fill="#cda85d" font-size="9" font-family="Inter,system-ui,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.08em">CONCEPT</text>
+          </svg>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-wip">W realizacji</span>
+          <span class="tag-cat">Strona</span>
+          <span class="tag-cat">Growth</span>
+          <span class="tag-cat">Marketing</span>
+        </div>
+        <div class="case-marker">02</div>
+        <div class="row">
+          <div>
+            <h3>PrimeGym Rumia</h3>
+            <div class="role"><span>Rola:</span> Strategia, UX, web design, frontend, local SEO, funnel</div>
+          </div>
+          <div class="meta">Fitness / lokalny klient</div>
+        </div>
+        <p class="p work-desc">Warstwa marketingowo-sprzedażowa dla lokalnego klubu fitness przed systemem eFitness: premium landing pages, lokalne SEO, CTA do grafiku/karnetu/kontaktu, kąty Meta Ads oraz mapa zdarzeń analitycznych.</p>
+        <ul class="bullets">
+          <li>Premium positioning: fitness + lifestyle club (5:00–24:00, Kids Zone, Akademia Prime, wellness/sauna)</li>
+          <li>Landing pages i struktura lokalnego SEO</li>
+          <li>CTA path do grafiku, karnetu, kontaktu i eFitness</li>
+          <li>Audyt sygnałów publicznych, mapa konkurentów, kąty kampanii Meta Ads</li>
+          <li>Mapa zdarzeń analitycznych i plan trackingu konwersji</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">HTML/CSS</span>
+          <span class="pill">JS</span>
+          <span class="pill">Local SEO</span>
+          <span class="pill">Meta Ads</span>
+          <span class="pill">Analytics</span>
+        </div>
+        <div class="metricline"><b>Status:</b> demo strategiczne / w realizacji</div>
+        <div class="inline-actions">
+          <span class="btn disabled" aria-disabled="true">Demo — wkrótce</span>
+          <a class="btn" href="./contact.html" data-i18n="book_call">Umów call</a>
+        </div>
+      </article>
+
+      <!-- ── Case 03: Sudoku Premium ──────────────────────────────── -->
+      <article class="case-panel work-card reveal" data-cat="aplikacje">
+        <!-- Mobile app preview frame -->
+        <div class="preview-frame">
+          <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="Sudoku Premium — mobile app preview">
+            <defs>
+              <linearGradient id="sp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0d0e12"/>
+                <stop offset="100%" stop-color="#10131a"/>
+              </linearGradient>
+              <linearGradient id="sp-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7c3aed"/>
+                <stop offset="100%" stop-color="#a855f7"/>
+              </linearGradient>
+              <radialGradient id="sp-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="640" height="360" fill="url(#sp-bg)"/>
+            <!-- bg glow -->
+            <ellipse cx="320" cy="180" rx="260" ry="200" fill="url(#sp-glow)"/>
+
+            <!-- Phone frame -->
+            <rect x="210" y="16" width="160" height="328" rx="24" fill="#14161e" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+            <!-- screen area -->
+            <rect x="216" y="32" width="148" height="296" rx="18" fill="#0d0f17"/>
+            <!-- status bar -->
+            <rect x="252" y="38" width="56" height="5" rx="3" fill="rgba(255,255,255,0.15)"/>
+
+            <!-- App header -->
+            <rect x="216" y="50" width="148" height="28" fill="rgba(255,255,255,0.03)"/>
+            <rect x="228" y="57" width="70" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
+            <circle cx="350" cy="61" r="9" fill="rgba(124,58,237,0.25)" stroke="rgba(124,58,237,0.5)" stroke-width="0.8"/>
+
+            <!-- Sudoku grid (9x9 compressed) -->
+            <!-- Grid background -->
+            <rect x="220" y="84" width="140" height="140" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <!-- 9x9 cells, cell size ~15x15 with 0.5px gap, plus 3x3 box separators -->
+            <!-- Row by row — coloring: highlighted cells in purple, target in amber, normal transparent -->
+            <!-- Col lines -->
+            <line x1="235" y1="84" x2="235" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="250" y1="84" x2="250" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="265" y1="84" x2="265" y2="224" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+            <line x1="280" y1="84" x2="280" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="295" y1="84" x2="295" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="310" y1="84" x2="310" y2="224" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+            <line x1="325" y1="84" x2="325" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="340" y1="84" x2="340" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <!-- Row lines -->
+            <line x1="220" y1="99"  x2="360" y2="99"  stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="220" y1="114" x2="360" y2="114" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="220" y1="129" x2="360" y2="129" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+            <line x1="220" y1="144" x2="360" y2="144" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="220" y1="159" x2="360" y2="159" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="220" y1="174" x2="360" y2="174" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+            <line x1="220" y1="189" x2="360" y2="189" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <line x1="220" y1="204" x2="360" y2="204" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
+            <!-- highlighted pattern cells (X-Wing) -->
+            <rect x="221" y="85"  width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
+            <rect x="221" y="175" width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
+            <rect x="311" y="85"  width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
+            <rect x="311" y="175" width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
+            <!-- target cell (amber) -->
+            <rect x="251" y="145" width="14" height="14" rx="2" fill="rgba(205,168,93,0.30)" stroke="rgba(205,168,93,0.6)" stroke-width="0.8"/>
+            <!-- some numbers -->
+            <text x="227" y="96"  fill="rgba(255,255,255,0.7)" font-size="10" font-family="Inter,monospace">5</text>
+            <text x="242" y="111" fill="rgba(255,255,255,0.45)" font-size="10" font-family="Inter,monospace">3</text>
+            <text x="272" y="96"  fill="rgba(255,255,255,0.7)" font-size="10" font-family="Inter,monospace">8</text>
+            <text x="317" y="96"  fill="rgba(124,58,237,0.9)" font-size="10" font-family="Inter,monospace">2</text>
+            <text x="332" y="111" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Inter,monospace">9</text>
+            <text x="257" y="151" fill="rgba(205,168,93,0.9)" font-size="10" font-family="Inter,monospace">?</text>
+
+            <!-- Technique label -->
+            <rect x="224" y="232" width="112" height="16" rx="8" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.35)" stroke-width="0.7"/>
+            <text x="280" y="243" fill="#a78bfa" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.05em">X-WING PATTERN</text>
+
+            <!-- Stats strip -->
+            <rect x="222" y="254" width="36" height="28" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <rect x="263" y="254" width="36" height="28" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <rect x="304" y="254" width="36" height="28" rx="6" fill="rgba(52,211,153,0.1)" stroke="rgba(52,211,153,0.25)" stroke-width="0.6"/>
+            <text x="240" y="264" fill="rgba(255,255,255,0.5)" font-size="6" font-family="Inter,sans-serif" text-anchor="middle">ACC</text>
+            <text x="240" y="274" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">87%</text>
+            <text x="281" y="264" fill="rgba(255,255,255,0.5)" font-size="6" font-family="Inter,sans-serif" text-anchor="middle">TIME</text>
+            <text x="281" y="274" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">4:32</text>
+            <text x="322" y="264" fill="rgba(52,211,153,0.8)" font-size="6" font-family="Inter,sans-serif" text-anchor="middle">STREAK</text>
+            <text x="322" y="274" fill="#34d399" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">×12</text>
+
+            <!-- home button -->
+            <rect x="268" y="292" width="44" height="5" rx="3" fill="rgba(255,255,255,0.18)"/>
+
+            <!-- Left info panel -->
+            <rect x="16" y="40" width="172" height="280" rx="16" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
+            <rect x="28" y="56" width="80" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
+            <rect x="28" y="70" width="148" height="6" rx="2" fill="rgba(255,255,255,0.18)"/>
+            <rect x="28" y="82" width="130" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+            <!-- technique list -->
+            <rect x="28" y="100" width="6" height="6" rx="1" fill="rgba(124,58,237,0.7)"/>
+            <rect x="40" y="101" width="100" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="28" y="114" width="6" height="6" rx="1" fill="rgba(124,58,237,0.5)"/>
+            <rect x="40" y="115" width="80"  height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="28" y="128" width="6" height="6" rx="1" fill="rgba(124,58,237,0.5)"/>
+            <rect x="40" y="129" width="90"  height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="28" y="142" width="6" height="6" rx="1" fill="rgba(124,58,237,0.9)"/>
+            <rect x="40" y="143" width="64"  height="6" rx="2" fill="#a78bfa" opacity="0.8"/>
+            <rect x="110" y="141" width="38" height="9" rx="4" fill="rgba(124,58,237,0.2)" stroke="rgba(124,58,237,0.4)" stroke-width="0.6"/>
+            <rect x="28" y="162" width="148" height="1" fill="rgba(255,255,255,0.07)"/>
+            <!-- progress bar -->
+            <rect x="28" y="174" width="148" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
+            <rect x="28" y="174" width="96"  height="6" rx="3" fill="url(#sp-purple)"/>
+            <rect x="28" y="186" width="56" height="6" rx="2" fill="rgba(255,255,255,0.18)"/>
+            <rect x="120" y="186" width="56" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+
+            <!-- Right info panel — brand assets -->
+            <rect x="452" y="40" width="172" height="280" rx="16" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
+            <rect x="464" y="56" width="80" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
+            <!-- app icon placeholder -->
+            <rect x="464" y="74" width="56" height="56" rx="14" fill="rgba(124,58,237,0.18)" stroke="rgba(124,58,237,0.35)" stroke-width="0.8"/>
+            <text x="492" y="108" fill="#a78bfa" font-size="22" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">S</text>
+            <!-- asset list -->
+            <rect x="464" y="142" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="474" y="143" width="120" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="464" y="154" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="474" y="155" width="100" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="464" y="166" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="474" y="167" width="110" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="464" y="178" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
+            <rect x="474" y="179" width="86"  height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <!-- expo / rn badge -->
+            <rect x="464" y="198" width="148" height="1" fill="rgba(255,255,255,0.07)"/>
+            <rect x="464" y="210" width="56" height="18" rx="9" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.35)" stroke-width="0.7"/>
+            <text x="492" y="222" fill="#a78bfa" font-size="7.5" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">Expo RN</text>
+            <rect x="526" y="210" width="56" height="18" rx="9" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
+            <text x="554" y="222" fill="rgba(255,255,255,0.4)" font-size="7.5" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">TypeScript</text>
+
+            <!-- concept label -->
+            <rect x="458" y="286" width="110" height="20" rx="6" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.35)" stroke-width="0.8"/>
+            <text x="513" y="300" fill="#a78bfa" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.08em">WŁASNA APLIKACJA</text>
+          </svg>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-own">Projekt własny</span>
+          <span class="tag-cat">Aplikacja mobilna</span>
+          <span class="tag-cat">React Native</span>
+        </div>
+        <div class="case-marker">03</div>
+        <div class="row">
+          <div>
+            <h3>Sudoku Premium</h3>
+            <div class="role"><span>Rola:</span> Product design, React Native, trainer logic, UX, brand assets</div>
+          </div>
+          <div class="meta">Własny produkt / mobile app</div>
+        </div>
+        <p class="p work-desc">Mobilna aplikacja do nauki technik Sudoku przez strukturyzowane scenariusze, kolorowe nakładki i prowadzony feedback. Pattern Trainer trenuje m.in. Naked Single, Hidden Single, X-Wing, Swordfish, Y-Wing.</p>
+        <ul class="bullets">
+          <li>Pattern Trainer: pełna siatka 9×9, kandydaci, nakładki wizualne i focus cell</li>
+          <li>Scenariusze i walidacja technik (Naked/Hidden Single, Pair, X-Wing…)</li>
+          <li>Statystyki sesji: trafność, czas, streak, postęp</li>
+          <li>Premium SVG/PNG brand asset system (ikona, hero, social preview)</li>
+          <li>Expo / React Native, TypeScript, produkt we własnym repo</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">React Native</span>
+          <span class="pill">Expo</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Product UX</span>
+          <span class="pill">SVG assets</span>
+        </div>
+        <div class="metricline"><b>Status:</b> projekt własny / repozytorium aktywne</div>
+        <div class="inline-actions">
+          <a class="btn primary" href="https://github.com/querosdev/sudokupremium" target="_blank" rel="noopener noreferrer">Repo / GitHub</a>
+        </div>
+      </article>
+
+      <!-- ── Case 04: Trading Workstation ─────────────────────────── -->
+      <article class="case-panel work-card reveal" data-cat="systemy">
+        <!-- Dashboard preview frame -->
+        <div class="preview-frame">
+          <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="Trading Workstation — dashboard preview">
+            <defs>
+              <linearGradient id="tw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#080a0d"/>
+                <stop offset="100%" stop-color="#0d1117"/>
+              </linearGradient>
+              <linearGradient id="tw-chart" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.0"/>
+                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.22"/>
+              </linearGradient>
+              <linearGradient id="tw-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="360" fill="url(#tw-bg)"/>
+
+            <!-- sidebar -->
+            <rect x="0" y="0" width="52" height="360" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <circle cx="26" cy="22" r="8" fill="rgba(59,130,246,0.3)" stroke="rgba(59,130,246,0.5)" stroke-width="0.8"/>
+            <text x="26" y="26" fill="#93c5fd" font-size="9" font-family="Inter,monospace" font-weight="800" text-anchor="middle">W</text>
+            <rect x="14" y="50" width="24" height="24" rx="6" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.35)" stroke-width="0.6"/>
+            <rect x="14" y="82" width="24" height="24" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <rect x="14" y="114" width="24" height="24" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <rect x="14" y="146" width="24" height="24" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <!-- sidebar icons (abstract) -->
+            <rect x="19" y="58" width="14" height="2" rx="1" fill="rgba(59,130,246,0.8)"/>
+            <rect x="19" y="63" width="10" height="2" rx="1" fill="rgba(59,130,246,0.6)"/>
+            <rect x="19" y="68" width="12" height="2" rx="1" fill="rgba(59,130,246,0.6)"/>
+
+            <!-- topbar -->
+            <rect x="52" y="0" width="588" height="36" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+            <rect x="64"  y="12" width="120" height="10" rx="3" fill="rgba(255,255,255,0.35)"/>
+            <rect x="440" y="13" width="60" height="8" rx="4" fill="rgba(52,211,153,0.15)" stroke="rgba(52,211,153,0.35)" stroke-width="0.7"/>
+            <rect x="508" y="13" width="60" height="8" rx="4" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.35)" stroke-width="0.7"/>
+            <rect x="576" y="11" width="56" height="14" rx="7" fill="url(#tw-blue)"/>
+            <text x="604" y="21" fill="#fff" font-size="7" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">RUN SCAN</text>
+
+            <!-- main area: chart -->
+            <rect x="60" y="44" width="400" height="180" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.6"/>
+            <rect x="68" y="52" width="80" height="8" rx="2" fill="rgba(255,255,255,0.4)"/>
+            <rect x="68" y="64" width="120" height="6" rx="2" fill="rgba(255,255,255,0.18)"/>
+            <!-- chart area -->
+            <rect x="68" y="78" width="384" height="132" rx="6" fill="rgba(59,130,246,0.04)" stroke="rgba(59,130,246,0.12)" stroke-width="0.6"/>
+            <!-- chart fill -->
+            <polygon points="68,210 110,180 150,190 190,155 230,165 270,140 310,148 350,125 390,132 430,110 452,115 452,210" fill="url(#tw-chart)"/>
+            <!-- chart line -->
+            <polyline points="68,210 110,180 150,190 190,155 230,165 270,140 310,148 350,125 390,132 430,110 452,115" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- gridlines -->
+            <line x1="68" y1="145" x2="452" y2="145" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
+            <line x1="68" y1="165" x2="452" y2="165" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
+            <line x1="68" y1="185" x2="452" y2="185" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
+            <!-- current dot -->
+            <circle cx="430" cy="110" r="5" fill="#3b82f6" stroke="#0d1117" stroke-width="1.5"/>
+            <circle cx="430" cy="110" r="9" fill="rgba(59,130,246,0.2)"/>
+
+            <!-- right rail -->
+            <rect x="468" y="44" width="164" height="180" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.6"/>
+            <rect x="478" y="54" width="80" height="7" rx="2" fill="rgba(255,255,255,0.4)"/>
+            <!-- decision badge -->
+            <rect x="478" y="68" width="144" height="28" rx="8" fill="rgba(52,211,153,0.1)" stroke="rgba(52,211,153,0.3)" stroke-width="0.7"/>
+            <text x="550" y="82" fill="#34d399" font-size="9" font-family="Inter,monospace" font-weight="800" text-anchor="middle" letter-spacing="0.06em">QUALIFIED_WATCHLIST</text>
+            <!-- evidence rows -->
+            <rect x="478" y="104" width="144" height="1" fill="rgba(255,255,255,0.06)"/>
+            <rect x="478" y="112" width="90" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="578" y="112" width="44" height="6" rx="3" fill="rgba(52,211,153,0.2)"/>
+            <rect x="478" y="124" width="80" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="478" y="136" width="100" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="578" y="136" width="44" height="6" rx="3" fill="rgba(239,68,68,0.2)"/>
+            <rect x="478" y="148" width="70" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="478" y="166" width="144" height="1" fill="rgba(255,255,255,0.06)"/>
+            <!-- sample count -->
+            <rect x="478" y="174" width="60" height="7" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="544" y="174" width="30" height="7" rx="3" fill="rgba(59,130,246,0.25)"/>
+            <rect x="478" y="186" width="50" height="7" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <rect x="534" y="186" width="40" height="7" rx="3" fill="rgba(59,130,246,0.15)"/>
+            <rect x="478" y="200" width="80" height="7" rx="2" fill="rgba(255,255,255,0.1)"/>
+
+            <!-- bottom panel: diagnostics -->
+            <rect x="60" y="232" width="572" height="116" rx="10" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.05)" stroke-width="0.6"/>
+            <rect x="68" y="242" width="80" height="7" rx="2" fill="rgba(255,255,255,0.35)"/>
+            <!-- diagnostic log lines (monospace style) -->
+            <rect x="68" y="258" width="8" height="6" rx="1" fill="rgba(52,211,153,0.6)"/>
+            <rect x="82" y="258" width="200" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="290" y="258" width="80"  height="6" rx="2" fill="rgba(52,211,153,0.25)"/>
+            <rect x="68" y="270" width="8" height="6" rx="1" fill="rgba(59,130,246,0.6)"/>
+            <rect x="82" y="270" width="180" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <rect x="270" y="270" width="60"  height="6" rx="2" fill="rgba(59,130,246,0.25)"/>
+            <rect x="68" y="282" width="8" height="6" rx="1" fill="rgba(239,68,68,0.6)"/>
+            <rect x="82" y="282" width="160" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+            <rect x="250" y="282" width="50"  height="6" rx="2" fill="rgba(239,68,68,0.25)"/>
+            <rect x="68" y="294" width="8" height="6" rx="1" fill="rgba(52,211,153,0.6)"/>
+            <rect x="82" y="294" width="220" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <!-- bottom right: stack labels -->
+            <rect x="470" y="258" width="72" height="14" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <text x="506" y="269" fill="rgba(255,255,255,0.3)" font-size="7" font-family="IBM Plex Mono,monospace" text-anchor="middle">Space Grotesk</text>
+            <rect x="548" y="258" width="72" height="14" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <text x="584" y="269" fill="rgba(255,255,255,0.3)" font-size="7" font-family="IBM Plex Mono,monospace" text-anchor="middle">IBM Plex Mono</text>
+            <!-- system label -->
+            <rect x="470" y="280" width="152" height="24" rx="6" fill="rgba(99,170,255,0.1)" stroke="rgba(99,170,255,0.3)" stroke-width="0.8"/>
+            <text x="546" y="295" fill="#93c5fd" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.07em">SYSTEM WŁASNY</text>
+
+            <!-- font monospace caption bottom left -->
+            <text x="68" y="340" fill="rgba(255,255,255,0.12)" font-size="7" font-family="IBM Plex Mono,monospace">evidence › decision › diagnostics › frontend</text>
+          </svg>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-sys">System własny</span>
+          <span class="tag-cat">Dashboard</span>
+          <span class="tag-cat">Frontend</span>
+        </div>
+        <div class="case-marker">04</div>
+        <div class="row">
+          <div>
+            <h3>Trading Workstation</h3>
+            <div class="role"><span>Rola:</span> Frontend architecture, UX systems, dashboard design, backend integration</div>
+          </div>
+          <div class="meta">Dashboard / system prywatny</div>
+        </div>
+        <p class="p work-desc">Lokalny decision-support dashboard do konserwatywnej analizy: evidence retrieval, klasyfikacje (qualified_watchlist, weak_watchlist, no_trade), diagnostyki i przeprojektowanie UI na cockpit operacyjny.</p>
+        <ul class="bullets">
+          <li>Chart-first layout z prawym railem evidence i sample-count diagnostics</li>
+          <li>Decision classification UI z czytelną hierarchią statusów</li>
+          <li>Dark mode workstation/cockpit: Space Grotesk + IBM Plex Mono</li>
+          <li>Frontend refactor: DashboardView, RightRailSummary, ActionCard, PriceHistoryChart</li>
+          <li>Build/test-validated — nie jest to prezentacja wyników finansowych</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">React</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Dashboard UX</span>
+          <span class="pill">Dark mode</span>
+        </div>
+        <div class="metricline"><b>Status:</b> system prywatny / frontend zwalidowany testami</div>
+        <div class="inline-actions">
+          <span class="btn disabled" aria-disabled="true">Prywatne repozytorium</span>
+          <a class="btn" href="./contact.html">Zapytaj o zakres</a>
+        </div>
+      </article>
+
+    </div><!-- /grid-2 -->
+
+  </div><!-- /container -->
 </main>
 
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
     <div class="mini">
       <a href="./contact.html" data-i18n="email_short">E-mail</a>
       <a href="./privacy.html" data-nav="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
-      <a href="./legal.html" data-nav="legal" data-i18n="footer_legal">Prawa autorskie</a>
+      <a href="./legal.html"   data-nav="legal"    data-i18n="footer_legal">Prawa autorskie</a>
       <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
@@ -207,5 +716,27 @@
 </footer>
 
 <script src="./script.js"></script>
+<script>
+  // Filter logic — działa niezależnie od script.js
+  (function () {
+    const filters = document.querySelectorAll('.filter');
+    const cards   = document.querySelectorAll('#caseGrid article[data-cat]');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(f => { f.classList.remove('active'); f.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const val = btn.dataset.filter;
+        cards.forEach(card => {
+          const cats = card.dataset.cat || '';
+          const show = val === 'all' || cats.includes(val);
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
 </body>
 </html>

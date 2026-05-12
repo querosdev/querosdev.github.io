@@ -1,0 +1,9 @@
+priority;source_type;keyword;intent;location_modifier;funnel_stage;status;notes
+P0;assumption;siłownia rumia;local_transactional;Rumia;BOFU;do potwierdzenia;Fraza robocza do weryfikacji wolumenu i trudności
+P0;assumption;fitness rumia;local_transactional;Rumia;BOFU;do potwierdzenia;Fraza robocza
+P0;assumption;trener personalny rumia;local_transactional;Rumia;BOFU;do potwierdzenia;Fraza robocza
+P1;assumption;karnet na siłownię rumia;local_commercial;Rumia;MOFU;do potwierdzenia;Fraza robocza
+P1;assumption;zajęcia fitness rumia;local_commercial;Rumia;MOFU;do potwierdzenia;Fraza robocza
+P1;assumption;siłownia reda;local_transactional;Reda;MOFU;do potwierdzenia;Do oceny ekspansji lokalnej
+P2;assumption;jak zacząć ćwiczyć na siłowni;informational;brak;TOFU;do potwierdzenia;Temat blogowy edukacyjny
+P2;assumption;plan treningowy dla początkujących;informational;brak;TOFU;do potwierdzenia;Temat content marketing
