@@ -120,6 +120,92 @@
     /* Case grid tweaks */
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
     @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    /* Real project screenshots */
+    .preview-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .preview-frame.is-web {
+      background:
+        radial-gradient(420px 260px at 78% 8%, rgba(205,168,93,.14), transparent 64%),
+        #0b0c0e;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .preview-label {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(11,12,14,.72);
+      border: 1px solid rgba(205,168,93,.38);
+      color: #e6c97a;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+    .proof-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .sudoku-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.12fr) minmax(0, .9fr);
+      align-items: end;
+      gap: clamp(8px, 1.5vw, 16px);
+      padding: clamp(16px, 2.5vw, 28px) clamp(18px, 3vw, 34px) 0;
+      background:
+        radial-gradient(260px 180px at 52% 40%, rgba(205,168,93,.16), transparent 66%),
+        linear-gradient(135deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        #0f1114;
+    }
+    .phone-shot {
+      height: 86%;
+      min-height: 0;
+      overflow: hidden;
+      border-radius: 22px 22px 0 0;
+      background: #111318;
+      border: 1px solid rgba(205,168,93,.22);
+      box-shadow: 0 18px 48px rgba(0,0,0,.35);
+    }
+    .phone-shot.main {
+      height: 105%;
+      z-index: 1;
+      transform: translateY(10px);
+      border-color: rgba(205,168,93,.38);
+    }
+    .phone-shot.side {
+      transform: translateY(22px);
+      opacity: .88;
+    }
+    .phone-shot.muted {
+      opacity: .68;
+    }
+    .phone-shot img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+    }
+    @media (max-width: 520px) {
+      .sudoku-showcase {
+        grid-template-columns: .82fr 1.16fr;
+      }
+      .phone-shot.muted { display: none; }
+    }
   </style>
 </head>
 <body class="page-work">
@@ -178,6 +264,12 @@
         <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
         <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
         <a class="btn" href="./contact.html"  data-i18n="email_short">E-mail</a>
+      </div>
+      <div class="proof-strip" aria-label="Typy dowodów w portfolio">
+        <span class="tag-cat" data-work-i18n="proof_live">Live website</span>
+        <span class="tag-cat" data-work-i18n="proof_demo">Demo strategiczne</span>
+        <span class="tag-cat" data-work-i18n="proof_own">Projekt własny</span>
+        <span class="tag-cat" data-work-i18n="proof_private">System prywatny</span>
       </div>
     </div>
 
@@ -265,78 +357,12 @@
 
       <!-- ── Case 02: PrimeGym Rumia ──────────────────────────────── -->
       <article class="case-panel work-card reveal" data-cat="strony marketing">
-        <!-- Preview frame — intentional concept mockup -->
-        <div class="preview-frame">
-          <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="PrimeGym Rumia — concept preview">
-            <defs>
-              <linearGradient id="pg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0b0c0e"/>
-                <stop offset="100%" stop-color="#111318"/>
-              </linearGradient>
-              <linearGradient id="pg-gold" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#cda85d"/>
-                <stop offset="100%" stop-color="#e6c97a"/>
-              </linearGradient>
-              <radialGradient id="pg-glow" cx="70%" cy="20%" r="55%">
-                <stop offset="0%" stop-color="#cda85d" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="#cda85d" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <!-- bg -->
-            <rect width="640" height="360" fill="url(#pg-bg)"/>
-            <rect width="640" height="360" fill="url(#pg-glow)"/>
-            <!-- nav bar -->
-            <rect x="0" y="0" width="640" height="38" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
-            <circle cx="24" cy="19" r="5" fill="#cda85d" opacity="0.9"/>
-            <rect x="36" y="14" width="70" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
-            <rect x="400" y="13" width="36" height="10" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-            <rect x="444" y="13" width="36" height="10" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-            <rect x="488" y="13" width="36" height="10" rx="5" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-            <rect x="542" y="12" width="74" height="14" rx="7" fill="url(#pg-gold)"/>
-            <!-- hero section -->
-            <rect x="0" y="38" width="640" height="200" fill="rgba(255,255,255,0.01)"/>
-            <!-- kicker -->
-            <rect x="32" y="62" width="90" height="7" rx="2" fill="#cda85d" opacity="0.7"/>
-            <!-- headline lines -->
-            <rect x="32" y="78" width="320" height="18" rx="3" fill="rgba(255,255,255,0.7)"/>
-            <rect x="32" y="102" width="260" height="18" rx="3" fill="rgba(255,255,255,0.5)"/>
-            <!-- sub -->
-            <rect x="32" y="132" width="280" height="8" rx="2" fill="rgba(255,255,255,0.22)"/>
-            <rect x="32" y="146" width="240" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
-            <!-- CTAs -->
-            <rect x="32"  y="166" width="110" height="28" rx="14" fill="url(#pg-gold)"/>
-            <rect x="150" y="166" width="100" height="28" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="0.7"/>
-            <!-- right visual block -->
-            <rect x="420" y="50" width="190" height="180" rx="16" fill="rgba(205,168,93,0.07)" stroke="rgba(205,168,93,0.18)" stroke-width="0.8"/>
-            <rect x="432" y="64" width="166" height="80" rx="8" fill="rgba(255,255,255,0.04)"/>
-            <rect x="442" y="74" width="80" height="9" rx="2" fill="rgba(255,255,255,0.4)"/>
-            <rect x="442" y="89" width="120" height="7" rx="2" fill="rgba(255,255,255,0.2)"/>
-            <rect x="442" y="102" width="100" height="7" rx="2" fill="rgba(255,255,255,0.15)"/>
-            <!-- stat pills -->
-            <rect x="432" y="156" width="56" height="20" rx="10" fill="rgba(52,211,153,0.12)" stroke="rgba(52,211,153,0.3)" stroke-width="0.6"/>
-            <rect x="494" y="156" width="72" height="20" rx="10" fill="rgba(205,168,93,0.12)" stroke="rgba(205,168,93,0.3)" stroke-width="0.6"/>
-            <!-- hours badge -->
-            <rect x="432" y="183" width="60" height="14" rx="7" fill="rgba(205,168,93,0.18)" stroke="rgba(205,168,93,0.4)" stroke-width="0.6"/>
-            <rect x="498" y="183" width="80" height="14" rx="7" fill="rgba(255,255,255,0.04)"/>
-            <!-- services strip -->
-            <rect x="0" y="238" width="640" height="60" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
-            <rect x="32"  y="252" width="88" height="32" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
-            <rect x="130" y="252" width="88" height="32" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
-            <rect x="228" y="252" width="88" height="32" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
-            <rect x="326" y="252" width="88" height="32" rx="8" fill="rgba(205,168,93,0.08)" stroke="rgba(205,168,93,0.20)" stroke-width="0.6"/>
-            <!-- service labels -->
-            <rect x="46"  y="263" width="56" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
-            <rect x="144" y="263" width="56" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
-            <rect x="242" y="263" width="56" height="7" rx="2" fill="rgba(255,255,255,0.3)"/>
-            <rect x="340" y="263" width="62" height="7" rx="2" fill="rgba(205,168,93,0.8)"/>
-            <!-- footer -->
-            <rect x="0" y="298" width="640" height="62" fill="rgba(0,0,0,0.3)"/>
-            <rect x="32" y="316" width="120" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="32" y="330" width="80"  height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
-            <!-- concept label -->
-            <rect x="506" y="308" width="110" height="26" rx="6" fill="rgba(205,168,93,0.15)" stroke="rgba(205,168,93,0.35)" stroke-width="0.8"/>
-            <text x="561" y="325" fill="#cda85d" font-size="9" font-family="Inter,system-ui,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.08em">CONCEPT</text>
-          </svg>
+        <!-- Real screenshot — strategic concept, not a live deployment -->
+        <div class="preview-frame is-web">
+          <img src="./assets/work/primegym-rumia-desktop.webp"
+               alt="PrimeGym Rumia — screenshot koncepcji premium landing page"
+               loading="lazy" width="1600" height="899">
+          <span class="preview-label" data-work-i18n="prime_preview_label">Demo strategiczne</span>
         </div>
 
         <div class="work-tags">
@@ -351,7 +377,7 @@
             <h3>PrimeGym Rumia</h3>
             <div class="role"><span>Rola:</span> Strategia, UX, web design, frontend, local SEO, funnel</div>
           </div>
-          <div class="meta">Fitness / lokalny klient</div>
+          <div class="meta" data-work-i18n="prime_meta">Fitness / demo strategiczne</div>
         </div>
         <p class="p work-desc">Warstwa marketingowo-sprzedażowa dla lokalnego klubu fitness przed systemem eFitness: premium landing pages, lokalne SEO, CTA do grafiku/karnetu/kontaktu, kąty Meta Ads oraz mapa zdarzeń analitycznych.</p>
         <ul class="bullets">
@@ -365,155 +391,33 @@
           <span class="pill">HTML/CSS</span>
           <span class="pill">JS</span>
           <span class="pill">Local SEO</span>
-          <span class="pill">Meta Ads</span>
-          <span class="pill">Analytics</span>
+          <span class="pill" data-work-i18n="prime_stack_meta">Kąty Meta Ads</span>
+          <span class="pill" data-work-i18n="prime_stack_tracking">Plan trackingu</span>
         </div>
         <div class="metricline"><b>Status:</b> demo strategiczne / w realizacji</div>
         <div class="inline-actions">
-          <span class="btn disabled" aria-disabled="true">Demo — wkrótce</span>
+          <span class="btn disabled" aria-disabled="true" data-work-i18n="prime_demo_btn">Demo w realizacji</span>
           <a class="btn" href="./contact.html" data-i18n="book_call">Umów call</a>
         </div>
       </article>
 
       <!-- ── Case 03: Sudoku Premium ──────────────────────────────── -->
       <article class="case-panel work-card reveal" data-cat="aplikacje">
-        <!-- Mobile app preview frame -->
-        <div class="preview-frame">
-          <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="Sudoku Premium — mobile app preview">
-            <defs>
-              <linearGradient id="sp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0d0e12"/>
-                <stop offset="100%" stop-color="#10131a"/>
-              </linearGradient>
-              <linearGradient id="sp-purple" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7c3aed"/>
-                <stop offset="100%" stop-color="#a855f7"/>
-              </linearGradient>
-              <radialGradient id="sp-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="640" height="360" fill="url(#sp-bg)"/>
-            <!-- bg glow -->
-            <ellipse cx="320" cy="180" rx="260" ry="200" fill="url(#sp-glow)"/>
-
-            <!-- Phone frame -->
-            <rect x="210" y="16" width="160" height="328" rx="24" fill="#14161e" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
-            <!-- screen area -->
-            <rect x="216" y="32" width="148" height="296" rx="18" fill="#0d0f17"/>
-            <!-- status bar -->
-            <rect x="252" y="38" width="56" height="5" rx="3" fill="rgba(255,255,255,0.15)"/>
-
-            <!-- App header -->
-            <rect x="216" y="50" width="148" height="28" fill="rgba(255,255,255,0.03)"/>
-            <rect x="228" y="57" width="70" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
-            <circle cx="350" cy="61" r="9" fill="rgba(124,58,237,0.25)" stroke="rgba(124,58,237,0.5)" stroke-width="0.8"/>
-
-            <!-- Sudoku grid (9x9 compressed) -->
-            <!-- Grid background -->
-            <rect x="220" y="84" width="140" height="140" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
-            <!-- 9x9 cells, cell size ~15x15 with 0.5px gap, plus 3x3 box separators -->
-            <!-- Row by row — coloring: highlighted cells in purple, target in amber, normal transparent -->
-            <!-- Col lines -->
-            <line x1="235" y1="84" x2="235" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="250" y1="84" x2="250" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="265" y1="84" x2="265" y2="224" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-            <line x1="280" y1="84" x2="280" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="295" y1="84" x2="295" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="310" y1="84" x2="310" y2="224" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-            <line x1="325" y1="84" x2="325" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="340" y1="84" x2="340" y2="224" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <!-- Row lines -->
-            <line x1="220" y1="99"  x2="360" y2="99"  stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="220" y1="114" x2="360" y2="114" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="220" y1="129" x2="360" y2="129" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-            <line x1="220" y1="144" x2="360" y2="144" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="220" y1="159" x2="360" y2="159" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="220" y1="174" x2="360" y2="174" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-            <line x1="220" y1="189" x2="360" y2="189" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <line x1="220" y1="204" x2="360" y2="204" stroke="rgba(255,255,255,0.06)" stroke-width="0.4"/>
-            <!-- highlighted pattern cells (X-Wing) -->
-            <rect x="221" y="85"  width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
-            <rect x="221" y="175" width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
-            <rect x="311" y="85"  width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
-            <rect x="311" y="175" width="14" height="14" rx="2" fill="rgba(124,58,237,0.22)"/>
-            <!-- target cell (amber) -->
-            <rect x="251" y="145" width="14" height="14" rx="2" fill="rgba(205,168,93,0.30)" stroke="rgba(205,168,93,0.6)" stroke-width="0.8"/>
-            <!-- some numbers -->
-            <text x="227" y="96"  fill="rgba(255,255,255,0.7)" font-size="10" font-family="Inter,monospace">5</text>
-            <text x="242" y="111" fill="rgba(255,255,255,0.45)" font-size="10" font-family="Inter,monospace">3</text>
-            <text x="272" y="96"  fill="rgba(255,255,255,0.7)" font-size="10" font-family="Inter,monospace">8</text>
-            <text x="317" y="96"  fill="rgba(124,58,237,0.9)" font-size="10" font-family="Inter,monospace">2</text>
-            <text x="332" y="111" fill="rgba(255,255,255,0.7)" font-size="10" font-family="Inter,monospace">9</text>
-            <text x="257" y="151" fill="rgba(205,168,93,0.9)" font-size="10" font-family="Inter,monospace">?</text>
-
-            <!-- Technique label -->
-            <rect x="224" y="232" width="112" height="16" rx="8" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.35)" stroke-width="0.7"/>
-            <text x="280" y="243" fill="#a78bfa" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.05em">X-WING PATTERN</text>
-
-            <!-- Stats strip -->
-            <rect x="222" y="254" width="36" height="28" rx="6" fill="rgba(255,255,255,0.04)"/>
-            <rect x="263" y="254" width="36" height="28" rx="6" fill="rgba(255,255,255,0.04)"/>
-            <rect x="304" y="254" width="36" height="28" rx="6" fill="rgba(52,211,153,0.1)" stroke="rgba(52,211,153,0.25)" stroke-width="0.6"/>
-            <text x="240" y="264" fill="rgba(255,255,255,0.5)" font-size="6" font-family="Inter,sans-serif" text-anchor="middle">ACC</text>
-            <text x="240" y="274" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">87%</text>
-            <text x="281" y="264" fill="rgba(255,255,255,0.5)" font-size="6" font-family="Inter,sans-serif" text-anchor="middle">TIME</text>
-            <text x="281" y="274" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">4:32</text>
-            <text x="322" y="264" fill="rgba(52,211,153,0.8)" font-size="6" font-family="Inter,sans-serif" text-anchor="middle">STREAK</text>
-            <text x="322" y="274" fill="#34d399" font-size="9" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">×12</text>
-
-            <!-- home button -->
-            <rect x="268" y="292" width="44" height="5" rx="3" fill="rgba(255,255,255,0.18)"/>
-
-            <!-- Left info panel -->
-            <rect x="16" y="40" width="172" height="280" rx="16" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
-            <rect x="28" y="56" width="80" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
-            <rect x="28" y="70" width="148" height="6" rx="2" fill="rgba(255,255,255,0.18)"/>
-            <rect x="28" y="82" width="130" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
-            <!-- technique list -->
-            <rect x="28" y="100" width="6" height="6" rx="1" fill="rgba(124,58,237,0.7)"/>
-            <rect x="40" y="101" width="100" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
-            <rect x="28" y="114" width="6" height="6" rx="1" fill="rgba(124,58,237,0.5)"/>
-            <rect x="40" y="115" width="80"  height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
-            <rect x="28" y="128" width="6" height="6" rx="1" fill="rgba(124,58,237,0.5)"/>
-            <rect x="40" y="129" width="90"  height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
-            <rect x="28" y="142" width="6" height="6" rx="1" fill="rgba(124,58,237,0.9)"/>
-            <rect x="40" y="143" width="64"  height="6" rx="2" fill="#a78bfa" opacity="0.8"/>
-            <rect x="110" y="141" width="38" height="9" rx="4" fill="rgba(124,58,237,0.2)" stroke="rgba(124,58,237,0.4)" stroke-width="0.6"/>
-            <rect x="28" y="162" width="148" height="1" fill="rgba(255,255,255,0.07)"/>
-            <!-- progress bar -->
-            <rect x="28" y="174" width="148" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
-            <rect x="28" y="174" width="96"  height="6" rx="3" fill="url(#sp-purple)"/>
-            <rect x="28" y="186" width="56" height="6" rx="2" fill="rgba(255,255,255,0.18)"/>
-            <rect x="120" y="186" width="56" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
-
-            <!-- Right info panel — brand assets -->
-            <rect x="452" y="40" width="172" height="280" rx="16" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
-            <rect x="464" y="56" width="80" height="8" rx="2" fill="rgba(255,255,255,0.5)"/>
-            <!-- app icon placeholder -->
-            <rect x="464" y="74" width="56" height="56" rx="14" fill="rgba(124,58,237,0.18)" stroke="rgba(124,58,237,0.35)" stroke-width="0.8"/>
-            <text x="492" y="108" fill="#a78bfa" font-size="22" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">S</text>
-            <!-- asset list -->
-            <rect x="464" y="142" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
-            <rect x="474" y="143" width="120" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="464" y="154" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
-            <rect x="474" y="155" width="100" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="464" y="166" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
-            <rect x="474" y="167" width="110" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="464" y="178" width="5" height="5" rx="1" fill="rgba(255,255,255,0.3)"/>
-            <rect x="474" y="179" width="86"  height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <!-- expo / rn badge -->
-            <rect x="464" y="198" width="148" height="1" fill="rgba(255,255,255,0.07)"/>
-            <rect x="464" y="210" width="56" height="18" rx="9" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.35)" stroke-width="0.7"/>
-            <text x="492" y="222" fill="#a78bfa" font-size="7.5" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">Expo RN</text>
-            <rect x="526" y="210" width="56" height="18" rx="9" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
-            <text x="554" y="222" fill="rgba(255,255,255,0.4)" font-size="7.5" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">TypeScript</text>
-
-            <!-- concept label -->
-            <rect x="458" y="286" width="110" height="20" rx="6" fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.35)" stroke-width="0.8"/>
-            <text x="513" y="300" fill="#a78bfa" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.08em">WŁASNA APLIKACJA</text>
-          </svg>
+        <!-- Real app screens — selected views, framed for portfolio -->
+        <div class="preview-frame sudoku-showcase" aria-label="Sudoku Premium — wybrane ekrany aplikacji mobilnej">
+          <div class="phone-shot side">
+            <img src="./assets/work/sudoku-premium-challenges.webp"
+                 alt="Sudoku Premium — ekran Challenges" loading="lazy" width="472" height="1024">
+          </div>
+          <div class="phone-shot main">
+            <img src="./assets/work/sudoku-premium-home.webp"
+                 alt="Sudoku Premium — ekran Home i Daily Puzzle" loading="lazy" width="472" height="1024">
+          </div>
+          <div class="phone-shot side muted">
+            <img src="./assets/work/sudoku-premium-profile.webp"
+                 alt="Sudoku Premium — ekran Profile i Premium" loading="lazy" width="472" height="1024">
+          </div>
+          <span class="preview-label" data-work-i18n="sudoku_preview_label">Projekt własny</span>
         </div>
 
         <div class="work-tags">
@@ -590,7 +494,7 @@
             <rect x="440" y="13" width="60" height="8" rx="4" fill="rgba(52,211,153,0.15)" stroke="rgba(52,211,153,0.35)" stroke-width="0.7"/>
             <rect x="508" y="13" width="60" height="8" rx="4" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.35)" stroke-width="0.7"/>
             <rect x="576" y="11" width="56" height="14" rx="7" fill="url(#tw-blue)"/>
-            <text x="604" y="21" fill="#fff" font-size="7" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">RUN SCAN</text>
+            <text class="tw-svg-run-label" x="604" y="21" fill="#fff" font-size="7" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">SKANUJ</text>
 
             <!-- main area: chart -->
             <rect x="60" y="44" width="400" height="180" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.6"/>
@@ -615,7 +519,7 @@
             <rect x="478" y="54" width="80" height="7" rx="2" fill="rgba(255,255,255,0.4)"/>
             <!-- decision badge -->
             <rect x="478" y="68" width="144" height="28" rx="8" fill="rgba(52,211,153,0.1)" stroke="rgba(52,211,153,0.3)" stroke-width="0.7"/>
-            <text x="550" y="82" fill="#34d399" font-size="9" font-family="Inter,monospace" font-weight="800" text-anchor="middle" letter-spacing="0.06em">QUALIFIED_WATCHLIST</text>
+            <text class="tw-svg-decision-label" x="550" y="82" fill="#34d399" font-size="9" font-family="Inter,monospace" font-weight="800" text-anchor="middle" letter-spacing="0.04em">DO OBSERWACJI</text>
             <!-- evidence rows -->
             <rect x="478" y="104" width="144" height="1" fill="rgba(255,255,255,0.06)"/>
             <rect x="478" y="112" width="90" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
@@ -654,7 +558,7 @@
             <text x="584" y="269" fill="rgba(255,255,255,0.3)" font-size="7" font-family="IBM Plex Mono,monospace" text-anchor="middle">IBM Plex Mono</text>
             <!-- system label -->
             <rect x="470" y="280" width="152" height="24" rx="6" fill="rgba(99,170,255,0.1)" stroke="rgba(99,170,255,0.3)" stroke-width="0.8"/>
-            <text x="546" y="295" fill="#93c5fd" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.07em">SYSTEM WŁASNY</text>
+            <text class="tw-svg-system-label" x="546" y="295" fill="#93c5fd" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.07em">SYSTEM WŁASNY</text>
 
             <!-- font monospace caption bottom left -->
             <text x="68" y="340" fill="rgba(255,255,255,0.12)" font-size="7" font-family="IBM Plex Mono,monospace">evidence › decision › diagnostics › frontend</text>
@@ -738,5 +642,299 @@
     });
   })();
 </script>
+
+<script>
+  // Work page extra i18n for the newer portfolio case studies.
+  // script.js handles the global navigation; this handles text added after the original dictionary.
+  (function () {
+    const dict = {
+      pl: {
+        page_kicker: "Realizacje",
+        page_h1: "Realizacje",
+        page_p: "Strony, aplikacje i systemy — od live client website po własny produkt mobilny i dashboard operacyjny. Każda pozycja pokazuje problem, rolę i zakres bez overclaimingu.",
+        proof_live: "Live website",
+        proof_demo: "Demo strategiczne",
+        proof_own: "Projekt własny",
+        proof_private: "System prywatny",
+        filter_all: "Wszystkie",
+        filter_web: "Strony",
+        filter_apps: "Aplikacje",
+        filter_systems: "Systemy",
+        filter_marketing: "Marketing",
+
+        feature_status: "Live site",
+        feature_cat: "Strona",
+        feature_client: "Lokalny klient",
+        feature_kicker: "Publiczny case #01",
+        feature_title: "UndergroundGym.pl",
+        feature_desc: "Strona lokalnej siłowni 24/7: premium first impression, czytelna oferta, cennik, opinie i pełna ścieżka kontaktu — od wejścia próbnego po formularz i mapę.",
+        feature_li_1: "Oferta i CTA prowadzące bezpośrednio do wejścia próbnego.",
+        feature_li_2: "Responsywny układ desktop/mobile z mocną identyfikacją klubu.",
+        feature_li_3: "Zewnętrzne embed-y (mapa) schowane za zgodą — RODO-friendly.",
+        feature_li_4: "SEO basics i Core Web Vitals jako standard od startu.",
+        open_live: "Otwórz live site",
+
+        role_label: "Rola:",
+        proof_label: "Dowód:",
+        status_label: "Status:",
+        ask_scope: "Zapytaj o zakres",
+
+        ug_title: "UndergroundGym.pl",
+        ug_role: "UX + frontend + wdrożenie",
+        ug_meta: "Fitness / realny klient",
+        ug_desc: "Conversion-focused website dla siłowni 24/7. Oferta, cennik, opinie, formularz wejścia próbnego i kontakt z RODO-friendly embeds.",
+        ug_metric: "live site / realny klient / publiczny URL",
+
+        prime_preview_label: "Demo strategiczne",
+        prime_status: "W realizacji",
+        prime_cat_web: "Strona",
+        prime_cat_growth: "Growth",
+        prime_cat_mkt: "Marketing",
+        prime_title: "PrimeGym Rumia",
+        prime_role: "Strategia, UX, web design, frontend, local SEO, funnel",
+        prime_meta: "Fitness / demo strategiczne",
+        prime_desc: "Warstwa marketingowo-sprzedażowa dla lokalnego klubu fitness przed systemem eFitness: premium landing pages, lokalne SEO, CTA do grafiku/karnetu/kontaktu, kąty Meta Ads oraz mapa zdarzeń analitycznych.",
+        prime_li_1: "Premium positioning: fitness + lifestyle club (5:00–24:00, Kids Zone, Akademia Prime, wellness/sauna)",
+        prime_li_2: "Landing pages i struktura lokalnego SEO",
+        prime_li_3: "CTA path do grafiku, karnetu, kontaktu i eFitness",
+        prime_li_4: "Audyt sygnałów publicznych, mapa konkurentów, kąty kampanii Meta Ads",
+        prime_li_5: "Mapa zdarzeń analitycznych i plan trackingu konwersji",
+        prime_stack_meta: "Kąty Meta Ads",
+        prime_stack_tracking: "Plan trackingu",
+        prime_metric: "demo strategiczne / w realizacji",
+        prime_demo_btn: "Demo w realizacji",
+
+        sudoku_preview_label: "Projekt własny",
+        sudoku_status: "Projekt własny",
+        sudoku_cat_app: "Aplikacja mobilna",
+        sudoku_title: "Sudoku Premium",
+        sudoku_role: "Product design, React Native, trainer logic, UX, brand assets",
+        sudoku_meta: "Własny produkt / mobile app",
+        sudoku_desc: "Mobilna aplikacja do nauki technik Sudoku przez strukturyzowane scenariusze, kolorowe nakładki i prowadzony feedback. Pattern Trainer trenuje m.in. Naked Single, Hidden Single, X-Wing, Swordfish, Y-Wing.",
+        sudoku_li_1: "Pattern Trainer: pełna siatka 9×9, kandydaci, nakładki wizualne i focus cell",
+        sudoku_li_2: "Scenariusze i walidacja technik (Naked/Hidden Single, Pair, X-Wing…)",
+        sudoku_li_3: "Statystyki sesji: trafność, czas, streak, postęp",
+        sudoku_li_4: "Premium SVG/PNG brand asset system (ikona, hero, social preview)",
+        sudoku_li_5: "Expo / React Native, TypeScript, produkt we własnym repo",
+        sudoku_metric: "projekt własny / repozytorium aktywne",
+        repo_btn: "Repo / GitHub",
+
+        trading_status: "System własny",
+        trading_cat_dashboard: "Dashboard",
+        trading_cat_frontend: "Frontend",
+        trading_title: "Trading Workstation",
+        trading_role: "Frontend architecture, UX systems, dashboard design, backend integration",
+        trading_meta: "Dashboard / system prywatny",
+        trading_desc: "Lokalny decision-support dashboard do konserwatywnej analizy: evidence retrieval, klasyfikacje (qualified_watchlist, weak_watchlist, no_trade), diagnostyki i przeprojektowanie UI na cockpit operacyjny.",
+        trading_li_1: "Chart-first layout z prawym railem evidence i sample-count diagnostics",
+        trading_li_2: "Decision classification UI z czytelną hierarchią statusów",
+        trading_li_3: "Dark mode workstation/cockpit: Space Grotesk + IBM Plex Mono",
+        trading_li_4: "Frontend refactor: DashboardView, RightRailSummary, ActionCard, PriceHistoryChart",
+        trading_li_5: "Build/test-validated — nie jest to prezentacja wyników finansowych",
+        trading_metric: "system prywatny / frontend zwalidowany testami",
+        private_repo: "Prywatne repozytorium",
+        tw_svg_run: "SKANUJ",
+        tw_svg_decision: "DO OBSERWACJI",
+        tw_svg_system: "SYSTEM WŁASNY"
+      },
+      en: {
+        page_kicker: "Work",
+        page_h1: "Work",
+        page_p: "Websites, apps and systems — from a live client website to an own mobile product and an operational dashboard. Each item shows the problem, role and scope without overclaiming.",
+        proof_live: "Live website",
+        proof_demo: "Strategic demo",
+        proof_own: "Own product",
+        proof_private: "Private system",
+        filter_all: "All",
+        filter_web: "Websites",
+        filter_apps: "Apps",
+        filter_systems: "Systems",
+        filter_marketing: "Marketing",
+
+        feature_status: "Live site",
+        feature_cat: "Website",
+        feature_client: "Local client",
+        feature_kicker: "Public case #01",
+        feature_title: "UndergroundGym.pl",
+        feature_desc: "Website for a local 24/7 gym: premium first impression, clear offer, pricing, reviews and a full contact path — from trial entry to form and map.",
+        feature_li_1: "Offer and CTAs leading directly to trial entry.",
+        feature_li_2: "Responsive desktop/mobile layout with a strong club identity.",
+        feature_li_3: "External embeds (map) gated behind consent — GDPR-friendly.",
+        feature_li_4: "SEO basics and Core Web Vitals treated as a launch standard.",
+        open_live: "Open live site",
+
+        role_label: "Role:",
+        proof_label: "Proof:",
+        status_label: "Status:",
+        ask_scope: "Ask about scope",
+
+        ug_title: "UndergroundGym.pl",
+        ug_role: "UX + frontend + delivery",
+        ug_meta: "Fitness / real client",
+        ug_desc: "Conversion-focused website for a 24/7 gym. Offer, pricing, reviews, trial-entry form and contact path with GDPR-friendly embeds.",
+        ug_metric: "live site / real client / public URL",
+
+        prime_preview_label: "Strategic demo",
+        prime_status: "In progress",
+        prime_cat_web: "Website",
+        prime_cat_growth: "Growth",
+        prime_cat_mkt: "Marketing",
+        prime_title: "PrimeGym Rumia",
+        prime_role: "Strategy, UX, web design, frontend, local SEO, funnel",
+        prime_meta: "Fitness / strategic demo",
+        prime_desc: "Marketing-sales layer for a local fitness club before the eFitness system: premium landing pages, local SEO, CTA paths to schedule/pass/contact, Meta Ads angles and analytics event map.",
+        prime_li_1: "Premium positioning: fitness + lifestyle club (5:00–24:00, Kids Zone, Akademia Prime, wellness/sauna)",
+        prime_li_2: "Landing pages and local SEO structure",
+        prime_li_3: "CTA path to schedule, pass, contact and eFitness",
+        prime_li_4: "Public signal audit, competitor map and Meta Ads campaign angles",
+        prime_li_5: "Analytics event map and conversion tracking plan",
+        prime_stack_meta: "Meta Ads angles",
+        prime_stack_tracking: "Tracking plan",
+        prime_metric: "strategic demo / in progress",
+        prime_demo_btn: "Demo in progress",
+
+        sudoku_preview_label: "Own product",
+        sudoku_status: "Own product",
+        sudoku_cat_app: "Mobile app",
+        sudoku_title: "Sudoku Premium",
+        sudoku_role: "Product design, React Native, trainer logic, UX, brand assets",
+        sudoku_meta: "Own product / mobile app",
+        sudoku_desc: "Mobile app for learning Sudoku techniques through structured scenarios, visual overlays and guided feedback. Pattern Trainer covers techniques such as Naked Single, Hidden Single, X-Wing, Swordfish and Y-Wing.",
+        sudoku_li_1: "Pattern Trainer: full 9×9 grid, candidates, visual overlays and focus cell",
+        sudoku_li_2: "Technique scenarios and validation (Naked/Hidden Single, Pair, X-Wing…)",
+        sudoku_li_3: "Session stats: accuracy, time, streak, progress",
+        sudoku_li_4: "Premium SVG/PNG brand asset system (icon, hero, social preview)",
+        sudoku_li_5: "Expo / React Native, TypeScript, own product repository",
+        sudoku_metric: "own product / active repository",
+        repo_btn: "Repo / GitHub",
+
+        trading_status: "Private system",
+        trading_cat_dashboard: "Dashboard",
+        trading_cat_frontend: "Frontend",
+        trading_title: "Trading Workstation",
+        trading_role: "Frontend architecture, UX systems, dashboard design, backend integration",
+        trading_meta: "Dashboard / private system",
+        trading_desc: "Local decision-support dashboard for conservative analysis: evidence retrieval, classifications (qualified_watchlist, weak_watchlist, no_trade), diagnostics and a workstation/cockpit UI redesign.",
+        trading_li_1: "Chart-first layout with right-rail evidence and sample-count diagnostics",
+        trading_li_2: "Decision classification UI with clear status hierarchy",
+        trading_li_3: "Dark workstation/cockpit feel: Space Grotesk + IBM Plex Mono",
+        trading_li_4: "Frontend refactor: DashboardView, RightRailSummary, ActionCard, PriceHistoryChart",
+        trading_li_5: "Build/test validated — not a presentation of financial results",
+        trading_metric: "private system / frontend validated with tests",
+        private_repo: "Private repository",
+        tw_svg_run: "RUN SCAN",
+        tw_svg_decision: "QUALIFIED WATCHLIST",
+        tw_svg_system: "PRIVATE SYSTEM"
+      }
+    };
+
+    const setText = (selector, value) => {
+      const el = document.querySelector(selector);
+      if (el && value !== undefined) el.textContent = value;
+    };
+    const setAll = (selector, values) => {
+      document.querySelectorAll(selector).forEach((el, i) => {
+        if (values[i] !== undefined) el.textContent = values[i];
+      });
+    };
+    const setRole = (selector, label, value) => {
+      const el = document.querySelector(selector);
+      if (el) el.innerHTML = `<span>${label}</span> ${value}`;
+    };
+
+    function detectLang() {
+      const navHome = document.querySelector('[data-i18n="nav_home"]')?.textContent?.trim().toLowerCase();
+      if (navHome === "home") return "en";
+      const htmlLang = document.documentElement.lang;
+      if (htmlLang === "en" || htmlLang === "pl") return htmlLang;
+      return "pl";
+    }
+
+    function applyWorkLang(lang) {
+      const t = dict[lang] || dict.pl;
+      document.documentElement.lang = lang;
+
+      setText('.title .kicker', t.page_kicker);
+      setText('.title .h1', t.page_h1);
+      setText('.title .sub', t.page_p);
+      setAll('.proof-strip .tag-cat', [t.proof_live, t.proof_demo, t.proof_own, t.proof_private]);
+
+      setAll('.filters .filter', [t.filter_all, t.filter_web, t.filter_apps, t.filter_systems, t.filter_marketing]);
+
+      setAll('.work-feature .work-tags span', [t.feature_status, t.feature_cat, t.feature_client]);
+      setText('.work-feature .kicker', t.feature_kicker);
+      setText('.work-feature .h2', t.feature_title);
+      setText('.work-feature .sub', t.feature_desc);
+      setAll('.work-feature .proof-list li', [t.feature_li_1, t.feature_li_2, t.feature_li_3, t.feature_li_4]);
+      setText('.work-feature .inline-actions .btn.primary', t.open_live);
+
+      const cards = document.querySelectorAll('#caseGrid article.work-card');
+
+      if (cards[0]) {
+        const c = cards[0];
+        c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.feature_status, t.feature_cat][i] && (el.textContent = [t.feature_status, t.feature_cat][i]); });
+        c.querySelector('h3').textContent = t.ug_title;
+        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.ug_role}`;
+        c.querySelector('.meta').textContent = t.ug_meta;
+        c.querySelector('.work-desc').textContent = t.ug_desc;
+        c.querySelector('.metricline').innerHTML = `<b>${t.proof_label}</b> ${t.ug_metric}`;
+        c.querySelector('.inline-actions .btn.primary').textContent = t.open_live;
+      }
+
+      if (cards[1]) {
+        const c = cards[1];
+        c.querySelector('.preview-label').textContent = t.prime_preview_label;
+        c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.prime_status, t.prime_cat_web, t.prime_cat_growth, t.prime_cat_mkt][i] && (el.textContent = [t.prime_status, t.prime_cat_web, t.prime_cat_growth, t.prime_cat_mkt][i]); });
+        c.querySelector('h3').textContent = t.prime_title;
+        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.prime_role}`;
+        c.querySelector('.meta').textContent = t.prime_meta;
+        c.querySelector('.work-desc').textContent = t.prime_desc;
+        setAll('#caseGrid article:nth-of-type(2) .bullets li', [t.prime_li_1, t.prime_li_2, t.prime_li_3, t.prime_li_4, t.prime_li_5]);
+        const pills = c.querySelectorAll('.stack .pill');
+        if (pills[3]) pills[3].textContent = t.prime_stack_meta;
+        if (pills[4]) pills[4].textContent = t.prime_stack_tracking;
+        c.querySelector('.metricline').innerHTML = `<b>${t.status_label}</b> ${t.prime_metric}`;
+        c.querySelector('.inline-actions .btn.disabled').textContent = t.prime_demo_btn;
+      }
+
+      if (cards[2]) {
+        const c = cards[2];
+        c.querySelector('.preview-label').textContent = t.sudoku_preview_label;
+        c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.sudoku_status, t.sudoku_cat_app, 'React Native'][i] && (el.textContent = [t.sudoku_status, t.sudoku_cat_app, 'React Native'][i]); });
+        c.querySelector('h3').textContent = t.sudoku_title;
+        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.sudoku_role}`;
+        c.querySelector('.meta').textContent = t.sudoku_meta;
+        c.querySelector('.work-desc').textContent = t.sudoku_desc;
+        setAll('#caseGrid article:nth-of-type(3) .bullets li', [t.sudoku_li_1, t.sudoku_li_2, t.sudoku_li_3, t.sudoku_li_4, t.sudoku_li_5]);
+        c.querySelector('.metricline').innerHTML = `<b>${t.status_label}</b> ${t.sudoku_metric}`;
+        c.querySelector('.inline-actions .btn.primary').textContent = t.repo_btn;
+      }
+
+      if (cards[3]) {
+        const c = cards[3];
+        c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.trading_status, t.trading_cat_dashboard, t.trading_cat_frontend][i] && (el.textContent = [t.trading_status, t.trading_cat_dashboard, t.trading_cat_frontend][i]); });
+        c.querySelector('h3').textContent = t.trading_title;
+        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.trading_role}`;
+        c.querySelector('.meta').textContent = t.trading_meta;
+        c.querySelector('.work-desc').textContent = t.trading_desc;
+        setAll('#caseGrid article:nth-of-type(4) .bullets li', [t.trading_li_1, t.trading_li_2, t.trading_li_3, t.trading_li_4, t.trading_li_5]);
+        c.querySelector('.metricline').innerHTML = `<b>${t.status_label}</b> ${t.trading_metric}`;
+        c.querySelector('.inline-actions .btn.disabled').textContent = t.private_repo;
+        const ask = c.querySelector('.inline-actions .btn:not(.disabled)');
+        if (ask) ask.textContent = t.ask_scope;
+        c.querySelector('.tw-svg-run-label')?.replaceChildren(document.createTextNode(t.tw_svg_run));
+        c.querySelector('.tw-svg-decision-label')?.replaceChildren(document.createTextNode(t.tw_svg_decision));
+        c.querySelector('.tw-svg-system-label')?.replaceChildren(document.createTextNode(t.tw_svg_system));
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => applyWorkLang(detectLang()), 0);
+      document.getElementById("langPL")?.addEventListener("click", () => setTimeout(() => applyWorkLang("pl"), 0));
+      document.getElementById("langEN")?.addEventListener("click", () => setTimeout(() => applyWorkLang("en"), 0));
+    });
+  })();
+</script>
+
 </body>
 </html>
