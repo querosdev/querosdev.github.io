@@ -1,9 +1,0 @@
-priority;source_type;question_category;question;why_it_matters;blocking_level
-P0;client_needed;Budżet;Jaki jest miesięczny budżet reklamowy per kanał (Meta, Google, inne)?;Bez budżetu nie da się ustalić skali i prognozy działań;wysoki
-P0;client_needed;Konwersja;Jak definiujecie lead jakościowy i kiedy jest uznany za sprzedaż?;Wpływa na KPI i optymalizację kampanii;wysoki
-P0;client_needed;Oferta;Która usługa ma najwyższy priorytet sprzedażowy w najbliższych 3 miesiącach?;Pozwala dobrać strukturę kampanii i LP;wysoki
-P1;client_needed;Historia działań;Jakie kampanie były prowadzone wcześniej i jakie były wnioski?;Unikamy powielania nieskutecznych działań;średni
-P1;client_needed;Obsługa leadów;Kto i w jakim czasie odpowiada na leady (SLA)?;Czas reakcji mocno wpływa na domykanie sprzedaży;średni
-P1;client_needed;Zasoby;Czy dostępne są zdjęcia/video oraz zgody wizerunkowe do reklam?;Wpływa na tempo produkcji kreacji;średni
-P2;client_needed;Promocje;Jakie promocje są możliwe formalnie i marżowo?;Pozwala planować komunikację ofert specjalnych;niski
-P2;client_needed;CRM/raportowanie;Z jakiego systemu CRM/rejestracji korzystacie?;Ułatwia domknięcie analityki end-to-end;niski

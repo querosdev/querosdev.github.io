@@ -1,5 +1,0 @@
-priority;source_type;lp_name;lp_goal;primary_audience;primary_cta;required_sections;measurement;status
-P0;client_needed;Karnet próbny;Lead - formularz;Nowi użytkownicy;Umów darmowy trening próbny;Cennik skrócony|Opinie|FAQ|Mapa dojazdu;Form submit + click-to-call + click-to-map;do potwierdzenia
-P0;client_needed;Trening personalny;Lead - konsultacja;Osoby początkujące i wracające;Umów konsultację;Sylwetki trenerów|Case studies|Pakiety cenowe;Form submit + click WhatsApp/telefon;do potwierdzenia
-P1;client_needed;Zajęcia grupowe;Rezerwacja wejścia;Kobiety 20-45;Sprawdź grafik i zarezerwuj;Grafik|Poziomy trudności|Regulamin;Click grafik + form submit;do potwierdzenia
-P2;assumption;Strefa dla dzieci;Zapytanie o ofertę;Rodzice;Zapytaj o zajęcia;Opis bezpieczeństwa|Harmonogram|FAQ;Form submit;do potwierdzenia

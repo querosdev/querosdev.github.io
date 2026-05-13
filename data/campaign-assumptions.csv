@@ -1,9 +1,0 @@
-priority;source_type;area;assumption;status;notes
-P0;client_needed;budget_miesieczny;do potwierdzenia;do potwierdzenia;Brak danych o budżecie reklamowym (Meta/Google)
-P0;client_needed;cel_glowny;do potwierdzenia;do potwierdzenia;Czy celem jest lead, telefon, wizyta próbna czy sprzedaż karnetu online
-P0;client_needed;oferta_flagowa;do potwierdzenia;do potwierdzenia;Które usługi mają priorytet: siłownia, fitness, trening personalny, zajęcia dla dzieci
-P1;assumption;target_geo;Rumia + okolice do 15 km;do potwierdzenia;Założenie robocze do planowania kampanii lokalnych
-P1;client_needed;sezonowosc;do potwierdzenia;do potwierdzenia;Potrzebne miesiące szczytu i niższego popytu
-P1;client_needed;grupy_docelowe;do potwierdzenia;do potwierdzenia;Wiek, płeć, poziom zaawansowania, motywacja
-P2;assumption;godziny_kontaktu;Pon-Pt 08:00-20:00;do potwierdzenia;Robocze okno obsługi leadów
-P2;client_needed;kpi;do potwierdzenia;do potwierdzenia;Np. CPL, liczba leadów, koszt wizyty próbnej
