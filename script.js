@@ -943,7 +943,7 @@
   const open = $("#openCalendarLink");
 
   const calLink = (host.getAttribute("data-cal-link") || "quero/15min").replace(/^\//, "");
-  const namespace = (host.getAttribute("data-cal-namespace") || "secret").trim() || "secret";
+  const namespace = (host.getAttribute("data-cal-namespace") || "queroBooking").trim() || "queroBooking";
   const openHref = `https://app.cal.eu/${calLink}`;
 
   if (open) open.setAttribute("href", openHref);

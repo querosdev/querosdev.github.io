@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.eu; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://app.cal.eu https://api.cal.com https://cal.com; frame-src https://app.cal.eu https://cal.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#0b0c0e" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,8 +104,8 @@
     </div>
   </div>
 <div id="calInlineEmbed"
-       data-cal-link="quero/15min" 
-       data-cal-namespace="secret" 
+       data-cal-link="quero/15min"
+       data-cal-namespace="queroBooking"
         class="cal-embed"
        hidden>
   </div>

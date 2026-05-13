@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.eu; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://app.cal.eu https://api.cal.com https://cal.com; frame-src https://app.cal.eu https://cal.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#0b0c0e" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -779,9 +781,11 @@
         if (values[i] !== undefined) el.textContent = values[i];
       });
     };
-    const setRole = (selector, label, value) => {
-      const el = document.querySelector(selector);
-      if (el) el.innerHTML = `<span>${label}</span> ${value}`;
+    const setLabeledText = (el, tagName, label, value) => {
+      if (!el) return;
+      const labelEl = document.createElement(tagName);
+      labelEl.textContent = label;
+      el.replaceChildren(labelEl, document.createTextNode(` ${value}`));
     };
 
     function detectLang() {
@@ -816,10 +820,10 @@
         const c = cards[0];
         c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.feature_status, t.feature_cat][i] && (el.textContent = [t.feature_status, t.feature_cat][i]); });
         c.querySelector('h3').textContent = t.ug_title;
-        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.ug_role}`;
+        setLabeledText(c.querySelector('.role'), "span", t.role_label, t.ug_role);
         c.querySelector('.meta').textContent = t.ug_meta;
         c.querySelector('.work-desc').textContent = t.ug_desc;
-        c.querySelector('.metricline').innerHTML = `<b>${t.proof_label}</b> ${t.ug_metric}`;
+        setLabeledText(c.querySelector('.metricline'), "b", t.proof_label, t.ug_metric);
         c.querySelector('.inline-actions .btn.primary').textContent = t.open_live;
       }
 
@@ -828,14 +832,14 @@
         c.querySelector('.preview-label').textContent = t.prime_preview_label;
         c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.prime_status, t.prime_cat_web, t.prime_cat_growth, t.prime_cat_mkt][i] && (el.textContent = [t.prime_status, t.prime_cat_web, t.prime_cat_growth, t.prime_cat_mkt][i]); });
         c.querySelector('h3').textContent = t.prime_title;
-        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.prime_role}`;
+        setLabeledText(c.querySelector('.role'), "span", t.role_label, t.prime_role);
         c.querySelector('.meta').textContent = t.prime_meta;
         c.querySelector('.work-desc').textContent = t.prime_desc;
         setAll('#caseGrid article:nth-of-type(2) .bullets li', [t.prime_li_1, t.prime_li_2, t.prime_li_3, t.prime_li_4, t.prime_li_5]);
         const pills = c.querySelectorAll('.stack .pill');
         if (pills[3]) pills[3].textContent = t.prime_stack_meta;
         if (pills[4]) pills[4].textContent = t.prime_stack_tracking;
-        c.querySelector('.metricline').innerHTML = `<b>${t.status_label}</b> ${t.prime_metric}`;
+        setLabeledText(c.querySelector('.metricline'), "b", t.status_label, t.prime_metric);
         c.querySelector('.inline-actions .btn.disabled').textContent = t.prime_demo_btn;
       }
 
@@ -844,11 +848,11 @@
         c.querySelector('.preview-label').textContent = t.sudoku_preview_label;
         c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.sudoku_status, t.sudoku_cat_app, 'React Native'][i] && (el.textContent = [t.sudoku_status, t.sudoku_cat_app, 'React Native'][i]); });
         c.querySelector('h3').textContent = t.sudoku_title;
-        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.sudoku_role}`;
+        setLabeledText(c.querySelector('.role'), "span", t.role_label, t.sudoku_role);
         c.querySelector('.meta').textContent = t.sudoku_meta;
         c.querySelector('.work-desc').textContent = t.sudoku_desc;
         setAll('#caseGrid article:nth-of-type(3) .bullets li', [t.sudoku_li_1, t.sudoku_li_2, t.sudoku_li_3, t.sudoku_li_4, t.sudoku_li_5]);
-        c.querySelector('.metricline').innerHTML = `<b>${t.status_label}</b> ${t.sudoku_metric}`;
+        setLabeledText(c.querySelector('.metricline'), "b", t.status_label, t.sudoku_metric);
         c.querySelector('.inline-actions .btn.primary').textContent = t.repo_btn;
       }
 
@@ -856,11 +860,11 @@
         const c = cards[3];
         c.querySelectorAll('.work-tags span').forEach((el, i) => { [t.trading_status, t.trading_cat_dashboard, t.trading_cat_frontend][i] && (el.textContent = [t.trading_status, t.trading_cat_dashboard, t.trading_cat_frontend][i]); });
         c.querySelector('h3').textContent = t.trading_title;
-        c.querySelector('.role').innerHTML = `<span>${t.role_label}</span> ${t.trading_role}`;
+        setLabeledText(c.querySelector('.role'), "span", t.role_label, t.trading_role);
         c.querySelector('.meta').textContent = t.trading_meta;
         c.querySelector('.work-desc').textContent = t.trading_desc;
         setAll('#caseGrid article:nth-of-type(4) .bullets li', [t.trading_li_1, t.trading_li_2, t.trading_li_3, t.trading_li_4, t.trading_li_5]);
-        c.querySelector('.metricline').innerHTML = `<b>${t.status_label}</b> ${t.trading_metric}`;
+        setLabeledText(c.querySelector('.metricline'), "b", t.status_label, t.trading_metric);
         c.querySelector('.inline-actions .btn.disabled').textContent = t.private_repo;
         const ask = c.querySelector('.inline-actions .btn:not(.disabled)');
         if (ask) ask.textContent = t.ask_scope;
