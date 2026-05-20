@@ -12,16 +12,16 @@
   <link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://querosdev.github.io/" />
   <link rel="stylesheet" href="./style.css" />
-  <title>Nikodem Kustusz Studio — Websites, apps and growth systems</title>
+  <title>Nikodem Kustusz Studio — Strony, panele i lead flow</title>
   <meta name="description" content="Portfolio Nikodema Kustusza: UndergroundGym.pl live, PrimeGym Rumia strategic demo, Sudoku Premium mobile app and private dashboard systems." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Nikodem Kustusz Studio" />
-  <meta property="og:title" content="Nikodem Kustusz Studio — websites, apps and growth systems" />
+  <meta property="og:title" content="Nikodem Kustusz Studio — websites, panels and lead flows" />
   <meta property="og:description" content="Selected work: live client website, strategic fitness website demo, own mobile app and private system interfaces." />
   <meta property="og:url" content="https://querosdev.github.io/" />
   <meta property="og:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nikodem Kustusz Studio — websites, apps and growth systems" />
+  <meta name="twitter:title" content="Nikodem Kustusz Studio — websites, panels and lead flows" />
   <meta name="twitter:description" content="Selected work: live client website, strategic fitness website demo, own mobile app and private system interfaces." />
   <meta name="twitter:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
 
@@ -118,8 +118,37 @@
       line-height: 1.55;
     }
 
+    .home-trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+      max-width: 680px;
+    }
+
+    .home-trust-item {
+      padding: 12px 13px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .home-trust-item b {
+      display: block;
+      margin-bottom: 4px;
+      color: rgba(242,241,238,.9);
+      font-size: .82rem;
+    }
+
+    .home-trust-item span {
+      color: rgba(242,241,238,.58);
+      font-size: .82rem;
+      line-height: 1.4;
+    }
+
     @media (max-width: 620px) {
       .home-proof-row { grid-template-columns: 1fr; gap: 5px; }
+      .home-trust-strip { grid-template-columns: 1fr; }
     }
 
     .home-hero-showcase {
@@ -401,14 +430,14 @@
     <section class="home-hero-clean">
       <div class="home-hero-copy reveal" data-reveal-order="2">
         <div class="home-eyebrow-row">
-          <span class="home-proof-pill green" data-home-i18n="hero_pill_1">Live work</span>
-          <span class="home-proof-pill gold" data-home-i18n="hero_pill_2">Local business</span>
-          <span class="home-proof-pill" data-home-i18n="hero_pill_3">Apps & systems</span>
+          <span class="home-proof-pill green" data-home-i18n="hero_pill_1">Publiczny case</span>
+          <span class="home-proof-pill gold" data-home-i18n="hero_pill_2">Jasny zakres</span>
+          <span class="home-proof-pill" data-home-i18n="hero_pill_3">Web + systemy</span>
         </div>
 
         <div class="kicker" data-i18n="hero_kicker">Partner dla firm</div>
-        <h1 class="h1" data-home-i18n="home_h1">Buduję strony, aplikacje i systemy growth z realnym proofem.</h1>
-        <p class="sub" data-home-i18n="home_p">Portfolio oparte na konkretnych realizacjach: live strona dla siłowni, strategiczny koncept PrimeGym, własna aplikacja Sudoku Premium i prywatne systemy dashboardowe.</p>
+        <h1 class="h1" data-home-i18n="home_h1">Projektuję strony i systemy, które ułatwiają firmom zdobywanie zapytań.</h1>
+        <p class="sub" data-home-i18n="home_p">Łączę strukturę oferty, UI, frontend i wdrożenie. Zobacz publiczną stronę UndergroundGym.pl oraz wybrane koncepcje i produkty własne.</p>
 
         <div class="home-hero-actions">
           <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
@@ -418,15 +447,29 @@
         <div class="home-proof-grid">
           <div class="home-proof-row">
             <b data-home-i18n="proof_a_label">Web</b>
-            <span data-home-i18n="proof_a_text">Landing pages, strony firmowe, lokalne SEO, CTA i wdrożenie.</span>
+            <span data-home-i18n="proof_a_text">Strony firmowe z ofertą, CTA, lokalnym SEO i wdrożeniem.</span>
           </div>
           <div class="home-proof-row">
-            <b data-home-i18n="proof_b_label">Product</b>
-            <span data-home-i18n="proof_b_text">Aplikacje, pattern trainer, UX produktu i assety brandowe.</span>
+            <b data-home-i18n="proof_b_label">Produkt</b>
+            <span data-home-i18n="proof_b_text">Aplikacje i prototypy pokazujące UX, logikę i assety brandowe.</span>
           </div>
           <div class="home-proof-row">
-            <b data-home-i18n="proof_c_label">Systems</b>
-            <span data-home-i18n="proof_c_text">Dashboardy, automatyzacje, evidence layer i workflow.</span>
+            <b data-home-i18n="proof_c_label">Proces</b>
+            <span data-home-i18n="proof_c_text">Dashboardy i flow pracy projektowane pod porządek, status i decyzje.</span>
+          </div>
+        </div>
+        <div class="home-trust-strip" aria-label="Standard współpracy">
+          <div class="home-trust-item">
+            <b data-home-i18n="trust_1_title">Plan przed buildem</b>
+            <span data-home-i18n="trust_1_text">Najpierw cel, zakres i priorytety.</span>
+          </div>
+          <div class="home-trust-item">
+            <b data-home-i18n="trust_2_title">Jedna osoba</b>
+            <span data-home-i18n="trust_2_text">Projekt, kod i komunikacja bez rozmycia.</span>
+          </div>
+          <div class="home-trust-item">
+            <b data-home-i18n="trust_3_title">Wdrożenie</b>
+            <span data-home-i18n="trust_3_text">Publikacja, testy i poprawki po starcie.</span>
           </div>
         </div>
       </div>
@@ -434,18 +477,18 @@
       <div class="home-hero-showcase reveal" data-reveal-order="3">
         <div class="home-showcase-frame primary">
           <div class="home-showcase-bar">
-            <span class="home-showcase-label gold">PrimeGym Rumia</span>
-            <span class="home-showcase-label" data-home-i18n="status_demo">Strategic demo</span>
+            <span class="home-showcase-label gold">UndergroundGym.pl</span>
+            <span class="home-showcase-label" data-home-i18n="status_live">Live website</span>
           </div>
-          <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia strategic website demo screenshot" loading="eager" width="1920" height="1080">
+          <img src="./assets/work/undergroundgym-clean-desktop.png" alt="UndergroundGym.pl live website screenshot" loading="eager" width="1440" height="1000">
         </div>
 
         <div class="home-showcase-stack">
           <div class="home-mini-case">
-            <img src="./assets/work/undergroundgym-clean-desktop.png" alt="UndergroundGym.pl live website screenshot" loading="lazy" width="1440" height="1000">
+            <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia strategic website demo screenshot" loading="lazy" width="1920" height="1080">
             <div class="mini-copy">
-              <strong>UndergroundGym.pl</strong>
-              <span data-home-i18n="mini_underground">Live client website</span>
+              <strong>PrimeGym Rumia</strong>
+              <span data-home-i18n="mini_prime">Strategic web concept</span>
             </div>
           </div>
 
@@ -468,13 +511,13 @@
         <img class="proof-phone" src="./assets/work/undergroundgym-clean-mobile.png" alt="Mobilny widok strony UndergroundGym.pl" loading="lazy" width="390" height="844">
       </div>
       <div class="proof-copy reveal" data-reveal-order="5">
-        <div class="kicker" data-i18n="proof_kicker">Live proof</div>
+        <div class="kicker" data-i18n="proof_kicker">Publiczny case</div>
         <h2 class="h2" data-i18n="proof_h2">UndergroundGym.pl — publiczny case dla siłowni</h2>
-        <p class="sub" data-i18n="proof_p">Publiczny projekt z realnym ruchem: oferta, cennik, opinie, formularz wejścia próbnego i kontakt dla klubu w Żukowie.</p>
+        <p class="sub" data-i18n="proof_p">Publicznie dostępna strona dla lokalnego klubu: oferta, cennik, opinie, formularz wejścia próbnego i kontakt dla klubu w Żukowie.</p>
         <dl class="proof-facts">
           <div>
             <dt data-i18n="proof_scope_label">Zakres</dt>
-            <dd data-i18n="proof_scope_value">UX, frontend, oferta, formularze, SEO basics</dd>
+            <dd data-i18n="proof_scope_value">UX, frontend, oferta, formularz, SEO basics</dd>
           </div>
           <div>
             <dt data-i18n="proof_outcome_label">Efekt</dt>
@@ -593,7 +636,7 @@
 
         <article class="service-strip reveal" data-reveal-order="14">
           <h3 class="h3" data-i18n="svc_mkt_h2">Marketing</h3>
-          <div class="meta" data-home-i18n="service_mkt_meta">Landing + tracking + CRO + kąty kampanii.</div>
+          <div class="meta" data-home-i18n="service_mkt_meta">Landing + tracking + CRO + plan kampanii.</div>
           <ul class="bullets">
             <li data-i18n="svc_mkt_d1">Landing pod kampanie</li>
             <li data-i18n="svc_mkt_d2">Tracking + eventy</li>
@@ -607,10 +650,10 @@
     <section class="section">
       <h2 class="h2 reveal" data-reveal-order="15" data-i18n="process_h2">Proces</h2>
       <div class="process-list">
-        <div class="process-item reveal" data-reveal-order="16"><div class="kicker">01</div><h3 class="h3" data-i18n="process_step1_t">Call</h3><p class="sub" data-i18n="process_step1_p">Szybkie zrozumienie celu, brief i priorytety.</p></div>
-        <div class="process-item reveal" data-reveal-order="17"><div class="kicker">02</div><h3 class="h3" data-i18n="process_step2_t">Plan</h3><p class="sub" data-i18n="process_step2_p">Propozycja struktury, copy i plan wdrożenia.</p></div>
-        <div class="process-item reveal" data-reveal-order="18"><div class="kicker">03</div><h3 class="h3" data-i18n="process_step3_t">Build</h3><p class="sub" data-i18n="process_step3_p">Projekt + implementacja, iteracje i testy.</p></div>
-        <div class="process-item reveal" data-reveal-order="19"><div class="kicker">04</div><h3 class="h3" data-i18n="process_step4_t">Launch</h3><p class="sub" data-i18n="process_step4_p">Publikacja, tracking i dopięcie detali.</p></div>
+        <div class="process-item reveal" data-reveal-order="16"><div class="kicker">01</div><h3 class="h3" data-i18n="process_step1_t">Call</h3><p class="sub" data-i18n="process_step1_p">Ustalam cel biznesowy, zakres, priorytety i ryzyka.</p></div>
+        <div class="process-item reveal" data-reveal-order="17"><div class="kicker">02</div><h3 class="h3" data-i18n="process_step2_t">Plan</h3><p class="sub" data-i18n="process_step2_p">Dostajesz strukturę, copy direction i plan wdrożenia.</p></div>
+        <div class="process-item reveal" data-reveal-order="18"><div class="kicker">03</div><h3 class="h3" data-i18n="process_step3_t">Build</h3><p class="sub" data-i18n="process_step3_p">Projektuję, wdrażam i pokazuję postęp w krótkich iteracjach.</p></div>
+        <div class="process-item reveal" data-reveal-order="19"><div class="kicker">04</div><h3 class="h3" data-i18n="process_step4_t">Launch</h3><p class="sub" data-i18n="process_step4_p">Publikacja, checklisty, testy i poprawki po starcie.</p></div>
       </div>
       <div class="section-cta reveal" data-reveal-order="20">
         <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
@@ -622,7 +665,7 @@
 
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="claim" data-i18n="footer_claim">Premium web + panele admin + marketing. Szybko. Bezpiecznie. Skutecznie.</div>
+    <div class="claim" data-i18n="footer_claim">Strony, panele i landing pages z jasnym zakresem, testami i wdrożeniem.</div>
     <div class="mini">
       <a href="./contact.html" data-i18n="email_short">E-mail</a>
       <a href="./privacy.html" data-nav="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
@@ -638,20 +681,27 @@
   (() => {
     const HOME_I18N = {
       pl: {
-        hero_pill_1: "Live work",
-        hero_pill_2: "Local business",
-        hero_pill_3: "Apps & systems",
-        home_h1: "Buduję strony, aplikacje i systemy growth z realnym proofem.",
-        home_p: "Portfolio oparte na konkretnych realizacjach: live strona dla siłowni, strategiczny koncept PrimeGym, własna aplikacja Sudoku Premium i prywatne systemy dashboardowe.",
+        hero_pill_1: "Publiczny case",
+        hero_pill_2: "Jasny zakres",
+        hero_pill_3: "Web + systemy",
+        home_h1: "Projektuję strony i systemy, które ułatwiają firmom zdobywanie zapytań.",
+        home_p: "Łączę strukturę oferty, UI, frontend i wdrożenie. Zobacz publiczną stronę UndergroundGym.pl oraz wybrane koncepcje i produkty własne.",
         home_cta_work: "Zobacz realizacje",
         proof_a_label: "Web",
-        proof_a_text: "Landing pages, strony firmowe, lokalne SEO, CTA i wdrożenie.",
-        proof_b_label: "Product",
-        proof_b_text: "Aplikacje, pattern trainer, UX produktu i assety brandowe.",
-        proof_c_label: "Systems",
-        proof_c_text: "Dashboardy, automatyzacje, evidence layer i workflow.",
+        proof_a_text: "Strony firmowe z ofertą, CTA, lokalnym SEO i wdrożeniem.",
+        proof_b_label: "Produkt",
+        proof_b_text: "Aplikacje i prototypy pokazujące UX, logikę i assety brandowe.",
+        proof_c_label: "Proces",
+        proof_c_text: "Dashboardy i flow pracy projektowane pod porządek, status i decyzje.",
+        trust_1_title: "Plan przed buildem",
+        trust_1_text: "Najpierw cel, zakres i priorytety.",
+        trust_2_title: "Jedna osoba",
+        trust_2_text: "Projekt, kod i komunikacja bez rozmycia.",
+        trust_3_title: "Wdrożenie",
+        trust_3_text: "Publikacja, testy i poprawki po starcie.",
+        status_live: "Live website",
         status_demo: "Demo strategiczne",
-        mini_underground: "Live client website",
+        mini_prime: "Strategiczna koncepcja web",
         mini_sudoku: "Projekt własny mobile",
         selected_kicker: "Połączone z Realizacjami",
         selected_h2: "Wybrane case studies",
@@ -665,23 +715,30 @@
         tile_trading: "Dashboard, evidence layer, decision UI i diagnostyki.",
         service_web_meta: "Landing pages, multi-page sites, lokalne SEO i conversion-focused UX.",
         service_admin_meta: "Dashboardy, role, raporty, workflow i automatyzacje.",
-        service_mkt_meta: "Landing + tracking + CRO + kąty kampanii."
+        service_mkt_meta: "Landing + tracking + CRO + plan kampanii."
       },
       en: {
-        hero_pill_1: "Live work",
-        hero_pill_2: "Local business",
-        hero_pill_3: "Apps & systems",
-        home_h1: "I build websites, apps and growth systems with real proof.",
-        home_p: "A portfolio based on concrete work: a live gym website, a strategic PrimeGym concept, my own Sudoku Premium app and private dashboard systems.",
+        hero_pill_1: "Public case",
+        hero_pill_2: "Clear scope",
+        hero_pill_3: "Web + systems",
+        home_h1: "I design websites and systems that help businesses collect better leads.",
+        home_p: "I combine offer structure, UI, frontend and deployment. See the public UndergroundGym.pl website plus selected concepts and own products.",
         home_cta_work: "See work",
         proof_a_label: "Web",
-        proof_a_text: "Landing pages, business websites, local SEO, CTAs and delivery.",
+        proof_a_text: "Business websites with offer structure, CTAs, local SEO and deployment.",
         proof_b_label: "Product",
-        proof_b_text: "Apps, pattern trainer, product UX and brand assets.",
-        proof_c_label: "Systems",
-        proof_c_text: "Dashboards, automations, evidence layer and workflow.",
+        proof_b_text: "Apps and prototypes that show UX, logic and brand assets.",
+        proof_c_label: "Process",
+        proof_c_text: "Dashboards and workflows designed around clarity, status and decisions.",
+        trust_1_title: "Plan before build",
+        trust_1_text: "Goal, scope and priorities first.",
+        trust_2_title: "One owner",
+        trust_2_text: "Design, code and communication stay direct.",
+        trust_3_title: "Launch",
+        trust_3_text: "Deployment, checks and post-launch fixes.",
+        status_live: "Live website",
         status_demo: "Strategic demo",
-        mini_underground: "Live client website",
+        mini_prime: "Strategic web concept",
         mini_sudoku: "Own mobile product",
         selected_kicker: "Connected to Work",
         selected_h2: "Selected case studies",
@@ -695,7 +752,7 @@
         tile_trading: "Dashboard, evidence layer, decision UI and diagnostics.",
         service_web_meta: "Landing pages, multi-page sites, local SEO and conversion-focused UX.",
         service_admin_meta: "Dashboards, roles, reporting, workflows and automations.",
-        service_mkt_meta: "Landing + tracking + CRO + campaign angles."
+        service_mkt_meta: "Landing + tracking + CRO + campaign plan."
       }
     };
 
