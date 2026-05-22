@@ -59,7 +59,7 @@
 
       // Home
       home_h1: "Projektuję strony i systemy, które ułatwiają firmom zdobywanie zapytań.",
-      home_p: "Łączę strukturę oferty, UI, frontend i wdrożenie. Zobacz publiczną stronę UndergroundGym.pl oraz wybrane koncepcje i produkty własne.",
+      home_p: "Łączę strukturę oferty, UI, frontend i wdrożenie. Zobacz publiczną stronę UndergroundGym.pl oraz wybrane koncepcje i moje projekty.",
       hero_tag: "Audit • Build • Scale",
       proof_fast: "Jasny zakres",
       proof_secure: "Testy przed startem",
@@ -312,7 +312,7 @@
 
       // Home
       home_h1: "I design websites and systems that help businesses collect better leads.",
-      home_p: "I combine offer structure, UI, frontend and deployment. See the public UndergroundGym.pl website plus selected concepts and own products.",
+      home_p: "I combine offer structure, UI, frontend and deployment. See the public UndergroundGym.pl website plus selected concepts and my projects.",
       hero_tag: "Audit • Build • Scale",
       proof_fast: "Clear scope",
       proof_secure: "Pre-launch checks",
