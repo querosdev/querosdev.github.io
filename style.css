@@ -1400,7 +1400,9 @@ html.js .reveal.in{opacity:1; transform:none; transition: opacity .35s ease, tra
     min-width: 0;
   }
 }
-
+.about-last {
+  margin-bottom: 20px;
+}
 .proof-spotlight{
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
