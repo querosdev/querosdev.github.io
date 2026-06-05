@@ -8,21 +8,21 @@
   <meta name="theme-color" content="#0b0c0e" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://querosdev.github.io/" />
   <link rel="stylesheet" href="./style.css" />
   <title>Nikodem Kustusz Studio — Strony, panele i lead flow</title>
-  <meta name="description" content="Portfolio Nikodema Kustusza: UndergroundGym.pl live, PrimeGym Rumia strategic demo, NineSmith Sudoku private mobile project and private dashboard systems." />
+  <meta name="description" content="Portfolio Nikodema Kustusza: UndergroundGym.pl live website, PrimeGym Rumia concept, NineSmith Sudoku mobile product and internal dashboard systems." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Nikodem Kustusz Studio" />
   <meta property="og:title" content="Nikodem Kustusz Studio — websites, panels and lead flows" />
-  <meta property="og:description" content="Selected work: live client website, strategic fitness website demo, own mobile app and private system interfaces." />
+  <meta property="og:description" content="Selected work: live client website, fitness website concept, own mobile app and internal system interfaces." />
   <meta property="og:url" content="https://querosdev.github.io/" />
   <meta property="og:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nikodem Kustusz Studio — websites, panels and lead flows" />
-  <meta name="twitter:description" content="Selected work: live client website, strategic fitness website demo, own mobile app and private system interfaces." />
+  <meta name="twitter:description" content="Selected work: live client website, fitness website concept, own mobile app and internal system interfaces." />
   <meta name="twitter:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
 
   <style>
@@ -274,6 +274,10 @@
       line-height: 1.4;
     }
 
+    .home-about-wrap {
+      max-width: 720px;
+    }
+
     .home-section-title-row {
       display: flex;
       justify-content: space-between;
@@ -361,7 +365,7 @@
     }
 
     .home-system-svg text {
-      font-family: Inter, system-ui, sans-serif;
+      font-family: var(--font-sans);
     }
 
     .page-home .section-cta {
@@ -429,15 +433,21 @@
   <div class="container">
     <section class="home-hero-clean">
       <div class="home-hero-copy reveal" data-reveal-order="2">
+        <div class="hero-identity">
+          <span class="hero-identity-mark" aria-hidden="true"></span>
+          <span class="hero-identity-text">
+            <strong>Nikodem Kustusz</strong>
+            <span data-home-i18n="identity_role">Niezależne studio — web i systemy</span>
+          </span>
+        </div>
         <div class="home-eyebrow-row">
           <span class="home-proof-pill green" data-home-i18n="hero_pill_1">Publiczny case</span>
           <span class="home-proof-pill gold" data-home-i18n="hero_pill_2">Jasny zakres</span>
           <span class="home-proof-pill" data-home-i18n="hero_pill_3">Web + systemy</span>
         </div>
 
-        <div class="kicker" data-i18n="hero_kicker">Partner dla firm</div>
-        <h1 class="h1" data-home-i18n="home_h1">Projektuję strony i systemy, które ułatwiają firmom zdobywanie zapytań.</h1>
-        <p class="sub" data-home-i18n="home_p">Łączę strukturę oferty, UI, frontend i wdrożenie. Zobacz publiczną stronę UndergroundGym.pl oraz wybrane koncepcje i moje projekty.</p>
+        <h1 class="h1" data-home-i18n="home_h1">Projektuję premium strony, interfejsy i systemy dla marek, które mają wyglądać ostrzej i działać konkretniej.</h1>
+        <p class="sub" data-home-i18n="home_p">Skupione studio jednej osoby: kierunek wizualny, frontend i logika produktu w jednym miejscu — od pozycjonowania oferty po wdrożenie i polish.</p>
 
         <div class="home-hero-actions">
           <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
@@ -460,16 +470,16 @@
         </div>
         <div class="home-trust-strip" aria-label="Standard współpracy">
           <div class="home-trust-item">
-            <b data-home-i18n="trust_1_title">Plan przed buildem</b>
-            <span data-home-i18n="trust_1_text">Najpierw cel, zakres i priorytety.</span>
+            <b data-home-i18n="trust_1_title">Product-level polish</b>
+            <span data-home-i18n="trust_1_text">Jakość na poziomie produktu, nie szablonu.</span>
           </div>
           <div class="home-trust-item">
-            <b data-home-i18n="trust_2_title">Jedna osoba</b>
-            <span data-home-i18n="trust_2_text">Projekt, kod i komunikacja bez rozmycia.</span>
+            <b data-home-i18n="trust_2_title">System, nie losowe strony</b>
+            <span data-home-i18n="trust_2_text">Pozycjonowanie, interfejs i ścieżka konwersji.</span>
           </div>
           <div class="home-trust-item">
-            <b data-home-i18n="trust_3_title">Wdrożenie</b>
-            <span data-home-i18n="trust_3_text">Publikacja, testy i poprawki po starcie.</span>
+            <b data-home-i18n="trust_3_title">Proof over claims</b>
+            <span data-home-i18n="trust_3_text">Pokazuję proces i output, nie obietnice.</span>
           </div>
         </div>
       </div>
@@ -485,10 +495,10 @@
 
         <div class="home-showcase-stack">
           <div class="home-mini-case">
-            <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia strategic website demo screenshot" loading="lazy" width="1920" height="1080">
+            <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia website concept screenshot" loading="lazy" width="1920" height="1080">
             <div class="mini-copy">
               <strong>PrimeGym Rumia</strong>
-              <span data-home-i18n="mini_prime">Strategic web concept</span>
+              <span data-home-i18n="mini_prime">Koncepcja / fitness lifestyle</span>
             </div>
           </div>
 
@@ -496,7 +506,7 @@
             <img src="./assets/work/sudoku-premium-home.webp" alt="NineSmith Sudoku mobile app screenshot" loading="lazy" width="900" height="1800">
             <div class="mini-copy">
               <strong>NineSmith Sudoku</strong>
-              <span data-home-i18n="mini_sudoku">Mój projekt / prywatne repo</span>
+              <span data-home-i18n="mini_sudoku">Produkt mobilny / App Store prep</span>
             </div>
           </div>
         </div>
@@ -550,18 +560,18 @@
           <div class="home-work-tile-body">
             <div class="home-tile-meta" data-home-i18n="tile_live">Live website</div>
             <h3 class="h3">UndergroundGym.pl</h3>
-            <p data-home-i18n="tile_underground">Strona lokalnej siłowni 24/7 z ofertą, opiniami i wejściem próbnym.</p>
+            <p data-home-i18n="tile_underground">Live strona lokalnej siłowni 24/7: oferta, opinie i wejście próbne.</p>
           </div>
         </a>
 
         <a class="home-work-tile reveal" data-reveal-order="8" href="./work.html#primegym">
           <div class="home-work-tile-media">
-            <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia strategic website demo screenshot" loading="lazy" width="1920" height="1080">
+            <img src="./assets/work/primegym-rumia-desktop.webp" alt="PrimeGym Rumia website concept screenshot" loading="lazy" width="1920" height="1080">
           </div>
           <div class="home-work-tile-body">
-            <div class="home-tile-meta" data-home-i18n="tile_demo">Demo strategiczne</div>
+            <div class="home-tile-meta" data-home-i18n="tile_demo">Koncepcja</div>
             <h3 class="h3">PrimeGym Rumia</h3>
-            <p data-home-i18n="tile_prime">Premium koncept strony, landing pages, CTA i plan trackingu.</p>
+            <p data-home-i18n="tile_prime">Repozycjonowanie klubu fitness na premium markę lifestyle.</p>
           </div>
         </a>
 
@@ -572,34 +582,60 @@
           <div class="home-work-tile-body">
             <div class="home-tile-meta" data-home-i18n="tile_own">Mój projekt</div>
             <h3 class="h3">NineSmith Sudoku</h3>
-            <p data-home-i18n="tile_sudoku">Mobilna aplikacja Sudoku w prywatnym repo: Pattern Trainer, UX i brand assets.</p>
+            <p data-home-i18n="tile_sudoku">Premium produkt mobilny: Pattern Trainer, czysty UI, przygotowanie do App Store.</p>
           </div>
         </a>
 
-        <a class="home-work-tile reveal" data-reveal-order="10" href="./work.html#trading">
+        <a class="home-work-tile reveal" data-reveal-order="10" href="./work.html#aurora">
           <div class="home-work-tile-media">
-            <svg class="home-system-svg" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-label="Trading Workstation private dashboard preview">
+            <svg class="home-system-svg" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" aria-label="Aurora OS local system preview">
               <rect width="640" height="400" fill="#0d1117"/>
               <rect x="28" y="32" width="584" height="326" rx="28" fill="rgba(255,255,255,.025)" stroke="rgba(255,255,255,.09)"/>
-              <rect x="54" y="64" width="160" height="12" rx="4" fill="rgba(255,255,255,.42)"/>
-              <rect x="54" y="104" width="336" height="170" rx="16" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.18)"/>
-              <polyline points="80,246 128,210 186,225 242,174 300,192 360,145" fill="none" stroke="#3b82f6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="420" y="104" width="150" height="170" rx="16" fill="rgba(255,255,255,.035)" stroke="rgba(255,255,255,.08)"/>
-              <rect x="442" y="128" width="102" height="22" rx="11" fill="rgba(52,211,153,.16)" stroke="rgba(52,211,153,.32)"/>
-              <rect x="442" y="176" width="86" height="9" rx="3" fill="rgba(255,255,255,.35)"/>
-              <rect x="442" y="202" width="112" height="9" rx="3" fill="rgba(255,255,255,.20)"/>
-              <rect x="54" y="302" width="190" height="14" rx="5" fill="rgba(255,255,255,.15)"/>
-              <rect x="54" y="328" width="256" height="14" rx="5" fill="rgba(59,130,246,.18)"/>
-              <rect x="420" y="302" width="150" height="32" rx="11" fill="rgba(99,170,255,.12)" stroke="rgba(99,170,255,.3)"/>
-              <text x="495" y="323" fill="#93c5fd" font-size="14" font-weight="800" text-anchor="middle">PRIVATE SYSTEM</text>
+              <g stroke="rgba(205,168,93,.32)" stroke-width="1.5">
+                <line x1="320" y1="196" x2="168" y2="112"/>
+                <line x1="320" y1="196" x2="470" y2="120"/>
+                <line x1="320" y1="196" x2="150" y2="276"/>
+                <line x1="320" y1="196" x2="300" y2="300"/>
+                <line x1="320" y1="196" x2="486" y2="262"/>
+              </g>
+              <circle cx="168" cy="112" r="13" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.30)"/>
+              <circle cx="470" cy="120" r="11" fill="rgba(99,170,255,.16)" stroke="rgba(99,170,255,.40)"/>
+              <circle cx="150" cy="276" r="10" fill="rgba(52,211,153,.16)" stroke="rgba(52,211,153,.40)"/>
+              <circle cx="300" cy="300" r="12" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.28)"/>
+              <circle cx="486" cy="262" r="14" fill="rgba(205,168,93,.16)" stroke="rgba(205,168,93,.40)"/>
+              <circle cx="320" cy="196" r="30" fill="rgba(205,168,93,.16)" stroke="rgba(205,168,93,.55)" stroke-width="2"/>
+              <circle cx="320" cy="196" r="11" fill="#cda85d"/>
+              <rect x="244" y="316" width="152" height="30" rx="11" fill="rgba(205,168,93,.12)" stroke="rgba(205,168,93,.30)"/>
+              <text x="320" y="336" fill="#e6c97a" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="0.06em">LOCAL AI · OS</text>
             </svg>
           </div>
           <div class="home-work-tile-body">
-            <div class="home-tile-meta" data-home-i18n="tile_private">System prywatny</div>
-            <h3 class="h3">Trading Workstation</h3>
-            <p data-home-i18n="tile_trading">Dashboard, evidence layer, decision UI i diagnostyki.</p>
+            <div class="home-tile-meta" data-home-i18n="tile_aurora_meta">System wewnętrzny</div>
+            <h3 class="h3">Aurora OS</h3>
+            <p data-home-i18n="tile_aurora">Local-first „operating mirror”: pamięć, refleksja i proof of work z lokalnym AI.</p>
           </div>
         </a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section home-about-preview">
+      <div class="home-about-wrap reveal" data-reveal-order="11">
+        <div class="hero-identity">
+          <span class="hero-identity-mark" aria-hidden="true"></span>
+          <span class="hero-identity-text">
+            <strong>Nikodem Kustusz</strong>
+            <span data-home-i18n="identity_role">Niezależne studio — web i systemy</span>
+          </span>
+        </div>
+        <div class="kicker" data-home-i18n="home_about_kicker">O mnie</div>
+        <h2 class="h2" data-home-i18n="home_about_h2">Niezależny builder z systemowym myśleniem</h2>
+        <p class="sub" data-home-i18n="home_about_p">Łączę kierunek wizualny, frontend i klarowność biznesową. Pracuję jak jednoosobowe studio: jeden właściciel projektu, jasne decyzje i output, który widać.</p>
+        <div class="home-hero-actions">
+          <a class="btn primary" href="./about.html" data-home-i18n="home_about_cta">Poznaj mnie</a>
+          <a class="btn" href="./contact.html" data-i18n="nav_contact">Kontakt</a>
+        </div>
       </div>
     </section>
 
@@ -684,75 +720,89 @@
         hero_pill_1: "Publiczny case",
         hero_pill_2: "Jasny zakres",
         hero_pill_3: "Web + systemy",
-        home_h1: "Projektuję strony i systemy, które ułatwiają firmom zdobywanie zapytań.",
-        home_p: "Łączę strukturę oferty, UI, frontend i wdrożenie. Zobacz publiczną stronę UndergroundGym.pl oraz wybrane koncepcje i moje projekty.",
+        home_h1: "Projektuję premium strony, interfejsy i systemy dla marek, które mają wyglądać ostrzej i działać konkretniej.",
+        home_p: "Skupione studio jednej osoby: kierunek wizualny, frontend i logika produktu w jednym miejscu — od pozycjonowania oferty po wdrożenie i polish.",
         home_cta_work: "Zobacz realizacje",
+        identity_role: "Niezależne studio — web i systemy",
         proof_a_label: "Web",
         proof_a_text: "Strony firmowe z ofertą, CTA, lokalnym SEO i wdrożeniem.",
         proof_b_label: "Produkt",
         proof_b_text: "Aplikacje i prototypy pokazujące UX, logikę i assety brandowe.",
         proof_c_label: "Proces",
         proof_c_text: "Dashboardy i flow pracy projektowane pod porządek, status i decyzje.",
-        trust_1_title: "Plan przed buildem",
-        trust_1_text: "Najpierw cel, zakres i priorytety.",
-        trust_2_title: "Jedna osoba",
-        trust_2_text: "Projekt, kod i komunikacja bez rozmycia.",
-        trust_3_title: "Wdrożenie",
-        trust_3_text: "Publikacja, testy i poprawki po starcie.",
+        trust_1_title: "Product-level polish",
+        trust_1_text: "Jakość na poziomie produktu, nie szablonu.",
+        trust_2_title: "System, nie losowe strony",
+        trust_2_text: "Pozycjonowanie, interfejs i ścieżka konwersji.",
+        trust_3_title: "Proof over claims",
+        trust_3_text: "Pokazuję proces i output, nie obietnice.",
         status_live: "Live website",
-        status_demo: "Demo strategiczne",
-        mini_prime: "Strategiczna koncepcja web",
-        mini_sudoku: "Mój projekt / prywatne repo",
+        status_demo: "Koncepcja",
+        mini_prime: "Koncepcja / fitness lifestyle",
+        mini_sudoku: "Produkt mobilny / App Store prep",
         selected_kicker: "Połączone z Realizacjami",
         selected_h2: "Wybrane case studies",
         tile_live: "Live website",
-        tile_demo: "Demo strategiczne",
+        tile_demo: "Koncepcja",
         tile_own: "Mój projekt",
         tile_private: "System prywatny",
-        tile_underground: "Strona lokalnej siłowni 24/7 z ofertą, opiniami i wejściem próbnym.",
-        tile_prime: "Premium koncept strony, landing pages, CTA i plan trackingu.",
-        tile_sudoku: "Mobilna aplikacja Sudoku w prywatnym repo: Pattern Trainer, UX i brand assets.",
+        tile_underground: "Live strona lokalnej siłowni 24/7: oferta, opinie i wejście próbne.",
+        tile_prime: "Repozycjonowanie klubu fitness na premium markę lifestyle.",
+        tile_sudoku: "Premium produkt mobilny: Pattern Trainer, czysty UI, przygotowanie do App Store.",
         tile_trading: "Dashboard, evidence layer, decision UI i diagnostyki.",
+        tile_aurora_meta: "System wewnętrzny",
+        tile_aurora: "Local-first „operating mirror”: pamięć, refleksja i proof of work z lokalnym AI.",
         service_web_meta: "Landing pages, multi-page sites, lokalne SEO i conversion-focused UX.",
         service_admin_meta: "Dashboardy, role, raporty, workflow i automatyzacje.",
-        service_mkt_meta: "Landing + tracking + CRO + plan kampanii."
+        service_mkt_meta: "Landing + tracking + CRO + plan kampanii.",
+        home_about_kicker: "O mnie",
+        home_about_h2: "Niezależny builder z systemowym myśleniem",
+        home_about_p: "Łączę kierunek wizualny, frontend i klarowność biznesową. Pracuję jak jednoosobowe studio: jeden właściciel projektu, jasne decyzje i output, który widać.",
+        home_about_cta: "Poznaj mnie"
       },
       en: {
         hero_pill_1: "Public case",
         hero_pill_2: "Clear scope",
         hero_pill_3: "Web + systems",
-        home_h1: "I design websites and systems that help businesses collect better leads.",
-        home_p: "I combine offer structure, UI, frontend and deployment. See the public UndergroundGym.pl website plus selected concepts and my projects.",
+        home_h1: "I build premium websites, product interfaces, and practical systems for brands that need to look sharper and move with intent.",
+        home_p: "A focused one-person studio: visual direction, frontend, and product logic in one place — from positioning the offer to deployment and polish.",
         home_cta_work: "See work",
+        identity_role: "Independent web & systems studio",
         proof_a_label: "Web",
         proof_a_text: "Business websites with offer structure, CTAs, local SEO and deployment.",
         proof_b_label: "Product",
         proof_b_text: "Apps and prototypes that show UX, logic and brand assets.",
         proof_c_label: "Process",
         proof_c_text: "Dashboards and workflows designed around clarity, status and decisions.",
-        trust_1_title: "Plan before build",
-        trust_1_text: "Goal, scope and priorities first.",
-        trust_2_title: "One owner",
-        trust_2_text: "Design, code and communication stay direct.",
-        trust_3_title: "Launch",
-        trust_3_text: "Deployment, checks and post-launch fixes.",
+        trust_1_title: "Product-level polish",
+        trust_1_text: "Quality at product level, not template level.",
+        trust_2_title: "Systems, not random pages",
+        trust_2_text: "Positioning, interface and a conversion path.",
+        trust_3_title: "Proof over claims",
+        trust_3_text: "I show process and output, not promises.",
         status_live: "Live website",
-        status_demo: "Strategic demo",
-        mini_prime: "Strategic web concept",
-        mini_sudoku: "My project / private repo",
+        status_demo: "Concept",
+        mini_prime: "Concept / fitness lifestyle",
+        mini_sudoku: "Mobile product / App Store prep",
         selected_kicker: "Connected to Work",
         selected_h2: "Selected case studies",
         tile_live: "Live website",
-        tile_demo: "Strategic demo",
+        tile_demo: "Concept",
         tile_own: "My project",
         tile_private: "Private system",
-        tile_underground: "24/7 local gym website with offer, reviews and trial entry.",
-        tile_prime: "Premium website concept, landing pages, CTAs and tracking plan.",
-        tile_sudoku: "Private-repo Sudoku app with Pattern Trainer, UX and brand assets.",
+        tile_underground: "Live 24/7 local gym website: offer, reviews and trial entry.",
+        tile_prime: "Repositioning a fitness club into a premium lifestyle brand.",
+        tile_sudoku: "Premium mobile product: Pattern Trainer, clean UI, App Store prep.",
         tile_trading: "Dashboard, evidence layer, decision UI and diagnostics.",
+        tile_aurora_meta: "Internal system",
+        tile_aurora: "Local-first operating mirror: memory, reflection and proof of work with local AI.",
         service_web_meta: "Landing pages, multi-page sites, local SEO and conversion-focused UX.",
         service_admin_meta: "Dashboards, roles, reporting, workflows and automations.",
-        service_mkt_meta: "Landing + tracking + CRO + campaign plan."
+        service_mkt_meta: "Landing + tracking + CRO + campaign plan.",
+        home_about_kicker: "About",
+        home_about_h2: "An independent builder with systems thinking",
+        home_about_p: "I combine visual direction, frontend, and business clarity. I work like a one-person studio: a single project owner, clear decisions, and output you can actually see.",
+        home_about_cta: "About me"
       }
     };
 

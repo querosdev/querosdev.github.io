@@ -209,21 +209,53 @@
       svc_mkt_ideal_3: "Chcesz testować ofertę, CTA i kolejność sekcji",
 
       // About
-      about_h1: "O współpracy",
-      about_sub: "Firmy zwykle nie szukają samego designu. Szukają osoby, która zrozumie cel, dowiezie zakres i jasno komunikuje postęp.",
-      about_p1: "Buduję produkty webowe end-to-end: struktura oferty, UI, frontend, backend, baza danych i wdrożenie.",
-      about_p2: "Myślę o stronie jak o procesie sprzedaży: kto wchodzi, co ma zrozumieć, jaki ma wykonać następny krok.",
-      about_p3: "Pracuję krótko i konkretnie: plan, build, testy, wdrożenie, poprawki. Bez obiecywania rzeczy, których nie da się obronić.",
-      why_h2: "Co dostajesz",
-      why_1: "Jeden właściciel projektu: strategia, UI i kod",
-      why_2: "Jasne priorytety, terminy i ryzyka przed startem",
-      why_3: "Performance, mobile i bezpieczeństwo jako część zakresu",
-      about_stack_h3: "Stack",
+      about_h1: "Niezależne studio. Web, interfejsy, systemy.",
+      about_sub: "Jestem Nikodem Kustusz — niezależny developer i builder. Pracuję w punkcie, w którym kierunek wizualny, frontend i klarowność biznesowa spotykają się i zaczynają działać jak jeden system.",
+      about_identity_role: "Niezależne studio — web i systemy",
+      about_p1: "Buduję premium web experience, interfejsy produktowe i systemy dla lokalnych firm — od pozycjonowania oferty, przez UI i frontend, po wdrożenie.",
+      about_p2: "Nie udaję dużej agencji. To skupione studio jednej osoby: jeden właściciel projektu, jasne decyzje i widoczny output zamiast korporacyjnego szumu.",
+      about_p3: "Każdy projekt traktuję jak system: pozycjonowanie, interfejs, ścieżka konwersji i polish — żeby małe marki wyglądały ostrzej, jaśniej i bardziej premium.",
+      why_h2: "Jak pracuję",
+      why_1: "Product-level UI — polish na poziomie produktu, nie szablonu.",
+      why_2: "Pozycjonowanie lokalnego biznesu — oferta, która prowadzi do kontaktu.",
+      why_3: "Szybkie wdrożenie — krótkie iteracje i realny output.",
+      why_4: "Dwujęzyczna struktura PL/EN — gotowa od startu.",
+      why_5: "Systemowe myślenie — spójny system, nie losowe strony.",
+      why_6: "Proof of work — pokazuję proces i efekty, nie obietnice.",
+      about_stack_h3: "Stack i narzędzia",
       stack_php: "PHP 8",
       stack_mysql: "MySQL",
       stack_docker: "Docker",
       stack_uiux: "UI/UX",
       stack_security: "Security",
+      stack_react: "React / RN",
+      stack_ts: "TypeScript",
+      stack_automation: "Automatyzacja",
+
+      // Case-study shared labels + new project cards (Work)
+      cs_role_label: "Rola:",
+      cs_status_label: "Status:",
+      cs_ask_scope: "Zapytaj o zakres",
+      aurora_status: "System wewnętrzny",
+      aurora_cat_1: "Local AI",
+      aurora_cat_2: "Memory graph",
+      aurora_role: "Architektura systemu, local-first AI, UX, logika produktu",
+      aurora_meta: "System wewnętrzny / aktywny rozwój",
+      aurora_desc: "Local-first „operating mirror”, który zamienia rozproszony kontekst osobisty w pamięć, refleksję, proof of work i sygnały następnego ruchu. To nie jest aplikacja do notatek.",
+      aurora_li1: "Local Sense Engine + integracja Ollama (embeddinggemma, gemma3:1b)",
+      aurora_li2: "Mirror i Advisor: klasyfikacja sygnału, wykrywanie wzorców, następny uczciwy ruch",
+      aurora_li3: "Deterministyczne guardraile i pamięć z dbałością o prywatność (local-first)",
+      aurora_metric: "system wewnętrzny / prototyp w rozwoju — nie komercyjny SaaS",
+      sigma_status: "Koncepcja",
+      sigma_cat_1: "Strona firmowa",
+      sigma_cat_2: "Budownictwo",
+      sigma_role: "Web design, UX, struktura oferty, propozycja",
+      sigma_meta: "Firma budowlana / koncepcja",
+      sigma_desc: "Koncepcja strony dla firmy budowlanej: jasna struktura usług, sekcja realizacji, sygnały zaufania i prosta ścieżka kontaktu — zbudowane i wysłane, brak wdrożenia.",
+      sigma_li1: "Struktura usług: budownictwo mieszkaniowe, komercyjne, użyteczności publicznej",
+      sigma_li2: "Sekcja realizacji i sygnały wiarygodności lokalnej firmy",
+      sigma_li3: "Prosta ścieżka kontaktu i wyceny",
+      sigma_metric: "koncepcja / zbudowane i wysłane / brak wdrożenia",
 
       // Contact
       contact_h1: "Kontakt",
@@ -461,21 +493,53 @@
       svc_mkt_ideal_3: "You want to test offer, CTA and section order",
 
       // About
-      about_h1: "Collaboration",
-      about_sub: "Companies usually do not need design alone. They need someone who understands the goal, owns the scope and communicates progress clearly.",
-      about_p1: "I build web products end-to-end: offer structure, UI, frontend, backend, database and deployment.",
-      about_p2: "I treat a website as a sales process: who enters, what they need to understand and what next step they should take.",
-      about_p3: "I work directly: plan, build, test, launch, fix. No promises that cannot be defended.",
-      why_h2: "What you get",
-      why_1: "One project owner: strategy, UI and code",
-      why_2: "Clear priorities, timelines and risks before kickoff",
-      why_3: "Performance, mobile and security included in scope",
-      about_stack_h3: "Stack",
+      about_h1: "Independent studio. Web, interfaces, systems.",
+      about_sub: "I'm Nikodem Kustusz — an independent developer and builder. I work at the point where visual direction, frontend, and business clarity meet and start behaving like one system.",
+      about_identity_role: "Independent studio — web & systems",
+      about_p1: "I build premium web experiences, product interfaces, and systems for local businesses — from positioning the offer, through UI and frontend, to deployment.",
+      about_p2: "I'm not pretending to be a big agency. This is a focused one-person studio: a single project owner, clear decisions, and visible output instead of corporate noise.",
+      about_p3: "I treat every project as a system: positioning, interface, conversion path, and polish — so small brands feel sharper, clearer, and more premium.",
+      why_h2: "How I work",
+      why_1: "Product-level UI — polish at product quality, not template level.",
+      why_2: "Local business positioning — an offer that leads to contact.",
+      why_3: "Fast implementation — short iterations and real output.",
+      why_4: "Bilingual PL/EN structure — ready from day one.",
+      why_5: "Systems thinking — a coherent system, not random pages.",
+      why_6: "Proof of work — I show process and results, not promises.",
+      about_stack_h3: "Stack & tools",
       stack_php: "PHP 8",
       stack_mysql: "MySQL",
       stack_docker: "Docker",
       stack_uiux: "UI/UX",
       stack_security: "Security",
+      stack_react: "React / RN",
+      stack_ts: "TypeScript",
+      stack_automation: "Automation",
+
+      // Case-study shared labels + new project cards (Work)
+      cs_role_label: "Role:",
+      cs_status_label: "Status:",
+      cs_ask_scope: "Ask about scope",
+      aurora_status: "Internal system",
+      aurora_cat_1: "Local AI",
+      aurora_cat_2: "Memory graph",
+      aurora_role: "System architecture, local-first AI, UX, product logic",
+      aurora_meta: "Internal system / active development",
+      aurora_desc: "A local-first operating mirror that turns scattered personal context into memory, reflection, proof of work, and next-action signals. It is not a notes app.",
+      aurora_li1: "Local Sense Engine + Ollama integration (embeddinggemma, gemma3:1b)",
+      aurora_li2: "Mirror and Advisor: signal classification, pattern detection, next honest move",
+      aurora_li3: "Deterministic guardrails and privacy-aware, local-first memory",
+      aurora_metric: "internal system / prototype in development — not a commercial SaaS",
+      sigma_status: "Concept",
+      sigma_cat_1: "Business website",
+      sigma_cat_2: "Construction",
+      sigma_role: "Web design, UX, offer structure, proposal",
+      sigma_meta: "Construction company / concept",
+      sigma_desc: "A website concept for a construction company: structured services, a project showcase, trust signals and a simple contact path — built and sent, no deployment.",
+      sigma_li1: "Service structure: residential, commercial, public-sector construction",
+      sigma_li2: "Portfolio section and local credibility signals",
+      sigma_li3: "Simple contact and quote path",
+      sigma_metric: "concept / built and sent / not deployed",
 
       // Contact
       contact_h1: "Contact",
@@ -756,7 +820,7 @@
       if (e.key === "Escape" && menu.classList.contains("is-open")) close();
     });
 
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 921px)");
     const closeOnDesktop = () => {
       if (mq.matches) close();
     };
@@ -1244,6 +1308,9 @@
   // Update all data-book links
   $$("[data-book]").forEach(a => a.setAttribute("href", CONFIG.bookUrl));
   $$("[data-email-link]").forEach(a => a.setAttribute("href", `mailto:${CONFIG.email}`));
+
+  // Populate copyright year (footer shows blank otherwise)
+  $$("[data-year]").forEach(el => { el.textContent = String(new Date().getFullYear()); });
 
   setupDrawer();
   setupWorkFilters();

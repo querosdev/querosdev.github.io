@@ -1,5 +1,6 @@
 .playwright-cli/
 .playwright-mcp/
+.claude/
 output/
 data/
 *.log
