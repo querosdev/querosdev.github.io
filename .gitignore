@@ -8,3 +8,4 @@ data/
 # Eleventy build output + deps
 _site/
 node_modules/
+.npm-cache/

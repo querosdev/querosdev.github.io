@@ -323,7 +323,7 @@
       status_live: "Live website",
       status_demo: "Koncepcja",
       mini_prime: "Koncepcja / fitness lifestyle",
-      mini_sudoku: "Produkt mobilny / App Store prep",
+      mini_sudoku: "Mój projekt / prywatne repo",
       selected_kicker: "Połączone z Realizacjami",
       selected_h2: "Wybrane case studies",
       tile_live: "Live website",
@@ -332,7 +332,7 @@
       tile_private: "System prywatny",
       tile_underground: "Live strona lokalnej siłowni 24/7: oferta, opinie i wejście próbne.",
       tile_prime: "Repozycjonowanie klubu fitness na premium markę lifestyle.",
-      tile_sudoku: "Premium produkt mobilny: Pattern Trainer, czysty UI, przygotowanie do App Store.",
+      tile_sudoku: "Mój projekt mobilny w prywatnym repo: Pattern Trainer, czysty UI i App Store prep.",
       tile_trading: "Dashboard, evidence layer, decision UI i diagnostyki.",
       tile_aurora_meta: "System wewnętrzny",
       tile_aurora: "Local-first „operating mirror”: pamięć, refleksja i proof of work z lokalnym AI.",
@@ -398,14 +398,14 @@
       sudoku_cat_app: "Aplikacja mobilna",
       sudoku_title: "NineSmith Sudoku",
       sudoku_role: "Product design, React Native, trainer logic, UX, brand assets",
-      sudoku_meta: "Produkt mobilny / przygotowanie do App Store",
+      sudoku_meta: "Mój projekt / prywatne repo",
       sudoku_desc: "Premium produkt Sudoku skupiony na codziennej logice i czystym UI: Pattern Trainer (Naked/Hidden Single, X-Wing, Swordfish, Y-Wing), pozycjonowanie bez reklam oraz ikona, screenshoty i ASO pod App Store.",
       sudoku_li_1: "Pattern Trainer: pełna siatka 9×9, kandydaci, nakładki wizualne i focus cell",
       sudoku_li_2: "Scenariusze i walidacja technik (Naked/Hidden Single, Pair, X-Wing…)",
       sudoku_li_3: "Statystyki sesji: trafność, czas, streak, postęp",
       sudoku_li_4: "Premium SVG/PNG brand asset system (ikona, hero, social preview)",
       sudoku_li_5: "Expo / React Native, TypeScript, prywatne repo mojego projektu",
-      sudoku_metric: "w rozwoju / przygotowanie do App Store",
+      sudoku_metric: "mój projekt / prywatne repo / App Store prep",
       repo_btn: "Prywatne repozytorium",
       trading_status: "System własny",
       trading_cat_dashboard: "Dashboard",
@@ -730,7 +730,7 @@
       status_live: "Live website",
       status_demo: "Concept",
       mini_prime: "Concept / fitness lifestyle",
-      mini_sudoku: "Mobile product / App Store prep",
+      mini_sudoku: "My project / private repo",
       selected_kicker: "Connected to Work",
       selected_h2: "Selected case studies",
       tile_live: "Live website",
@@ -739,7 +739,7 @@
       tile_private: "Private system",
       tile_underground: "Live 24/7 local gym website: offer, reviews and trial entry.",
       tile_prime: "Repositioning a fitness club into a premium lifestyle brand.",
-      tile_sudoku: "Premium mobile product: Pattern Trainer, clean UI, App Store prep.",
+      tile_sudoku: "My private-repo mobile project: Pattern Trainer, clean UI and App Store prep.",
       tile_trading: "Dashboard, evidence layer, decision UI and diagnostics.",
       tile_aurora_meta: "Internal system",
       tile_aurora: "Local-first operating mirror: memory, reflection and proof of work with local AI.",
@@ -805,14 +805,14 @@
       sudoku_cat_app: "Mobile app",
       sudoku_title: "NineSmith Sudoku",
       sudoku_role: "Product design, React Native, trainer logic, UX, brand assets",
-      sudoku_meta: "Mobile product / App Store preparation",
+      sudoku_meta: "My project / private repo",
       sudoku_desc: "A premium Sudoku product focused on daily logic and clean UI: Pattern Trainer (Naked/Hidden Single, X-Wing, Swordfish, Y-Wing), no-ad positioning, plus icon, screenshots and ASO for the App Store.",
       sudoku_li_1: "Pattern Trainer: full 9×9 grid, candidates, visual overlays and focus cell",
       sudoku_li_2: "Technique scenarios and validation (Naked/Hidden Single, Pair, X-Wing…)",
       sudoku_li_3: "Session stats: accuracy, time, streak, progress",
       sudoku_li_4: "Premium SVG/PNG brand asset system (icon, hero, social preview)",
       sudoku_li_5: "Expo / React Native, TypeScript, private repository for my project",
-      sudoku_metric: "in development / App Store preparation",
+      sudoku_metric: "my project / private repo / App Store prep",
       repo_btn: "Private repository",
       trading_status: "Private system",
       trading_cat_dashboard: "Dashboard",
@@ -1106,7 +1106,7 @@
     if (!tablist) return;
 
     const buttons = Array.from(tablist.querySelectorAll('[data-filter]'));
-    const cards = Array.from(document.querySelectorAll('[data-cat]'));
+    const cards = Array.from(document.querySelectorAll('#caseGrid article[data-cat]'));
 
     function setActive(btn){
       buttons.forEach(b => {
