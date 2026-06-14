@@ -1,0 +1,633 @@
+---
+permalink: "/work.html"
+title: "Nikodem Kustusz Studio — Realizacje i live proof"
+description: "Realizacje: UndergroundGym.pl (publiczny URL), PrimeGym Rumia (koncepcja), NineSmith Sudoku (mój projekt, prywatne repo), Trading Workstation (dashboard systemowy)."
+canonical: "https://querosdev.github.io/work.html"
+ogTitle: "Realizacje — Nikodem Kustusz Studio"
+ogDescription: "Strony, aplikacje i systemy: od live business website po aplikację mobilną i dashboard operacyjny."
+bodyClass: "page-work"
+---
+{% extends "base.njk" %}
+
+{% block head %}{% raw %}
+<style>
+    .preview-frame {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
+      position: relative;
+      background: #0f1114;
+      margin: 0 0 18px;
+    }
+    .preview-frame svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .work-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .tag-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .tag-live   { background: rgba(52,211,153,.14); color: #34d399; border: 1px solid rgba(52,211,153,.28); }
+    .tag-wip    { background: rgba(205,168,93,.14);  color: #cda85d; border: 1px solid rgba(205,168,93,.28); }
+    .tag-own    { background: rgba(139,92,246,.14);  color: #a78bfa; border: 1px solid rgba(139,92,246,.28); }
+    .tag-sys    { background: rgba(99,170,255,.14);  color: #93c5fd; border: 1px solid rgba(99,170,255,.28); }
+    .tag-cat {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 700;
+      color: rgba(242,241,238,.55);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .work-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+      gap: clamp(20px, 4vw, 40px);
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .work-feature { grid-template-columns: 1fr; }
+    }
+    .work-feature-media {
+      position: relative;
+      min-height: 340px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: radial-gradient(440px 300px at 90% 8%, rgba(205,168,93,.16), transparent 62%),
+                  rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 28px 70px rgba(0,0,0,.32);
+    }
+    .work-feature-desktop {
+      width: 100%; height: 100%; min-height: inherit;
+      object-fit: cover; object-position: top left; opacity: .92;
+    }
+    .work-feature-mobile {
+      position: absolute; right: 18px; bottom: 18px;
+      width: min(170px, 28%); max-height: 72%;
+      object-fit: cover; object-position: top center;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 20px;
+      box-shadow: 0 24px 54px rgba(0,0,0,.44);
+    }
+    .work-feature-copy { display: grid; gap: 14px; }
+    .work-feature-copy .sub { margin-top: 0; }
+    .proof-list { margin: 10px 0 0; padding-left: 18px; color: rgba(242,241,238,.72); }
+    .proof-list li { margin: 7px 0; }
+
+    .btn.disabled {
+      opacity: .38;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .preview-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .preview-frame.is-web {
+      background:
+        radial-gradient(420px 260px at 78% 8%, rgba(205,168,93,.14), transparent 64%),
+        #0b0c0e;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .preview-label {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(11,12,14,.72);
+      border: 1px solid rgba(205,168,93,.38);
+      color: #e6c97a;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+    .proof-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .sudoku-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.12fr) minmax(0, .9fr);
+      align-items: end;
+      gap: clamp(8px, 1.5vw, 16px);
+      padding: clamp(16px, 2.5vw, 28px) clamp(18px, 3vw, 34px) 0;
+      background:
+        radial-gradient(260px 180px at 52% 40%, rgba(205,168,93,.16), transparent 66%),
+        linear-gradient(135deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        #0f1114;
+    }
+    .phone-shot {
+      height: 86%;
+      min-height: 0;
+      overflow: hidden;
+      border-radius: 22px 22px 0 0;
+      background: #111318;
+      border: 1px solid rgba(205,168,93,.22);
+      box-shadow: 0 18px 48px rgba(0,0,0,.35);
+    }
+    .phone-shot.main {
+      height: 105%;
+      z-index: 1;
+      transform: translateY(10px);
+      border-color: rgba(205,168,93,.38);
+    }
+    .phone-shot.side {
+      transform: translateY(22px);
+      opacity: .88;
+    }
+    .phone-shot.muted {
+      opacity: .68;
+    }
+    .phone-shot img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+    }
+    @media (max-width: 520px) {
+      .sudoku-showcase {
+        grid-template-columns: .82fr 1.16fr;
+      }
+      .phone-shot.muted { display: none; }
+    }
+  </style>
+{% endraw %}{% endblock %}
+
+{% block content %}{% raw %}
+<main class="page">
+  <div class="container">
+<div class="title reveal">
+      <div class="kicker" data-i18n="page_kicker">Realizacje</div>
+      <h1 class="h1" data-i18n="page_h1">Realizacje</h1>
+      <p class="sub" data-i18n="page_p">Wybrane prace pokazane tak, jak patrzy na nie firma: problem, zakres, moja rola i status projektu. Publiczny case jest oznaczony osobno od koncepcji i systemów prywatnych.</p>
+      <div class="quick-actions reveal">
+        <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
+        <a class="btn" href="./services.html" data-i18n="nav_services">Usługi</a>
+        <a class="btn" href="./contact.html"  data-i18n="email_short">E-mail</a>
+      </div>
+      <div class="proof-strip" aria-label="Typy dowodów w portfolio">
+        <span class="tag-cat" data-i18n="proof_live">Publiczny URL</span>
+        <span class="tag-cat" data-i18n="proof_demo">Koncepcja</span>
+        <span class="tag-cat" data-i18n="proof_own">Mój projekt</span>
+        <span class="tag-cat" data-i18n="proof_private">System prywatny</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+<section class="work-feature reveal" id="undergroundgym" data-cat="strony,marketing">
+      <div class="work-feature-media">
+        <img class="work-feature-desktop"
+             src="./assets/work/undergroundgym-clean-desktop.png"
+             alt="Zrzut ekranu strony UndergroundGym.pl na desktopie"
+             loading="eager" width="1440" height="1000">
+        <img class="work-feature-mobile"
+             src="./assets/work/undergroundgym-clean-mobile.png"
+             alt="Mobilny zrzut strony UndergroundGym.pl"
+             loading="eager" width="390" height="844">
+      </div>
+      <div class="work-feature-copy">
+        <div class="work-tags">
+          <span class="tag-status tag-live" data-i18n="feature_status">Live site</span>
+          <span class="tag-cat" data-i18n="feature_cat">Strona</span>
+          <span class="tag-cat" data-i18n="feature_client">Lokalny klient</span>
+        </div>
+        <div class="kicker" data-i18n="feature_kicker">Publiczny case #01</div>
+        <h2 class="h2" data-i18n="feature_title">UndergroundGym.pl</h2>
+        <p class="sub" data-i18n="feature_desc">Strona lokalnej siłowni 24/7: premium first impression, czytelna oferta, cennik, opinie i pełna ścieżka kontaktu — od wejścia próbnego po formularz i mapę.</p>
+        <ul class="proof-list">
+          <li data-i18n="feature_li_1">Oferta i CTA prowadzące bezpośrednio do wejścia próbnego.</li>
+          <li data-i18n="feature_li_2">Responsywny układ desktop/mobile z mocną identyfikacją klubu.</li>
+          <li data-i18n="feature_li_3">Zewnętrzne embed-y (mapa) schowane za zgodą — RODO-friendly.</li>
+          <li data-i18n="feature_li_4">SEO basics i Core Web Vitals jako standard od startu.</li>
+        </ul>
+        <div class="inline-actions">
+          <a class="btn primary" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer" data-i18n="open_live">Otwórz live site</a>
+          <a class="btn" href="./contact.html" data-i18n="book_call">Umów call</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+<div class="filters reveal" role="tablist" aria-label="Filtruj projekty">
+      <button class="filter active" role="tab" type="button" data-filter="all" data-i18n="filter_all">Wszystkie</button>
+      <button class="filter" role="tab" type="button" data-filter="strony" data-i18n="filter_web">Strony</button>
+      <button class="filter" role="tab" type="button" data-filter="aplikacje" data-i18n="filter_apps">Aplikacje</button>
+      <button class="filter" role="tab" type="button" data-filter="systemy" data-i18n="filter_systems">Systemy</button>
+      <button class="filter" role="tab" type="button" data-filter="marketing" data-i18n="filter_marketing">Marketing</button>
+    </div>
+<div class="grid-2" id="caseGrid">
+<article class="case-panel work-card reveal" data-cat="strony marketing">
+        <div class="case-thumb">
+          <img src="./assets/work/undergroundgym-clean-desktop.png"
+               alt="Desktopowy widok strony UndergroundGym.pl"
+               loading="lazy" width="1440" height="1000">
+        </div>
+        <div class="work-tags">
+          <span class="tag-status tag-live" data-i18n="feature_status">Live site</span>
+          <span class="tag-cat" data-i18n="feature_cat">Strona</span>
+        </div>
+        <div class="case-marker">01</div>
+        <div class="row">
+          <div>
+            <h3 data-i18n="ug_title">UndergroundGym.pl</h3>
+            <div class="role"><span data-i18n="role_label">Rola:</span> <span data-i18n="ug_role">UX + frontend + wdrożenie</span></div>
+          </div>
+          <div class="meta" data-i18n="ug_meta">Fitness / realny klient</div>
+        </div>
+        <p class="p work-desc" data-i18n="ug_desc">Conversion-focused website dla siłowni 24/7. Oferta, cennik, opinie, formularz wejścia próbnego i kontakt z RODO-friendly embeds.</p>
+        <div class="stack">
+          <span class="pill">HTML/CSS</span>
+          <span class="pill">JS</span>
+          <span class="pill">Responsive</span>
+          <span class="pill">SEO</span>
+        </div>
+        <div class="metricline"><b data-i18n="proof_label">Dowód:</b> <span data-i18n="ug_metric">live site / realny klient / publiczny URL</span></div>
+        <div class="inline-actions">
+          <a class="btn primary" href="https://undergroundgym.pl/" target="_blank" rel="noopener noreferrer" data-i18n="open_live">Otwórz live site</a>
+        </div>
+      </article>
+<article class="case-panel work-card reveal" data-cat="strony marketing">
+<div class="preview-frame is-web">
+          <img src="./assets/work/primegym-rumia-desktop.webp"
+               alt="PrimeGym Rumia — screenshot koncepcji premium landing page"
+               loading="lazy" width="1600" height="899">
+          <span class="preview-label" data-i18n="prime_preview_label">Koncepcja</span>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-wip" data-i18n="prime_status">Koncepcja</span>
+          <span class="tag-cat" data-i18n="prime_cat_web">Strona</span>
+          <span class="tag-cat" data-i18n="prime_cat_growth">Fitness</span>
+          <span class="tag-cat" data-i18n="prime_cat_mkt">Repozycjonowanie</span>
+        </div>
+        <div class="case-marker">02</div>
+        <div class="row">
+          <div>
+            <h3 data-i18n="prime_title">PrimeGym Rumia</h3>
+            <div class="role"><span data-i18n="role_label">Rola:</span> <span data-i18n="prime_role">Strategia oferty, UX, web design, frontend, local SEO</span></div>
+          </div>
+          <div class="meta" data-i18n="prime_meta">Fitness / koncepcja</div>
+        </div>
+        <p class="p work-desc" data-i18n="prime_desc">Repozycjonowanie lokalnego klubu ze zwykłej siłowni na premium markę fitness-lifestyle: nowy hero, struktura oferty, grafik i cennik, ścieżki CTA oraz plan trackingu konwersji.</p>
+        <ul class="bullets">
+          <li data-i18n="prime_li_1">Pozycjonowanie oferty: fitness + lifestyle club, Kids Zone, Akademia Prime, wellness/sauna</li>
+          <li data-i18n="prime_li_2">Landing pages i struktura lokalnego SEO</li>
+          <li data-i18n="prime_li_3">CTA path do grafiku, karnetu, kontaktu i eFitness</li>
+          <li data-i18n="prime_li_4">Audyt sygnałów publicznych, mapa konkurentów i kierunki kampanii</li>
+          <li data-i18n="prime_li_5">Mapa zdarzeń analitycznych i plan trackingu konwersji</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">HTML/CSS</span>
+          <span class="pill">JS</span>
+          <span class="pill">Local SEO</span>
+          <span class="pill" data-i18n="prime_stack_meta">Plan kampanii</span>
+          <span class="pill" data-i18n="prime_stack_tracking">Plan trackingu</span>
+        </div>
+        <div class="metricline"><b data-i18n="status_label">Status:</b> <span data-i18n="prime_metric">koncepcja / zbudowane i wysłane</span></div>
+        <div class="inline-actions">
+          <span class="btn disabled" aria-disabled="true" data-i18n="prime_demo_btn">Koncepcja, nie live</span>
+          <a class="btn" href="./contact.html" data-i18n="book_call">Umów call</a>
+        </div>
+      </article>
+<article class="case-panel work-card reveal" data-cat="aplikacje">
+<div class="preview-frame sudoku-showcase" aria-label="NineSmith Sudoku — wybrane ekrany aplikacji mobilnej">
+          <div class="phone-shot side">
+            <img src="./assets/work/sudoku-premium-challenges.webp"
+                 alt="NineSmith Sudoku — ekran Challenges" loading="lazy" width="472" height="1024">
+          </div>
+          <div class="phone-shot main">
+            <img src="./assets/work/sudoku-premium-home.webp"
+                 alt="NineSmith Sudoku — ekran Home i Daily Puzzle" loading="lazy" width="472" height="1024">
+          </div>
+          <div class="phone-shot side muted">
+            <img src="./assets/work/sudoku-premium-profile.webp"
+                 alt="NineSmith Sudoku — ekran Profile i Premium" loading="lazy" width="472" height="1024">
+          </div>
+          <span class="preview-label" data-i18n="sudoku_preview_label">Mój projekt</span>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-own" data-i18n="sudoku_status">Mój projekt</span>
+          <span class="tag-cat" data-i18n="sudoku_cat_app">Aplikacja mobilna</span>
+          <span class="tag-cat">React Native</span>
+        </div>
+        <div class="case-marker">03</div>
+        <div class="row">
+          <div>
+            <h3 data-i18n="sudoku_title">NineSmith Sudoku</h3>
+            <div class="role"><span data-i18n="role_label">Rola:</span> <span data-i18n="sudoku_role">Product design, React Native, trainer logic, UX, brand assets</span></div>
+          </div>
+          <div class="meta" data-i18n="sudoku_meta">Produkt mobilny / przygotowanie do App Store</div>
+        </div>
+        <p class="p work-desc" data-i18n="sudoku_desc">Premium produkt Sudoku skupiony na codziennej logice i czystym UI: Pattern Trainer (Naked/Hidden Single, X-Wing, Swordfish, Y-Wing), pozycjonowanie bez reklam oraz ikona, screenshoty i ASO pod App Store.</p>
+        <ul class="bullets">
+          <li data-i18n="sudoku_li_1">Pattern Trainer: pełna siatka 9×9, kandydaci, nakładki wizualne i focus cell</li>
+          <li data-i18n="sudoku_li_2">Scenariusze i walidacja technik (Naked/Hidden Single, Pair, X-Wing…)</li>
+          <li data-i18n="sudoku_li_3">Statystyki sesji: trafność, czas, streak, postęp</li>
+          <li data-i18n="sudoku_li_4">Premium SVG/PNG brand asset system (ikona, hero, social preview)</li>
+          <li data-i18n="sudoku_li_5">Expo / React Native, TypeScript, prywatne repo mojego projektu</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">React Native</span>
+          <span class="pill">Expo</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Product UX</span>
+          <span class="pill">SVG assets</span>
+        </div>
+        <div class="metricline"><b data-i18n="status_label">Status:</b> <span data-i18n="sudoku_metric">w rozwoju / przygotowanie do App Store</span></div>
+        <div class="inline-actions">
+          <span class="btn primary disabled" aria-disabled="true" data-i18n="repo_btn">Prywatne repozytorium</span>
+        </div>
+      </article>
+<article class="case-panel work-card reveal" data-cat="systemy">
+<div class="preview-frame">
+          <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="Trading Workstation — dashboard preview">
+            <defs>
+              <linearGradient id="tw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#080a0d"/>
+                <stop offset="100%" stop-color="#0d1117"/>
+              </linearGradient>
+              <linearGradient id="tw-chart" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.0"/>
+                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.22"/>
+              </linearGradient>
+              <linearGradient id="tw-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="360" fill="url(#tw-bg)"/>
+<rect x="0" y="0" width="52" height="360" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <circle cx="26" cy="22" r="8" fill="rgba(59,130,246,0.3)" stroke="rgba(59,130,246,0.5)" stroke-width="0.8"/>
+            <text x="26" y="26" fill="#93c5fd" font-size="9" font-family="Inter,monospace" font-weight="800" text-anchor="middle">W</text>
+            <rect x="14" y="50" width="24" height="24" rx="6" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.35)" stroke-width="0.6"/>
+            <rect x="14" y="82" width="24" height="24" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <rect x="14" y="114" width="24" height="24" rx="6" fill="rgba(255,255,255,0.04)"/>
+            <rect x="14" y="146" width="24" height="24" rx="6" fill="rgba(255,255,255,0.04)"/>
+<rect x="19" y="58" width="14" height="2" rx="1" fill="rgba(59,130,246,0.8)"/>
+            <rect x="19" y="63" width="10" height="2" rx="1" fill="rgba(59,130,246,0.6)"/>
+            <rect x="19" y="68" width="12" height="2" rx="1" fill="rgba(59,130,246,0.6)"/>
+<rect x="52" y="0" width="588" height="36" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+            <rect x="64"  y="12" width="120" height="10" rx="3" fill="rgba(255,255,255,0.35)"/>
+            <rect x="440" y="13" width="60" height="8" rx="4" fill="rgba(52,211,153,0.15)" stroke="rgba(52,211,153,0.35)" stroke-width="0.7"/>
+            <rect x="508" y="13" width="60" height="8" rx="4" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.35)" stroke-width="0.7"/>
+            <rect x="576" y="11" width="56" height="14" rx="7" fill="url(#tw-blue)"/>
+            <text class="tw-svg-run-label" data-i18n="tw_svg_run" x="604" y="21" fill="#fff" font-size="7" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">SKANUJ</text>
+<rect x="60" y="44" width="400" height="180" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.6"/>
+            <rect x="68" y="52" width="80" height="8" rx="2" fill="rgba(255,255,255,0.4)"/>
+            <rect x="68" y="64" width="120" height="6" rx="2" fill="rgba(255,255,255,0.18)"/>
+<rect x="68" y="78" width="384" height="132" rx="6" fill="rgba(59,130,246,0.04)" stroke="rgba(59,130,246,0.12)" stroke-width="0.6"/>
+<polygon points="68,210 110,180 150,190 190,155 230,165 270,140 310,148 350,125 390,132 430,110 452,115 452,210" fill="url(#tw-chart)"/>
+<polyline points="68,210 110,180 150,190 190,155 230,165 270,140 310,148 350,125 390,132 430,110 452,115" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="68" y1="145" x2="452" y2="145" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
+            <line x1="68" y1="165" x2="452" y2="165" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
+            <line x1="68" y1="185" x2="452" y2="185" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
+<circle cx="430" cy="110" r="5" fill="#3b82f6" stroke="#0d1117" stroke-width="1.5"/>
+            <circle cx="430" cy="110" r="9" fill="rgba(59,130,246,0.2)"/>
+<rect x="468" y="44" width="164" height="180" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="0.6"/>
+            <rect x="478" y="54" width="80" height="7" rx="2" fill="rgba(255,255,255,0.4)"/>
+<rect x="478" y="68" width="144" height="28" rx="8" fill="rgba(52,211,153,0.1)" stroke="rgba(52,211,153,0.3)" stroke-width="0.7"/>
+            <text class="tw-svg-decision-label" data-i18n="tw_svg_decision" x="550" y="82" fill="#34d399" font-size="9" font-family="Inter,monospace" font-weight="800" text-anchor="middle" letter-spacing="0.04em">DO OBSERWACJI</text>
+<rect x="478" y="104" width="144" height="1" fill="rgba(255,255,255,0.06)"/>
+            <rect x="478" y="112" width="90" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="578" y="112" width="44" height="6" rx="3" fill="rgba(52,211,153,0.2)"/>
+            <rect x="478" y="124" width="80" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="478" y="136" width="100" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="578" y="136" width="44" height="6" rx="3" fill="rgba(239,68,68,0.2)"/>
+            <rect x="478" y="148" width="70" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="478" y="166" width="144" height="1" fill="rgba(255,255,255,0.06)"/>
+<rect x="478" y="174" width="60" height="7" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="544" y="174" width="30" height="7" rx="3" fill="rgba(59,130,246,0.25)"/>
+            <rect x="478" y="186" width="50" height="7" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <rect x="534" y="186" width="40" height="7" rx="3" fill="rgba(59,130,246,0.15)"/>
+            <rect x="478" y="200" width="80" height="7" rx="2" fill="rgba(255,255,255,0.1)"/>
+<rect x="60" y="232" width="572" height="116" rx="10" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.05)" stroke-width="0.6"/>
+            <rect x="68" y="242" width="80" height="7" rx="2" fill="rgba(255,255,255,0.35)"/>
+<rect x="68" y="258" width="8" height="6" rx="1" fill="rgba(52,211,153,0.6)"/>
+            <rect x="82" y="258" width="200" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="290" y="258" width="80"  height="6" rx="2" fill="rgba(52,211,153,0.25)"/>
+            <rect x="68" y="270" width="8" height="6" rx="1" fill="rgba(59,130,246,0.6)"/>
+            <rect x="82" y="270" width="180" height="6" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <rect x="270" y="270" width="60"  height="6" rx="2" fill="rgba(59,130,246,0.25)"/>
+            <rect x="68" y="282" width="8" height="6" rx="1" fill="rgba(239,68,68,0.6)"/>
+            <rect x="82" y="282" width="160" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+            <rect x="250" y="282" width="50"  height="6" rx="2" fill="rgba(239,68,68,0.25)"/>
+            <rect x="68" y="294" width="8" height="6" rx="1" fill="rgba(52,211,153,0.6)"/>
+            <rect x="82" y="294" width="220" height="6" rx="2" fill="rgba(255,255,255,0.2)"/>
+<rect x="470" y="258" width="72" height="14" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <text x="506" y="269" fill="rgba(255,255,255,0.3)" font-size="7" font-family="IBM Plex Mono,monospace" text-anchor="middle">Space Grotesk</text>
+            <rect x="548" y="258" width="72" height="14" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            <text x="584" y="269" fill="rgba(255,255,255,0.3)" font-size="7" font-family="IBM Plex Mono,monospace" text-anchor="middle">IBM Plex Mono</text>
+<rect x="470" y="280" width="152" height="24" rx="6" fill="rgba(99,170,255,0.1)" stroke="rgba(99,170,255,0.3)" stroke-width="0.8"/>
+            <text class="tw-svg-system-label" data-i18n="tw_svg_system" x="546" y="295" fill="#93c5fd" font-size="8" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.07em">SYSTEM WŁASNY</text>
+<text x="68" y="340" fill="rgba(255,255,255,0.12)" font-size="7" font-family="IBM Plex Mono,monospace">evidence › decision › diagnostics › frontend</text>
+          </svg>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-sys" data-i18n="trading_status">System własny</span>
+          <span class="tag-cat" data-i18n="trading_cat_dashboard">Dashboard</span>
+          <span class="tag-cat" data-i18n="trading_cat_frontend">Frontend</span>
+        </div>
+        <div class="case-marker">04</div>
+        <div class="row">
+          <div>
+            <h3 data-i18n="trading_title">Trading Workstation</h3>
+            <div class="role"><span data-i18n="role_label">Rola:</span> <span data-i18n="trading_role">Frontend architecture, UX systems, dashboard design, backend integration</span></div>
+          </div>
+          <div class="meta" data-i18n="trading_meta">Dashboard / system prywatny</div>
+        </div>
+        <p class="p work-desc" data-i18n="trading_desc">Lokalny decision-support dashboard do konserwatywnej analizy: evidence retrieval, klasyfikacje (qualified_watchlist, weak_watchlist, no_trade), diagnostyki i przeprojektowanie UI na cockpit operacyjny.</p>
+        <ul class="bullets">
+          <li data-i18n="trading_li_1">Chart-first layout z prawym railem evidence i sample-count diagnostics</li>
+          <li data-i18n="trading_li_2">Decision classification UI z czytelną hierarchią statusów</li>
+          <li data-i18n="trading_li_3">Dark mode workstation/cockpit: Space Grotesk + IBM Plex Mono</li>
+          <li data-i18n="trading_li_4">Frontend refactor: DashboardView, RightRailSummary, ActionCard, PriceHistoryChart</li>
+          <li data-i18n="trading_li_5">Build/test-validated — nie jest to prezentacja wyników finansowych</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">React</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Dashboard UX</span>
+          <span class="pill">Dark mode</span>
+        </div>
+        <div class="metricline"><b data-i18n="status_label">Status:</b> <span data-i18n="trading_metric">system prywatny / frontend zwalidowany testami</span></div>
+        <div class="inline-actions">
+          <span class="btn disabled" aria-disabled="true" data-i18n="private_repo">Prywatne repozytorium</span>
+          <a class="btn" href="./contact.html" data-i18n="ask_scope">Zapytaj o zakres</a>
+        </div>
+      </article>
+<article class="case-panel work-card reveal" id="aurora" data-cat="systemy">
+        <div class="preview-frame">
+          <svg class="system-preview-svg" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="Aurora OS — local system preview">
+            <rect width="640" height="360" fill="#0d1117"/>
+            <g stroke="rgba(205,168,93,0.28)" stroke-width="1.4">
+              <line x1="320" y1="176" x2="150" y2="92"/>
+              <line x1="320" y1="176" x2="486" y2="96"/>
+              <line x1="320" y1="176" x2="132" y2="250"/>
+              <line x1="320" y1="176" x2="300" y2="282"/>
+              <line x1="320" y1="176" x2="500" y2="244"/>
+            </g>
+            <circle cx="150" cy="92" r="12" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.30)"/>
+            <circle cx="486" cy="96" r="10" fill="rgba(99,170,255,0.16)" stroke="rgba(99,170,255,0.40)"/>
+            <circle cx="132" cy="250" r="9" fill="rgba(52,211,153,0.16)" stroke="rgba(52,211,153,0.40)"/>
+            <circle cx="300" cy="282" r="11" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.28)"/>
+            <circle cx="500" cy="244" r="13" fill="rgba(205,168,93,0.16)" stroke="rgba(205,168,93,0.40)"/>
+            <circle cx="320" cy="176" r="28" fill="rgba(205,168,93,0.16)" stroke="rgba(205,168,93,0.55)" stroke-width="2"/>
+            <circle cx="320" cy="176" r="10" fill="#cda85d"/>
+            <text x="320" y="334" fill="rgba(255,255,255,0.30)" font-size="11" text-anchor="middle" letter-spacing="0.08em">sense › memory › mirror › advisor</text>
+          </svg>
+          <span class="preview-label">Local AI</span>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-internal" data-i18n="aurora_status">System wewnętrzny</span>
+          <span class="tag-cat" data-i18n="aurora_cat_1">Local AI</span>
+          <span class="tag-cat" data-i18n="aurora_cat_2">Memory graph</span>
+        </div>
+        <div class="case-marker">05</div>
+        <div class="row">
+          <div>
+            <h3>Aurora OS</h3>
+            <div class="role"><span data-i18n="cs_role_label">Rola:</span> <span data-i18n="aurora_role">Architektura systemu, local-first AI, UX, logika produktu</span></div>
+          </div>
+          <div class="meta" data-i18n="aurora_meta">System wewnętrzny / aktywny rozwój</div>
+        </div>
+        <p class="p work-desc" data-i18n="aurora_desc">Local-first „operating mirror”, który zamienia rozproszony kontekst osobisty w pamięć, refleksję, proof of work i sygnały następnego ruchu. To nie jest aplikacja do notatek.</p>
+        <ul class="bullets">
+          <li data-i18n="aurora_li1">Local Sense Engine + integracja Ollama (embeddinggemma, gemma3:1b)</li>
+          <li data-i18n="aurora_li2">Mirror i Advisor: klasyfikacja sygnału, wykrywanie wzorców, następny uczciwy ruch</li>
+          <li data-i18n="aurora_li3">Deterministyczne guardraile i pamięć z dbałością o prywatność (local-first)</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">Local-first</span>
+          <span class="pill">Ollama</span>
+          <span class="pill">embeddinggemma</span>
+          <span class="pill">gemma3:1b</span>
+        </div>
+        <div class="metricline"><b data-i18n="cs_status_label">Status:</b> <span data-i18n="aurora_metric">system wewnętrzny / prototyp w rozwoju — nie komercyjny SaaS</span></div>
+        <div class="inline-actions">
+          <span class="btn disabled" aria-disabled="true" data-i18n="aurora_status">System wewnętrzny</span>
+          <a class="btn" href="./contact.html" data-i18n="cs_ask_scope">Zapytaj o zakres</a>
+        </div>
+      </article>
+<article class="case-panel work-card reveal" id="sigma" data-cat="strony,marketing">
+        <div class="preview-frame is-web">
+          <svg class="system-preview-svg" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" aria-label="Sigma Budownictwo — website concept preview">
+            <rect width="640" height="360" fill="#0b0c0e"/>
+            <g stroke="rgba(205,168,93,0.18)" stroke-width="1">
+              <line x1="0" y1="120" x2="640" y2="120"/>
+              <line x1="0" y1="240" x2="640" y2="240"/>
+              <line x1="213" y1="0" x2="213" y2="360"/>
+              <line x1="426" y1="0" x2="426" y2="360"/>
+            </g>
+            <rect x="64" y="150" width="118" height="120" fill="rgba(255,255,255,0.04)" stroke="rgba(205,168,93,0.32)"/>
+            <rect x="104" y="110" width="118" height="160" fill="rgba(255,255,255,0.05)" stroke="rgba(205,168,93,0.45)"/>
+            <rect x="150" y="70" width="118" height="200" fill="rgba(205,168,93,0.10)" stroke="rgba(205,168,93,0.55)"/>
+            <rect x="360" y="96" width="200" height="14" rx="4" fill="rgba(255,255,255,0.40)"/>
+            <rect x="360" y="124" width="150" height="9" rx="3" fill="rgba(255,255,255,0.20)"/>
+            <rect x="360" y="170" width="200" height="44" rx="10" fill="rgba(205,168,93,0.10)" stroke="rgba(205,168,93,0.30)"/>
+            <rect x="360" y="232" width="96" height="30" rx="15" fill="rgba(205,168,93,0.92)"/>
+            <text x="408" y="251" fill="#16120a" font-size="11" font-weight="800" text-anchor="middle">Kontakt</text>
+            <text x="64" y="322" fill="rgba(255,255,255,0.28)" font-size="11" letter-spacing="0.06em">usługi › realizacje › kontakt</text>
+          </svg>
+          <span class="preview-label" data-i18n="sigma_status">Koncepcja</span>
+        </div>
+
+        <div class="work-tags">
+          <span class="tag-status tag-wip" data-i18n="sigma_status">Koncepcja</span>
+          <span class="tag-cat" data-i18n="sigma_cat_1">Strona firmowa</span>
+          <span class="tag-cat" data-i18n="sigma_cat_2">Budownictwo</span>
+        </div>
+        <div class="case-marker">06</div>
+        <div class="row">
+          <div>
+            <h3>Sigma Budownictwo</h3>
+            <div class="role"><span data-i18n="cs_role_label">Rola:</span> <span data-i18n="sigma_role">Web design, UX, struktura oferty, wdrożenie</span></div>
+          </div>
+          <div class="meta" data-i18n="sigma_meta">Firma budowlana / koncepcja</div>
+        </div>
+        <p class="p work-desc" data-i18n="sigma_desc">Koncepcja strony dla lokalnej firmy budowlanej: więcej wiarygodności, jasna struktura usług i prosta ścieżka kontaktu zamiast przypadkowej wizytówki.</p>
+        <ul class="bullets">
+          <li data-i18n="sigma_li1">Struktura usług i czytelny zakres oferty</li>
+          <li data-i18n="sigma_li2">Sygnały wiarygodności i lokalnego zaufania</li>
+          <li data-i18n="sigma_li3">Prosta, premium ścieżka kontaktu i wyceny</li>
+        </ul>
+        <div class="stack">
+          <span class="pill">HTML/CSS</span>
+          <span class="pill">UX</span>
+          <span class="pill">Local SEO</span>
+        </div>
+        <div class="metricline"><b data-i18n="cs_status_label">Status:</b> <span data-i18n="sigma_metric">projekt wdrożony dla klienta / pliki nie dostępne w repo</span></div>
+        <div class="inline-actions">
+          <span class="btn disabled" aria-disabled="true">URL niedostępny</span>
+          <a class="btn" href="./contact.html" data-i18n="cs_ask_scope">Zapytaj o zakres</a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</main>
+{% endraw %}{% endblock %}
+
+{% block scripts %}{% raw %}
+<script>
+  (function () {
+    const filters = document.querySelectorAll('.filter');
+    const cards   = document.querySelectorAll('#caseGrid article[data-cat]');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(f => { f.classList.remove('active'); f.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const val = btn.dataset.filter;
+        cards.forEach(card => {
+          const cats = card.dataset.cat || '';
+          const show = val === 'all' || cats.includes(val);
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
+{% endraw %}{% endblock %}

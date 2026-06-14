@@ -1,75 +1,15 @@
-﻿<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.eu; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://app.cal.eu https://api.cal.com https://cal.com; frame-src https://app.cal.eu https://cal.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="theme-color" content="#0b0c0e" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="./assets/brand/favicon.svg" type="image/svg+xml" />
-  <link rel="canonical" href="https://querosdev.github.io/privacy.html" />
-  <link rel="stylesheet" href="./style.css" />
-  <title>Polityka prywatności — Nikodem Kustusz Studio</title>
-  <meta name="description" content="Polityka prywatności, dane kontaktowe, cookies i zasady działania kalendarza Cal.com." />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Nikodem Kustusz Studio" />
-  <meta property="og:title" content="Polityka prywatności — Nikodem Kustusz Studio" />
-  <meta property="og:description" content="Informacje o danych kontaktowych, cookies i zewnętrznym kalendarzu Cal.com." />
-  <meta property="og:url" content="https://querosdev.github.io/privacy.html" />
-  <meta property="og:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Polityka prywatności — Nikodem Kustusz Studio" />
-  <meta name="twitter:description" content="Informacje o danych kontaktowych, cookies i zewnętrznym kalendarzu Cal.com." />
-  <meta name="twitter:image" content="https://querosdev.github.io/assets/brand/og-image.png" />
-</head>
-<body class="page-privacy page-legal-doc">
-<header class="nav reveal">
-  <div class="container nav-inner">
-    <a class="brand" href="./index.html" aria-label="Home">
-      <span class="mark" aria-hidden="true"></span>
-      <span class="name" data-i18n="site_name">Nikodem Kustusz Studio</span>
-      <span class="role" data-i18n="hero_kicker">Partner dla firm</span>
-    </a>
+---
+permalink: "/privacy.html"
+title: "Polityka prywatności — Nikodem Kustusz Studio"
+description: "Polityka prywatności, dane kontaktowe, cookies i zasady działania kalendarza Cal.com."
+canonical: "https://querosdev.github.io/privacy.html"
+ogTitle: "Polityka prywatności — Nikodem Kustusz Studio"
+ogDescription: "Informacje o danych kontaktowych, cookies i zewnętrznym kalendarzu Cal.com."
+bodyClass: "page-privacy page-legal-doc"
+---
+{% extends "base.njk" %}
 
-    <nav class="nav-links" aria-label="Primary">
-      <a href="./index.html" data-nav="home" data-i18n="nav_home">Start</a>
-      <a href="./work.html" data-nav="work" data-i18n="nav_work">Realizacje</a>
-      <a href="./services.html" data-nav="services" data-i18n="nav_services">Usługi</a>
-      <a href="./about.html" data-nav="about" data-i18n="nav_about">O mnie</a>
-      <a href="./contact.html" data-nav="contact" data-i18n="nav_contact">Kontakt</a>
-    </nav>
-
-    <div class="nav-actions">
-      <div class="lang" role="group" aria-label="Language">
-        <button id="langPL" type="button">PL</button>
-        <button id="langEN" type="button">EN</button>
-      </div>
-      <a class="btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
-  <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Nawigacja główna">
-    <div class="mobile-links">
-      <a href="./index.html" data-nav-mobile="home" data-i18n="nav_home">Start</a>
-      <a href="./work.html" data-nav-mobile="work" data-i18n="nav_work">Realizacje</a>
-      <a href="./services.html" data-nav-mobile="services" data-i18n="nav_services">Usługi</a>
-      <a href="./about.html" data-nav-mobile="about" data-i18n="nav_about">O mnie</a>
-      <a href="./contact.html" data-nav-mobile="contact" data-i18n="nav_contact">Kontakt</a>
-      <a class="mobile-menu-secondary" href="./privacy.html" data-nav-mobile="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
-      <a class="mobile-menu-secondary" href="./legal.html" data-nav-mobile="legal" data-i18n="footer_legal">Prawa autorskie</a>
-      <a class="mobile-menu-cta btn primary" data-book href="https://app.cal.eu/quero/15min" data-i18n="book_call">Umów call</a>
-    </div>
-  </nav>
-</header>
-
-
+{% block content %}{% raw %}
 <main class="page">
   <div class="container">
     <div class="title reveal">
@@ -230,21 +170,4 @@ Email: <a href="mailto:wonskkdesign@gmail.com">wonskkdesign@gmail.com</a></p>
     </div>
   </div>
 </main>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="claim" data-i18n="footer_claim">Strony, panele i landing pages z jasnym zakresem, testami i wdrożeniem.</div>
-    <div class="mini">
-      <a href="./contact.html" data-i18n="email_short">E-mail</a>
-      <a href="./privacy.html" data-nav="privacy" data-i18n="footer_privacy">Polityka prywatności</a>
-      <a href="./legal.html" data-nav="legal" data-i18n="footer_legal">Prawa autorskie</a>
-      <a href="https://github.com/querosdev" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/nikodem-kustusz-031ba1335/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-    <div class="copyright">© <span data-year></span> Nikodem Kustusz — <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></div>
-  </div>
-</footer>
-
-<script src="./script.js"></script>
-</body>
-</html>
+{% endraw %}{% endblock %}

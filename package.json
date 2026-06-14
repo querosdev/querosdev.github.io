@@ -1,0 +1,14 @@
+{
+  "name": "querosdev-site",
+  "version": "1.0.0",
+  "description": "Nikodem Kustusz Studio — portfolio site (Eleventy)",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

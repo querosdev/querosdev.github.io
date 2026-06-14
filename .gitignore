@@ -4,3 +4,7 @@
 output/
 data/
 *.log
+
+# Eleventy build output + deps
+_site/
+node_modules/

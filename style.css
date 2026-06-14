@@ -1,3 +1,13 @@
+/* Anti-FOUC: when a non-default language is resolved before paint, the head
+   script adds .i18n-pending to <html>; translatable text stays invisible (but
+   keeps its layout box, so no shift) until applyLang() removes the class.
+   Polish visitors never get this class, so they see text instantly. */
+.i18n-pending [data-i18n]:not([data-i18n-attr]),
+.i18n-pending [data-home-i18n],
+.i18n-pending [data-work-i18n]{
+  visibility: hidden;
+}
+
 :root{
   --bg: #0b0c0e;
   --bg2:#0f1114;
